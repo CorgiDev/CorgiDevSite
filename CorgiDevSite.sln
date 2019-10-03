@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "CorgiDev_React", "CorgiDev_React\CorgiDev_React.njsproj", "{3A8AF8BD-8292-4CA6-AC70-CD05DDB04198}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorgiDev_Selenium", "CorgiDev_Selenium\CorgiDev_Selenium.csproj", "{1A3EFC9F-826D-4F05-A7E5-4AAE8949C27B}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CorgiDev_HTML", "CorgiDev_HTML\", "{67D6310B-02B4-487F-8691-901161EC74F4}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_64547"
+		Debug.AspNetCompiler.PhysicalPath = "CorgiDev_HTML\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64547\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_64547"
+		Release.AspNetCompiler.PhysicalPath = "CorgiDev_HTML\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64547\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "64547"
+		SlnRelativePath = "CorgiDev_HTML\"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E210FB97-5EF7-4EC8-8964-06058C8644FF}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A8AF8BD-8292-4CA6-AC70-CD05DDB04198}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A8AF8BD-8292-4CA6-AC70-CD05DDB04198}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A8AF8BD-8292-4CA6-AC70-CD05DDB04198}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A8AF8BD-8292-4CA6-AC70-CD05DDB04198}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A3EFC9F-826D-4F05-A7E5-4AAE8949C27B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A3EFC9F-826D-4F05-A7E5-4AAE8949C27B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A3EFC9F-826D-4F05-A7E5-4AAE8949C27B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A3EFC9F-826D-4F05-A7E5-4AAE8949C27B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67D6310B-02B4-487F-8691-901161EC74F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67D6310B-02B4-487F-8691-901161EC74F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67D6310B-02B4-487F-8691-901161EC74F4}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{67D6310B-02B4-487F-8691-901161EC74F4}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD22DF6A-2B70-4064-8148-435C838DF9BD}
+	EndGlobalSection
+EndGlobal

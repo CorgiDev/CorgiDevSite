@@ -1,0 +1,9 @@
+{
+  "name": "corgi-dev-react",
+  "version": "0.0.0",
+  "description": "CorgiDev-React",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  }
+}
