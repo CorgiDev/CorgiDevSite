@@ -5,10 +5,19 @@ font-family: 'Nunito Sans', sans-serif;
 font-family: 'Ubuntu', sans-serif;
 ******************************************/
 
+
 /******************************************
 GENERAL
 ******************************************/
+
+
 /*Wrapper section styles. Includes everything under the nav down to the footer.*/
+
+#wholePageContainer {
+    margin: 0;
+    padding: 0;
+}
+
 #wrapper {
     max-width: 940px;
     margin: 0 auto;
@@ -19,8 +28,21 @@ GENERAL
     font-weight: bold;
 }
 
+p {
+    margin-top: 0;
+    max-height: 10em;
+}
+
+/***********************************
+Makes footer go to bottom of page
+section {
+  flex: 1;
+}
+***********************************/
+
 a {
-    text-decoration: none; /** Removes link styling. **/
+    text-decoration: none;
+    /** Removes link styling. **/
 }
 
 body {
@@ -34,7 +56,6 @@ img {
     max-width: 100%;
 }
 
-
 h3 {
     margin: 0 0 1em 0;
 }
@@ -43,101 +64,11 @@ h3 {
     padding-left: 1.5em;
 }
 
-footer a {
-    margin: 5px;
-}
-
-
-/******************************************
-COLORS
-******************************************/
-
-/*Site body*/
-body, p, figure figcaption {
-    background-color: #f0f5f5;
-    color: #242424;
-}
-
-/*Header section*/
-
-header {
-    border-color: #af5920;
-    /*** background: #93420C; ***/
-    background: #f27a2b;
-}
-
-/*nav bkgrd on mobile*/
-nav {
-    background: #af5920;
-}
-
-/*Logo text*/
-#logo h1,
-#logo h2 {
-    color: #fff;
-}
-
-.mainHeadline {
-    color: #682d06;
-    text-align: center;
-}
-
-/*links*/
-a {
-    color: #7d6608;
-}
-
-/*nav styles*/
-nav a,
-nav a:visited {
-    color: #fff;
-}
-
-    nav a.selected, nav a:hover {
-        color: #1C0800;
-    }
-
-.error {
-    color: darkred;
-    font-weight: bold;
-}
-
-.social-icon {
-    color: #af5920;
-}
-
-#gallery img {
-    border: 2px solid #af5920;
-}
-
-#gallery figcaption {
-    color: black;
-}
-
-.resume-photo {
-    border: 2px solid #af5920;
-}
-
-#resumeWrapperA h1 h2 {
-    color: #af5920;
-}
-
-#resumeName {
-    color: #af5920;
-}
-
-#resumeWrapperB h1 h2 {
-    font: black;
-}
-
-#a11yContent h1, h2, h3 {
-    color: #af5920;
-}
-
 
 /******************************************
 HEADING
 ******************************************/
+
 header {
     float: left;
     margin: 0 0 30px 0;
@@ -145,7 +76,9 @@ header {
     width: 100%;
 }
 
+
 /*Logo encompasses just the part where it says my name and a title.*/
+
 #logo {
     text-align: center;
     margin: 0;
@@ -159,11 +92,10 @@ h1 {
     line-height: 0.8em;
 }
 
-#logo h2 {
+h2 {
     font-family: 'Ubuntu', sans-serif;
     font-size: 0.9em;
-    /*** margin: -5px 0 0; ***/
-    margin: -5px 5px 6px;
+    margin: -5px 0 0;
     font-weight: normal;
 }
 
@@ -171,6 +103,7 @@ h1 {
 /******************************************
 NAVIGATION
 ******************************************/
+
 nav {
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
@@ -195,30 +128,100 @@ nav a {
 
 
 /******************************************
-PAGE: MAIN PAGE
+FOOTER
 ******************************************/
+
+footer {
+    font-size: 0.75em;
+    text-align: center;
+    clear: both;
+    padding-top: 50px;
+    color: #b2b2b2;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    border-radius: 20%;
+}
+
+.attribution {
+    margin: 30px 0 15px 0;
+}
+
+
+/******************************************
+PAGE: PORTFOLIO
+******************************************/
+
 #gallery,
+#gallery figure,
 #gallery figcaption {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-#gallery dt {
+#gallery li {
     float: left;
     width: 45%;
-    margin: 1%;
+    margin: 2.5%;
+    background-color: #f5f5f5;
+    color: #bdc3c7;
 }
+
+
+/************************
+
+#gallery li a p {
+  margin: 0;
+  padding 5%;
+  font-size: 0.80em;
+  color: #666;
+  text-align: center;
+}
+
+************************/
 
 #gallery img {
     border-radius: 25px;
+    border: 2px solid #f1c40f;
 }
 
 #gallery figcaption {
     margin: 0;
-    padding: 1%;
+    padding: 5%;
     font-size: 0.80em;
+    color: #666;
     text-align: center;
+}
+
+
+/******************************************
+PAGE: BLOG
+******************************************/
+
+#blogHeader {
+    margin: 0;
+    padding: 0;
+    color: #714f02;
+    font-weight: bold;
+    text-align: center;
+}
+
+#postTitle {
+    color: #714f02;
+}
+
+#postTimestamp {
+    color: #737373;
+    margin: 0 5px;
+}
+
+#postContent {
+    margin: 0 5px;
 }
 
 
@@ -232,9 +235,11 @@ PAGE: RESUME
     max-width: 175px;
     margin: 0 auto 30px;
     border-radius: 100%;
+    border: 2px solid #f1c40f;
 }
 
 #resumeWrapperA h1 h2 {
+    font: black;
     margin: 10 auto;
 }
 
@@ -246,9 +251,14 @@ PAGE: RESUME
     font-size: 1em;
 }
 
+#resumeWrapperB h1 h2 {
+    font: black;
+}
+
 #professionalProfileList {
     display: block;
     text-align: center;
+    
 }
 
 #professionalProfileList li {
@@ -260,28 +270,30 @@ PAGE: RESUME
 
 
 /******************************************
-PAGE: ACCESSIBILITY
+PAGE: FORMS
 ******************************************/
-.siteList dt {
+
+.formLabel {
     font-weight: bold;
+    color: #714f02;
 }
 
-#a11yTitle {
-    display: block;
-    text-align: center;
-    margin-top: 0;
+.formTitle {
+    font-weight: bold;
+    color: #714f02;
 }
 
-.a11ySubTitle {
+.formHeader {
+    font-weight: bold;
     font-size: 1.5em;
-    font-weight: bold;
-    margin-top: 5px;
+    color: #714f02;
 }
 
 
 /******************************************
 PAGE: CONTACT
 ******************************************/
+
 .contact-info {
     list-style: none;
     padding: 0;
@@ -289,31 +301,113 @@ PAGE: CONTACT
     font-size: 0.9;
 }
 
-.contact-info a {
-    display: block;
-    min-height: 20px;
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-    padding: 0 0 0 30px;
-    margin: 0 0 10px;
-}
 
-.corgiLogo {
-    max-height: 275px;
-}
-
-#secondary {
-    align-content: space-around;
-}
+/* .contact-info a {
+  display: block;
+  min-height: 20px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  padding: 0 0 0 30px;
+  margin: 0 0 10px;
+} */
 
 
 /******************************************
-FOOTER
+COLORS
 ******************************************/
-footer {
-    font-size: 0.75em;
-    text-align: center;
-    clear: both;
-    padding-top: 20px;
-    font-family: 'Ubuntu', sans-serif;
+
+
+/******************************************
+Colors chosen:
+Dark brown: #7D6608
+Dark golden yellow: #f1c40f;
+Golden yellow: #ffe316;
+
+#d4c20f
+******************************************/
+
+
+/*Site body*/
+
+body {
+    background-color: #f0f5f5;
+    color: #737373;
 }
+
+
+/*Header section*/
+
+header {
+    /*******************
+   background: #64b47b;
+   border-color: #599a68;
+   *******************/
+    border-color: #f1c40f;
+    background: #ffd011;
+}
+
+
+/*nav bkgrd on mobile*/
+
+nav {
+    /*******************
+   background: #599a68;
+   *******************/
+    background: #f1c40f;
+}
+
+
+/*Logo text*/
+
+h1,
+h2 {
+    color: #fff;
+}
+
+.mainHeadline {
+    margin-top: 0;
+    padding-top: 0;
+    color: #714f02;
+    text-align: center;
+}
+
+
+/*links*/
+
+a {
+    color: #7d6608;
+}
+
+
+/*nav styles*/
+
+nav a,
+nav a:visited {
+    color: #fff;
+}
+
+nav a.selected,
+nav a:hover {
+    color: #7d6608;
+}
+
+.error {
+    color: darkred;
+    font-weight: bold;
+}
+
+/**
+p {
+    color: #714f02;
+    color: #808080;
+}
+**/
+
+
+/**
+nav a:hover span {
+   background-color: black;
+   padding: 10px;
+}
+
+**/

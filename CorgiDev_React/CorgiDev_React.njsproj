@@ -384,9 +384,13 @@
     <Content Include="src\normalize.css" />
     <Content Include="src\responsive.css" />
     <Content Include="src\serviceWorker.js" />
+    <Content Include="src\App2.css" />
     <Content Include="src\views\Contact.js" />
     <Content Include="src\views\Error.js" />
     <Content Include="src\views\Home.js" />
+    <Content Include="src\views\A11y.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\views\Resume.js" />
   </ItemGroup>
   <ItemGroup>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 //My Profile Pic
 import profilePic from '../img/beth2.jpg';

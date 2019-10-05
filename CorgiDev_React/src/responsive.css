@@ -1,6 +1,6 @@
 /* Applies to many smartphones in landscape mode. */
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 616px) {
 
     /******************************************
     TWO COLUMN LAYOUT
@@ -9,11 +9,12 @@
         width: 50%;
         float: left;
     }
+
     #secondary {
         width: 40%;
         float: right;
     }
-    
+
     /******************************************
     PORTFOLIO GALLERY 3 COLUMN LAYOUT
 
@@ -22,25 +23,26 @@
     85% / 3 images = 28.3333% of width to be 
     taken up by pictures.
     ******************************************/
-    #gallery li {
+    #gallery dt {
         width: 28.3333%;
     }
-    #gallery li:nth-child(3n+1) {
-        clear: left;
-    }
+
+        #gallery dt:nth-child(3n+1) {
+            clear: left;
+        }
 }
 
-    /******************************************
+/******************************************
     PAGE: ABOUT
     ******************************************/
-    .profile-photo {
-        float: left;
-        margin: 0 5% 80px 0;
-    }
+.profile-photo {
+    float: left;
+    margin: 0 5% 80px 0;
+}
 
 
-
-@media screen and (min-width: 660px) {
+/**** @media screen and (min-width: 660px) {  ***/
+@media screen and (min-width: 773px) {
 
     /******************************************
     HEADER
@@ -73,6 +75,17 @@
 }
 
 header {
-    border-bottom: 5px solid #f1c40f;
+    /*** border-bottom: 5px solid #f1c40f; ***/
+    border-bottom: 5px solid #af5920;
     margin-bottom: 60px;
+}
+
+@media screen and (max-width: 615px) {
+    #secondary {
+        display: none;
+    }
+
+    #primary {
+        max-width: 100%;
+    }
 }

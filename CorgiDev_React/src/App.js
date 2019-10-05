@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Home from './views/Home';
 import Resume from './views/Resume';
+import A11y from './views/A11y';
 import Contact from './views/Contact';
-import Blog from './views/Blog';
 import {BrowserRouter, Route} from 'react-router-dom';
 
 //Normalize css used to reset everything to a more consistent look across different browsers.
@@ -13,9 +13,9 @@ import './foundation-icons/foundation-icons.css';
 import './App.css';
 import './responsive.css';
 //import logo from './logo.svg';
-
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-brands-svg-icons'
 //import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 library.add(fab)
@@ -30,16 +30,16 @@ class App extends Component {
               <Home />
             </div>
           )}/>
-          <Route exact={true} path='/blog' render={() => (
-            <div className="App">
-              <Blog />
-            </div>
-          )}/>
           <Route exact={true} path='/resume' render={() => (
             <div className="App">
               <Resume />
             </div>
-          )}/>
+                )} />
+            <Route exact={true} path='/a11y' render={() => (
+                <div className="App">
+                    <A11y />
+                </div>
+            )} />
           <Route exact={true} path='/contact' render={() => (
             <div className="App">
               <Contact />
