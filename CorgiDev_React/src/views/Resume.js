@@ -16,7 +16,7 @@ export default class Resume extends Component {
                 <Header />
                 <div id="wrapper">
                   <section id="resumeWrapperA">
-                    <img src={profilePic} alt="Me with rounded border." class="resume-photo"/>
+                    <img src={profilePic} alt="Portrait of me with rounded border." class="resume-photo"/>
                     <h1 id="resumeName">Elizabeth Ann Gray</h1>
                     <h2 id="resumeEmail"><a href="mailto:egray@corgidev.com">egray@corgidev.com</a></h2>
                   </section>
@@ -24,12 +24,12 @@ export default class Resume extends Component {
 				  <hr/>
 				  	<h3>PROFESSIONAL PROFILES</h3>
 				  	<ul id="professionalProfileList">
-						<li><a href="https://www.linkedin.com/in/corgidev/"><i class="fi-social-linkedin"></i></a></li>
-						<li><a href="https://teamtreehouse.com/corgidev"><i class="fi-social-treehouse"></i></a></li>
-						<li><a href="https://twitter.com/TheCorgiDev"><i class="fi-social-twitter"></i></a></li>
-						<li><a href="https://github.com/CorgiDev"><i class="fi-social-github"></i></a></li>
-						<li><a href="https://www.hackerrank.com/CorgiDev"><FontAwesomeIcon icon={['fab', 'hackerrank']} /></a></li>
-						<li><a href="https://trailhead.salesforce.com/me/corgidev"><FontAwesomeIcon icon={['fab', 'salesforce']} /></a></li>
+                      <li><a href="https://www.linkedin.com/in/corgidev/" target="_blank" rel="noopener noreferrer"><i class="fi-social-linkedin"></i></a></li>
+                      <li><a href="https://teamtreehouse.com/corgidev" target="_blank" rel="noopener noreferrer"><i class="fi-social-treehouse"></i></a></li>
+                      <li><a href="https://twitter.com/TheCorgiDev" target="_blank" rel="noopener noreferrer"><i class="fi-social-twitter"></i></a></li>
+                      <li><a href="https://github.com/CorgiDev" target="_blank" rel="noopener noreferrer"><i class="fi-social-github"></i></a></li>
+                      <li><a href="https://www.hackerrank.com/CorgiDev" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fab', 'hackerrank']} /></a></li>
+                      <li><a href="https://trailhead.salesforce.com/me/corgidev" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fab', 'salesforce']} /></a></li>
 					</ul>
 
 				  <hr/>
