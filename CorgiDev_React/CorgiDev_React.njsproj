@@ -341,6 +341,7 @@
     <Content Include="src\img\beth3.jpg" />
     <Content Include="src\img\close.png" />
     <Content Include="src\img\comingSoon.png" />
+    <Content Include="src\img\CorgidevLogo.png" />
     <Content Include="src\img\email.png" />
     <Content Include="src\img\favicon.png" />
     <Content Include="src\img\fb-round.png" />

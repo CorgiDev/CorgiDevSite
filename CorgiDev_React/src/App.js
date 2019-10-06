@@ -14,11 +14,10 @@ import './App.css';
 import './responsive.css';
 //import logo from './logo.svg';
 import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { fas } from '@fortawesome/free-brands-svg-icons'
-//import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
 
-library.add(fab)
+library.add(fas, fab)
 
 class App extends Component {
   render() {

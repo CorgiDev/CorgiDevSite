@@ -22,7 +22,7 @@ export default class Home extends Component {
             <div id="wholePageContainer">
                 <Header />
                 <div id="wrapper">
-                    <h1 class="mainHeadline">Welcome to CorgiDev!</h1>
+                    <h1 id="mainHeadline">Welcome to CorgiDev!</h1>
                     <section>
                         <dl id="gallery"> 
                             <dt>

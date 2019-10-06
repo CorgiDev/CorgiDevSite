@@ -14,7 +14,7 @@ export default class A11y extends Component {
                 <Header />
                 <div id="wrapper">
                     <section id="a11yContent">
-                        <h1 id="a11yTitle">Accessibility Resources and Information</h1>
+                        <h1 id="mainHeadline">Accessibility Resources and Information</h1>
                         <br />
                         <h2 class="a11ySubTitle">Why A11y?</h2>
                         <p>You may have seen the name of this page and been slightly confused. Why <b>A11y</b> instead of <b>Accessibility</b>? A11y is a numeronym for the word Accessibility. A <b>numeronym</b> is where you form an abbreviation for a word by replacing some letters with numbers. The end word may, or may not, be pronounced similar to the full word.</p>

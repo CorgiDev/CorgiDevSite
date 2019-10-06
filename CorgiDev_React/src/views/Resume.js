@@ -3,18 +3,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
 //My Profile Pic
 import profilePic from '../img/beth2.jpg';
-
-//Resume Name and Email styles. Need to eventually refactor CSS to avoid using as many inline styles.
-const resumeTop = {
-  display: "block",
-  textAlign: "center"
-}
-const resumeName = {
-	color: "#714f02"
-}
 
 export default class Resume extends Component { 
   state = { 
@@ -25,9 +15,9 @@ export default class Resume extends Component {
         <div id="wholePageContainer">
                 <Header />
                 <div id="wrapper">
-                  <section id="resumeWrapperA" style={resumeTop}>
+                  <section id="resumeWrapperA">
                     <img src={profilePic} alt="Me with rounded border." class="resume-photo"/>
-                    <h1 id="resumeName" style={resumeName}>Elizabeth Ann Gray</h1>
+                    <h1 id="resumeName">Elizabeth Ann Gray</h1>
                     <h2 id="resumeEmail"><a href="mailto:egray@corgidev.com">egray@corgidev.com</a></h2>
                   </section>
 

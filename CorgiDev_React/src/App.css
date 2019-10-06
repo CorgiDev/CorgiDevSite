@@ -3,6 +3,8 @@ How to Include chosen Google Fonts:
 
 font-family: 'Nunito Sans', sans-serif;
 font-family: 'Ubuntu', sans-serif;
+
+        color: #af5920;
 ******************************************/
 
 /******************************************
@@ -62,7 +64,6 @@ body, p, figure figcaption {
 
 header {
     border-color: #af5920;
-    /*** background: #93420C; ***/
     background: #f27a2b;
 }
 
@@ -77,9 +78,15 @@ nav {
     color: #fff;
 }
 
-.mainHeadline {
+#mainHeadline {
     color: #682d06;
+    display: block;
     text-align: center;
+    margin-top: 0;
+}
+
+#resumeName {
+    color: #682d06;
 }
 
 /*links*/
@@ -93,17 +100,13 @@ nav a:visited {
     color: #fff;
 }
 
-    nav a.selected, nav a:hover {
-        color: #1C0800;
-    }
+nav a.selected, nav a:hover {
+    color: #1C0800;
+}
 
 .error {
     color: darkred;
     font-weight: bold;
-}
-
-.social-icon {
-    color: #af5920;
 }
 
 #gallery img {
@@ -118,19 +121,19 @@ nav a:visited {
     border: 2px solid #af5920;
 }
 
-#resumeWrapperA h1 h2 {
+/*#resumeWrapperA h1 h2 {
     color: #af5920;
 }
 
 #resumeName {
     color: #af5920;
-}
+}*/
 
 #resumeWrapperB h1 h2 {
     font: black;
 }
 
-#a11yContent h1, h2, h3 {
+#a11yContent h2, h3 {
     color: #af5920;
 }
 
@@ -234,6 +237,11 @@ PAGE: RESUME
     border-radius: 100%;
 }
 
+#resumeWrapperA {
+    display: block;
+    text-align: center;
+}
+
 #resumeWrapperA h1 h2 {
     margin: 10 auto;
 }
@@ -266,11 +274,11 @@ PAGE: ACCESSIBILITY
     font-weight: bold;
 }
 
-#a11yTitle {
+/*#a11yTitle {
     display: block;
     text-align: center;
     margin-top: 0;
-}
+}*/
 
 .a11ySubTitle {
     font-size: 1.5em;
@@ -286,7 +294,6 @@ PAGE: CONTACT
     list-style: none;
     padding: 0;
     margin: 0;
-    font-size: 0.9;
 }
 
 .contact-info a {
@@ -304,6 +311,10 @@ PAGE: CONTACT
 
 #secondary {
     align-content: space-around;
+}
+
+svg {
+    margin-right: 5px;
 }
 
 
