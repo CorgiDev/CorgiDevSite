@@ -1,5 +1,4 @@
-
-name: deploy_to_firebase_hosting
+name: Build and Deploy
 
 on:
   push:
