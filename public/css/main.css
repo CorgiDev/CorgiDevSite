@@ -4,6 +4,9 @@ How to Include chosen Google Fonts:
 font-family: 'Nunito Sans', sans-serif;
 font-family: 'Ubuntu', sans-serif;
 ******************************************/
+/* new background color #DD610E */
+/* old background color #F27A2B */
+/* other possible background color #93420C; */
 
 /******************************************
 GENERAL
@@ -65,8 +68,7 @@ body, p, figure figcaption {
 
 header {
     border-color: #af5920;
-    /*** background: #93420C; ***/
-    background: #f27a2b;
+    background: #DD610E;
 }
 
 /*nav bkgrd on mobile*/
