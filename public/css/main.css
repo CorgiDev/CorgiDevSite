@@ -79,7 +79,8 @@ nav {
 /*Logo text*/
 #logo h1, 
 #logo h2 {
-    color: #fff;
+    /* color: #fff; */
+    color: #f0f5f5;
 }
 
 .mainHeadline {
@@ -95,7 +96,8 @@ a {
 /*nav styles*/
 nav a, 
 nav a:visited {
-    color: #fff;
+    /* color: #fff; */
+    color: #f0f5f5;
 }
 
 nav a.selected, nav a:hover {
