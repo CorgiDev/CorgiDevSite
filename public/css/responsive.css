@@ -22,21 +22,13 @@
     85% / 3 images = 28.3333% of width to be 
     taken up by pictures.
     ******************************************/
-    #gallery dt {
+    #gallery figure {
         width: 28.3333%;
     }
-    #gallery dt:nth-child(3n+1) {
+    #gallery figure:nth-child(3n+1) {
         clear: left;
     }
 }
-
-    /******************************************
-    PAGE: ABOUT
-    ******************************************/
-    .profile-photo {
-        float: left;
-        margin: 0 5% 80px 0;
-    }
 
 @media screen and (max-width: 615px) {
     #secondary{

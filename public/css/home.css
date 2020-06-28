@@ -8,7 +8,7 @@ PAGE: MAIN PAGE
     list-style: none;
 }
 
-#gallery dt {
+#gallery figure {
     float: left;
     width: 45%;
     margin: 1%;
@@ -17,6 +17,7 @@ PAGE: MAIN PAGE
 #gallery img {
     border: 2px solid #af5920;
     border-radius: 25px;
+    max-width: 100%;
 }
 
 #gallery figcaption {
