@@ -24,3 +24,7 @@ PAGE: CONTACT
 #secondary {
     align-content: space-around;
 }
+
+.logo_caption {
+    text-align: center;
+}

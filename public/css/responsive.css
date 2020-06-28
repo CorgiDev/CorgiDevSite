@@ -38,10 +38,21 @@
         margin: 0 5% 80px 0;
     }
 
+@media screen and (max-width: 615px) {
+    #secondary{
+        width: 100%;
+        float: left;
+        clear: both;
+        text-align: center;
+    }
+    #primary {
+        width: 100%;
+        float: right;
+        clear: both;
+    }    
+}
 
-/**** @media screen and (min-width: 660px) {  ***/
-@media screen and (min-width: 773px) {
-
+@media screen and (min-width: 1150px) {
     /******************************************
     HEADER
     ******************************************/
@@ -49,7 +60,8 @@
         background: none;
         float: right;
         font-size: 1.125em;
-        margin-right: 5%;
+        margin-right: 55px;
+        padding-top: 25px;
         text-align: right;
         width: 45%;
     }
@@ -59,7 +71,7 @@
         float: left;
         margin-left: 5%;
         text-align: left;
-        width: 45%
+        width: 45%;
     }
 
     h1 {
@@ -70,19 +82,9 @@
         font-size: 0.825em;
         margin-bottom: 20px;
     }
-}
 
-header {
-    /*** border-bottom: 5px solid #f1c40f; ***/
-    border-bottom: 5px solid #af5920;
-    margin-bottom: 60px;
-}
-
-@media screen and (max-width: 615px) {
-    #secondary{
-        display: none;
-    }
-    #primary {
-        max-width: 100%;
+    header {
+        border-bottom: 5px solid #f27a2b;
+        margin: 0px;
     }
 }

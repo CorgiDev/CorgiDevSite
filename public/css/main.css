@@ -15,7 +15,7 @@ GENERAL
 #wrapper {
     max-width: 940px;
     margin: 0 auto;
-    padding: 0 5%;
+    padding: 20px 5%;
 }
 
 .highlight {
@@ -50,8 +50,8 @@ h3 {
     margin: 5px;
 }
 
-.logo_caption {
-    text-align: center;
+#logo {
+    padding-bottom: 5px;
 }
 
 /******************************************
@@ -67,20 +67,26 @@ body, p, figure figcaption {
 /*Header section*/
 
 header {
-    border-color: #af5920;
+    /* border-color: #af5920;*/
+    border-color: #f27a2b;
+    /* background: #DD610E; */
     background: #DD610E;
 }
 
 /*nav bkgrd on mobile*/
 nav {
-    background: #af5920;
+    background: #f27a2b;
 }
 
 /*Logo text*/
 #logo h1, 
 #logo h2 {
     /* color: #fff; */
-    color: #f0f5f5;
+    color: #1C0800;
+}
+
+#logo h2 {
+    font-size: 1em;
 }
 
 .mainHeadline {
@@ -97,11 +103,13 @@ a {
 nav a, 
 nav a:visited {
     /* color: #fff; */
-    color: #f0f5f5;
+    color: #1C0800;
 }
 
 nav a.selected, nav a:hover {
     color: #1C0800;
+    border-bottom: 2px solid black;
+    padding-bottom: 2px;
 }
 
 .error {
@@ -129,6 +137,10 @@ nav a.selected, nav a:hover {
     color: #af5920;
 }
 
+#resumeWrapperB a {
+    font-weight: bold;
+}
+
 #resumeName {
     color: #af5920;
 }
@@ -136,11 +148,6 @@ nav a.selected, nav a:hover {
 #resumeWrapperB h1 h2 {
     font: black;
 }
-
-#a11yContent h1, h2, h3 {
-    color:#af5920;
-}
-
 
 /******************************************
 HEADING
@@ -169,8 +176,8 @@ h1 {
 #logo h2 {
     font-family: 'Ubuntu', sans-serif;
     font-size: 0.9em;
-    /*** margin: -5px 0 0; ***/
-    margin: -5px 5px 6px;
+    margin: -5px 5px 3px 0px;
+    padding-bottom: 2px;
     font-weight: normal;
 }
 
@@ -181,14 +188,14 @@ NAVIGATION
 nav {
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
-    padding: 10px 0;
-    margin: 20px 0 0;
+    margin: auto;
 }
 
 nav ul {
     list-style: none;
-    margin: 0 10px;
-    padding: 0;
+    padding: 15px 20px 15px 20px;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 nav li {
@@ -196,121 +203,10 @@ nav li {
 }
 nav a {
     font-weight: 700;
-    padding: 15px 10px;
+    height: 25%;
+    padding: 15px 10px 15px 10px;
+    margin: 0 8px 8px 8px;
 }
-
-
-/******************************************
-PAGE: MAIN PAGE
-******************************************/
-#gallery, 
-#gallery figcaption {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-#gallery dt {
-    float: left;
-    width: 45%;
-    margin: 1%;
-}
-
-#gallery img {
-    border-radius: 25px;
-}
-
-#gallery figcaption {
-    margin: 0;
-    padding: 1%;
-    font-size: 0.80em;
-    text-align: center;
-}
-
-
-/******************************************
-PAGE: RESUME
-******************************************/
-
-.resume-photo {
-    display: block;
-    /** Using Block allows us to center the image using margins. Default is inline. **/
-    max-width: 175px;
-    margin: 0 auto 30px;
-    border-radius: 100%;
-}
-
-#resumeWrapperA h1 h2 {
-    margin: 10 auto;
-}
-
-#resumeName {
-    font-size: 3em;
-}
-
-#resumeEmail {
-    font-size: 1em;
-}
-
-#professionalProfileList {
-    display: block;
-    text-align: center;  
-}
-
-#professionalProfileList li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 3em;
-}
-
-
-/******************************************
-PAGE: ACCESSIBILITY
-******************************************/
-.siteList dt {
-    font-weight: bold;
-}
-
-#a11yTitle {
-    display: block;
-    text-align: center;
-}
-
-.a11ySubTitle {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-top: 5px;
-}
-
-
-/******************************************
-PAGE: CONTACT
-******************************************/
-.contact-info {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 0.9;
-}
-
-.contact-info a {
-    display: block;
-    min-height: 20px;
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-    padding: 0 0 0 30px;
-    margin: 0 0 10px;
-}
-
-.corgiLogo {
-    max-height: 275px;
-}
-
-#secondary {
-    align-content: space-around;
-}
-
 
 /******************************************
 FOOTER
