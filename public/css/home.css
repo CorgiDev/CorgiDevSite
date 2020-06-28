@@ -1,0 +1,26 @@
+/******************************************
+PAGE: MAIN PAGE
+******************************************/
+#gallery, 
+#gallery figcaption {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#gallery dt {
+    float: left;
+    width: 45%;
+    margin: 1%;
+}
+
+#gallery img {
+    border-radius: 25px;
+}
+
+#gallery figcaption {
+    margin: 0;
+    padding: 1%;
+    font-size: 0.80em;
+    text-align: center;
+}

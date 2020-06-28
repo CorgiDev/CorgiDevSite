@@ -1,0 +1,17 @@
+/******************************************
+PAGE: ACCESSIBILITY
+******************************************/
+.siteList dt {
+    font-weight: bold;
+}
+
+#a11yTitle {
+    display: block;
+    text-align: center;
+}
+
+.a11ySubTitle {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 5px;
+}

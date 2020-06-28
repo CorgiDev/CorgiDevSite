@@ -1,0 +1,35 @@
+/******************************************
+PAGE: RESUME
+******************************************/
+
+.resume-photo {
+    display: block;
+    /** Using Block allows us to center the image using margins. Default is inline. **/
+    max-width: 175px;
+    margin: 0 auto 30px;
+    border-radius: 100%;
+}
+
+#resumeWrapperA h1 h2 {
+    margin: 10 auto;
+}
+
+#resumeName {
+    font-size: 3em;
+}
+
+#resumeEmail {
+    font-size: 1em;
+}
+
+#professionalProfileList {
+    display: block;
+    text-align: center;  
+}
+
+#professionalProfileList li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 3em;
+}
