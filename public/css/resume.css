@@ -8,14 +8,12 @@ PAGE: RESUME
     max-width: 175px;
     margin: 0 auto 30px;
     border-radius: 100%;
-}
-
-#resumeWrapperA h1 h2 {
-    margin: 10 auto;
+    border: 2px solid #af5920;
 }
 
 #resumeName {
     font-size: 3em;
+    color: #af5920;
 }
 
 #resumeEmail {
@@ -32,4 +30,17 @@ PAGE: RESUME
     display: inline-block;
     margin: 0 10px;
     font-size: 3em;
+}
+
+#resumeWrapperA h1 h2 {
+    margin: 10 auto;
+    color: #af5920;
+}
+
+#resumeWrapperB a {
+    font-weight: bold;
+}
+
+#resumeWrapperB h1 h2 {
+    font: black;
 }

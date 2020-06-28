@@ -2,9 +2,7 @@
 PAGE: ACCESSIBILITY
 ******************************************/
 /* Colors */
-#a11yContent h1, h2, h3 {
-    color:#af5920;
-}
+
 
 /* Other Styles */
 .siteList dt {

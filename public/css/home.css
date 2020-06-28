@@ -15,6 +15,7 @@ PAGE: MAIN PAGE
 }
 
 #gallery img {
+    border: 2px solid #af5920;
     border-radius: 25px;
 }
 
@@ -23,4 +24,5 @@ PAGE: MAIN PAGE
     padding: 1%;
     font-size: 0.80em;
     text-align: center;
+    color: black;
 }

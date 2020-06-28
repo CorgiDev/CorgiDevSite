@@ -37,6 +37,10 @@ img {
     max-width: 100%;
 }
 
+h1, h2, h3 {
+    color:#af5920;
+}
+
 h3 {
     margin: 0 0 1em 0;
 }
@@ -119,34 +123,6 @@ nav a.selected, nav a:hover {
 
 .social-icon {
     color: #af5920;
-}
-
-#gallery img {
-    border: 2px solid #af5920;
-}
-
-#gallery figcaption {
-    color: black;
-}
-
-.resume-photo {
-    border: 2px solid #af5920;
-}
-
-#resumeWrapperA h1 h2 {
-    color: #af5920;
-}
-
-#resumeWrapperB a {
-    font-weight: bold;
-}
-
-#resumeName {
-    color: #af5920;
-}
-
-#resumeWrapperB h1 h2 {
-    font: black;
 }
 
 /******************************************
