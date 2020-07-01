@@ -47,12 +47,6 @@ PAGE: RESUME
     font: black;
 }
 
-#wrapper h2 {
-    font-size: 1.25em;
-    font-weight: bold;
-    margin-top: 5px;
-}
-
 #resumeWrapperB h3 {
     color: #242424;
     font-size: 1em;
