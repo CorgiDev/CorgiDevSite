@@ -32,6 +32,8 @@ PAGE: RESUME
     font-size: 3em;
 }
 
+#professionalProfileList h2 {}
+
 #resumeWrapperA h1 h2 {
     margin: 10 auto;
     color: #af5920;
@@ -43,6 +45,17 @@ PAGE: RESUME
 
 #resumeWrapperB h1 h2 {
     font: black;
+}
+
+#wrapper h2 {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+#resumeWrapperB h3 {
+    color: #242424;
+    font-size: 1em;
 }
 
 /* Cert Table */

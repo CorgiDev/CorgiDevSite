@@ -18,6 +18,12 @@ GENERAL
     padding: 20px 5%;
 }
 
+#wrapper h2{
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
 .highlight {
     font-weight: bold;
 }
