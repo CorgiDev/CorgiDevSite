@@ -1,0 +1,23 @@
+{
+  "name": "corgidev-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "a11y",
+    "accessibility",
+    "resume",
+    "portfolio"
+  ],
+  "author": "Beth Gray <egray@corgidev.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "gatsby": "^2.21.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
