@@ -6,6 +6,24 @@ I have included documentation related to various stuff I used when building my s
 
 ## Accessibility
 
+I have used a combination of tools to improve the overall accessibility and performance of my site. While this will always be a work in progress, the following tools are what I used to accomplish this:
+
+- [ANDI](https://www.ssa.gov/accessibility/andi/help/install.html)
+   - **ANDI** stands for **Accessible Name & Description Inspector**.
+   - It is a free tool that assists in Section 508 testing.
+   - ANDI is maintained by the Accessible Solutions Branch at SSA.
+   - You can learn more about ANDI using the link above, or by visiting the [ANDI GitHub Repo](https://github.com/SSAgov/ANDI).
+- [Accessibility Insights](https://accessibilityinsights.io/)
+   - **Accessibility Insights** is a free Accessibility testing tool developed by Microsoft.
+   - It is available for Android, Web, and Windows.
+   - There is a GitHub repo for each version:
+      - [Accessibility Insights for Web on GitHub](https://github.com/microsoft/accessibility-insights-web)
+      - [Accessibility Insights for Android on GitHub](https://github.com/microsoft/accessibility-insights-for-android-service)
+      - [Accessibility Insights for Windows on GitHub](https://github.com/microsoft/accessibility-insights-windows)
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+   - This is the built in auditing tools found in Chrome and the new Chromium based Edge.
+   - These tools are built into the Developer Tools and provide performance and accessibility auditing capabilities.
+
 ## FireBase Documentation
 
 ### Serve and test your Firebase project locally
