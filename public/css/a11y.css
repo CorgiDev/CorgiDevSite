@@ -14,7 +14,7 @@ PAGE: ACCESSIBILITY
     text-align: center;
 }
 
-#return2Top {
-    padding-bottom: 5px;
+#returnTop a {
+    margin-bottom: 20px;
+    font-weight: bold;
 }
-
