@@ -1,0 +1,20 @@
+/******************************************
+PAGE: ACCESSIBILITY
+******************************************/
+/* Colors */
+
+
+/* Other Styles */
+.siteList dt {
+    font-weight: bold;
+}
+
+#a11yTitle {
+    display: block;
+    text-align: center;
+}
+
+#returnTop a {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
