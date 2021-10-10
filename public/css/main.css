@@ -209,3 +209,7 @@ footer {
     padding-top: 20px;
     font-family: 'Ubuntu', sans-serif;
 }
+
+#wcagIcon {
+    display: block;
+}
