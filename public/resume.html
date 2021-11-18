@@ -42,9 +42,7 @@
                 <p>formerly Elizabeth Ann Gray</p>
                 <p id="resumeEmail"><a href="mailto:eduvall@corgidev.com">eduvall@corgidev.com</a></p>
             </section>
-
             <hr/>
-            
             <section role="navigation" class="beforeSection" aria-labelledby="profProfiles">
                 <h2 id="profProfiles">PROFESSIONAL PROFILES</h2>
                 <ul id="professionalProfileList">
@@ -54,26 +52,19 @@
                     <li><a href="https://github.com/CorgiDev" aria-label="My GitHub Profile." rel="noreferrer" target="_blank"><i class="fi-social-github social-icon" alt=""></i></a></li>
                     <li><a href="https://www.hackerrank.com/CorgiDev" aria-label="My HackerRank profile." rel="noreferrer" target="_blank"><i class="fab fa-hackerrank social-icon" alt=""></i></a></li>
                 </ul>
-                <br />
-                <br />
                 <b><a href="#wrapper">Return to Top</a></b>
             </section>
             <section id="resumeWrapperB" class="beforeSection" role="complementary">
                 <section aria-labelledby="skillSectionTitle">
                     <h2 id="skillSectionTitle">SKILLS SUMMARY</h2>
-                    <b>Languages:</b> HTML, CSS, JavaScript, C#, Python
-                    <br />
-                    <b>Libraries:</b> JQuery, React
-                    <br />
-                    <b>Frameworks:</b> Bootstrap, Foundation
-                    <br />
-                    <b>Operating Systems:</b>Windows Server, Windows, OSX, Android, and iOS
-                    <br />
-                    <b>Other Technical Skills:</b> DISA STIGs, GPO, HBSS, Docker, GitHub Actions, Azure DevOps, Group Policy, Active Directory, Exchange 2010/2016/2019/Online, Azure, Amazon S3, AWS Route 53, Google Firebase, Azure Security, Azure SQL Server/Databases
-                    <br />
-                    <b>Non-Technical Skills:</b> Training coordination, technical documentation, accessibility, public speaking
-                    <br />
-                    <br />
+                    <ul>
+                        <li><b>Languages:</b> HTML, CSS, JavaScript, C#, Python</li>
+                        <li><b>Libraries:</b> JQuery, React</li>
+                        <li><b>Frameworks:</b> Bootstrap, Foundation</li>
+                        <li><b>Operating Systems:</b>Windows Server, Windows, OSX, Android, iOS</li>
+                        <li><b>Other Technical Skills:</b> DISA STIGs, GPO, HBSS, Docker, GitHub Actions, Azure DevOps, Group Policy, Active Directory, Exchange 2010/2016/2019/Online, Azure, Amazon S3, AWS Route 53, Google Firebase, Azure Security, Azure SQL Server/Databases</li>
+                        <li><b>Non-Technical Skills:</b> Training coordination, technical documentation, accessibility, public speaking</li>
+                    </ul>
                     <a href="#wrapper">Return to Top</a>
                 </section>
                 <section class="beforeSection" aria-labelledby="projectSectionTitle">
@@ -133,10 +124,31 @@
                             <li>Performs API calls to the Azure DevOps API.</li>
                             <li>Uses a WIQL query to search work items sent via API call.</li>
                             <li>Downloads a CSV, edits the file, and then allows the user to search based on the CVE name.</li>
-                            <li>There are 2 main folders, AzureRunbook and LocalRun, and each contains 2 scripts.</li>
-                            <li><i>AzureRunbook</i> scripts are meant to be run in an Azure Runbook.</li>
-                            <li><i>LocalRun</i> scripts are capable of being run locally.</li>
+                            <li>There are 2 main folders, AzureRunbook and LocalRun, and each contains 2 scripts.
+                                <ul>
+                                    <li><i>AzureRunbook</i> scripts are meant to be run in an Azure Runbook.</li>
+                                    <li><i>LocalRun</i> scripts are capable of being run locally.</li>
+                                </ul>
+                            </li>
                             <li>Of the 2 scripts in each folder, one checks for expiring Key Vault assets and sends email notifications as needed. The other does the same, but also creates Azure DevOps work items as needed and includes that information in the notifications sent.</li>
+                        </ul>
+                        <h3>Azure VM Snapshot</h3>
+                        <ul>
+                            <li><b>Project Location: </b><a href="https://github.com/CorgiDev/AzureVMSnapshots" rel="noreferrer" target="_blank">https://github.com/CorgiDev/AzureVMSnapshots</a></li>
+                            <li>Built using PowerShell.</li>
+                            <li>Allows for the creation and deletion of snapshots of Azure VM virtual disks.</li>
+                            <li>Formatted to be used as an Azure Runbook script.</li>
+                            <li>Gave me experience with a variety of environments beyond just the general commercial Azure environment.</li>
+                            <li>Learned how to force TLS use.</li>
+                        </ul>
+                        <h3>Hyper-V VM Scripts</h3>
+                        <ul>
+                            <li><b>Project Location: </b><a href="https://github.com/CorgiDev/Hyper-V-VM-Scripts" rel="noreferrer" target="_blank">https://github.com/CorgiDev/Hyper-V-VM-Scripts</a></li>
+                            <li>PowerShell scripts relating to the creation, configuration, and deletion of Hyper-V VMs.</li>
+                            <li>Learned how to use Powershell to configure Windows Features and local Group Policy.</li>
+                            <li>Handled issues relating to TPM and secure boot required by Windows 11.</li>
+                            <li>Learned about issues relating to Hyper-V and Windows Hello in Windows 10/11.</li>
+                            <li>Created initially as a way to have a separate VM so I could have a secure, separate environment for work on my personal machine.</li>
                         </ul>
                         <a href="#wrapper">Return to Top</a>
                 </section>
