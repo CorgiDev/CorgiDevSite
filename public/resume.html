@@ -42,9 +42,7 @@
                 <p>formerly Elizabeth Ann Gray</p>
                 <p id="resumeEmail"><a href="mailto:eduvall@corgidev.com">eduvall@corgidev.com</a></p>
             </section>
-
             <hr/>
-            
             <section role="navigation" class="beforeSection" aria-labelledby="profProfiles">
                 <h2 id="profProfiles">PROFESSIONAL PROFILES</h2>
                 <ul id="professionalProfileList">
@@ -54,26 +52,19 @@
                     <li><a href="https://github.com/CorgiDev" aria-label="My GitHub Profile." rel="noreferrer" target="_blank"><i class="fi-social-github social-icon" alt=""></i></a></li>
                     <li><a href="https://www.hackerrank.com/CorgiDev" aria-label="My HackerRank profile." rel="noreferrer" target="_blank"><i class="fab fa-hackerrank social-icon" alt=""></i></a></li>
                 </ul>
-                <br />
-                <br />
                 <b><a href="#wrapper">Return to Top</a></b>
             </section>
             <section id="resumeWrapperB" class="beforeSection" role="complementary">
                 <section aria-labelledby="skillSectionTitle">
                     <h2 id="skillSectionTitle">SKILLS SUMMARY</h2>
-                    <b>Languages:</b> HTML, CSS, JavaScript, C#, Python
-                    <br />
-                    <b>Libraries:</b> JQuery, React
-                    <br />
-                    <b>Frameworks:</b> Bootstrap, Foundation
-                    <br />
-                    <b>Operating Systems:</b>Windows Server, Windows, OSX, Android, and iOS
-                    <br />
-                    <b>Other Technical Skills:</b> DISA STIGs, GPO, HBSS, Docker, GitHub Actions, Azure DevOps, Group Policy, Active Directory, Exchange 2010/2016/2019/Online, Azure, Amazon S3, AWS Route 53, Google Firebase, Azure Security, Azure SQL Server/Databases
-                    <br />
-                    <b>Non-Technical Skills:</b> Training coordination, technical documentation, accessibility, public speaking
-                    <br />
-                    <br />
+                    <ul>
+                        <li><b>Languages:</b> HTML, CSS, JavaScript, C#, Python</li>
+                        <li><b>Libraries:</b> JQuery, React</li>
+                        <li><b>Frameworks:</b> Bootstrap, Foundation</li>
+                        <li><b>Operating Systems:</b>Windows Server, Windows, OSX, Android, iOS</li>
+                        <li><b>Other Technical Skills:</b> DISA STIGs, GPO, HBSS, Docker, GitHub Actions, Azure DevOps, Group Policy, Active Directory, Exchange 2010/2016/2019/Online, Azure, Amazon S3, AWS Route 53, Google Firebase, Azure Security, Azure SQL Server/Databases</li>
+                        <li><b>Non-Technical Skills:</b> Training coordination, technical documentation, accessibility, public speaking</li>
+                    </ul>
                     <a href="#wrapper">Return to Top</a>
                 </section>
                 <section class="beforeSection" aria-labelledby="projectSectionTitle">
@@ -133,49 +124,98 @@
                             <li>Performs API calls to the Azure DevOps API.</li>
                             <li>Uses a WIQL query to search work items sent via API call.</li>
                             <li>Downloads a CSV, edits the file, and then allows the user to search based on the CVE name.</li>
-                            <li>There are 2 main folders, AzureRunbook and LocalRun, and each contains 2 scripts.</li>
-                            <li><i>AzureRunbook</i> scripts are meant to be run in an Azure Runbook.</li>
-                            <li><i>LocalRun</i> scripts are capable of being run locally.</li>
+                            <li>There are 2 main folders, AzureRunbook and LocalRun, and each contains 2 scripts.
+                                <ul>
+                                    <li><i>AzureRunbook</i> scripts are meant to be run in an Azure Runbook.</li>
+                                    <li><i>LocalRun</i> scripts are capable of being run locally.</li>
+                                </ul>
+                            </li>
                             <li>Of the 2 scripts in each folder, one checks for expiring Key Vault assets and sends email notifications as needed. The other does the same, but also creates Azure DevOps work items as needed and includes that information in the notifications sent.</li>
+                        </ul>
+                        <h3>Azure VM Snapshot</h3>
+                        <ul>
+                            <li><b>Project Location: </b><a href="https://github.com/CorgiDev/AzureVMSnapshots" rel="noreferrer" target="_blank">https://github.com/CorgiDev/AzureVMSnapshots</a></li>
+                            <li>Built using PowerShell.</li>
+                            <li>Allows for the creation and deletion of snapshots of Azure VM virtual disks.</li>
+                            <li>Formatted to be used as an Azure Runbook script.</li>
+                            <li>Gave me experience with a variety of environments beyond just the general commercial Azure environment.</li>
+                            <li>Learned how to force TLS use.</li>
+                        </ul>
+                        <h3>Hyper-V VM Scripts</h3>
+                        <ul>
+                            <li><b>Project Location: </b><a href="https://github.com/CorgiDev/Hyper-V-VM-Scripts" rel="noreferrer" target="_blank">https://github.com/CorgiDev/Hyper-V-VM-Scripts</a></li>
+                            <li>PowerShell scripts relating to the creation, configuration, and deletion of Hyper-V VMs.</li>
+                            <li>Learned how to use Powershell to configure Windows Features and local Group Policy.</li>
+                            <li>Handled issues relating to TPM and secure boot required by Windows 11.</li>
+                            <li>Learned about issues relating to Hyper-V and Windows Hello in Windows 10/11.</li>
+                            <li>Created initially as a way to have a separate VM so I could have a secure, separate environment for work on my personal machine.</li>
                         </ul>
                         <a href="#wrapper">Return to Top</a>
                 </section>
                 <section class="beforeSection" aria-labelledby="educationSectionTitle">
                     <h2 id="educationSectionTitle">EDUCATION</h2>
-                    <h3>Python | July 2020 | <a href="https://codelouisville.org/" rel="noreferrer" target="_blank">Code Louisville</a></h3>
-                        <ul>
-                            <li>Course work was a mixture of virtual class discussion using Zoom and online learning through Treehouse.</li>
-                            <li>Created a Python app that downloads a CSV, formats it for easier searching, and then allows the user to search for CVE items based on their main label.</li>
-                            <li>Project is contained within my <a href="https://github.com/CorgiDev/CVE_Search" rel="noreferrer" target="_blank">CVE Search Repo</a> on GitHub.</li>
-                        </ul>
-                    <h3>JavaScript/React | November 2018 | <a href="https://codelouisville.org/" rel="noreferrer" target="_blank">Code Louisville</a></h3>
-                        <ul>
-                            <li>Focus on JavaScript/React with API usage.</li>
-                            <li>Course work was a mixture of in-class discussion and online learning through Treehouse.</li>
-                            <li>Recreated my CorgiDev.com website with an additional page that uses React-Context API to have CRUD functionality, but without persistence.</li>
-                            <li>Used Bootstrap CDN for much of the styling and React-Router-Dom for routing.</li>
-                            <li>Used Firebase database as an API for my app to connect to.</li>
-                            <li>Project is located in my <a href="https://github.com/CorgiDev/ReactProject" rel="noreferrer" target="_blank">ReactProject</a> repo on GitHub.</li>
-                        </ul>
-                    <h3>Full-Stack JavaScript | August 2018 | <a href="https://codelouisville.org/" rel="noreferrer" target="_blank">Code Louisville</a></h3>
-                        <ul>
-                            <li>Focused on front-end/back-end development using JavaScript.</li>
-                            <li>Course work was a mixture of in-class discussion and online learning through Treehouse.</li>
-                            <li>Created a CRUD application as my final project, which is located in my <a href="https://github.com/CorgiDev/animalDex" rel="noreferrer" target="_blank">animalDex</a> repo on GitHub.</li>
-                        </ul>
-                    <h3>C#/.Net Development | March 2018 | <a href="https://codelouisville.org/" rel="noreferrer" target="_blank">Code Louisville</a></h3>
-                        <ul>
-                            <li>Focused on C#/.Net development on the front-end and back-end of a project.</li>
-                            <li>Course work was a mixture of in-class discussion and online learning through Treehouse.</li>
-                            <li>Created a CRUD application as my final project, which is located in my <a href="https://github.com/CorgiDev/StaffDirectoryProject" rel="noreferrer" target="_blank">StaffDirectoryProject</a> repo on GitHub.</li>
-                        </ul>
-                    <h3>Front-End Web Design | August 2017 | <a href="https://codelouisville.org/" rel="noreferrer" target="_blank">Code Louisville</a></h3>
-                        <ul>
-                            <li>Focused on Front-End Web Design technologies (i.e. HTML, CSS, and JavaScript)</li>
-                            <li>Course work was a mixture of in-class discussion and online learning through Treehouse.</li>
-                            <li>Created a project, which became my live site at <a href="https://corgidev.com">corgidev.com</a>.</li>
-                        </ul>
-                    <h3>Bachelor of Arts | May 2012 | <a href="https://wwww.wku.edu" rel="noreferrer" target="_blank">Western Kentucky University</a></h3>
+                    <h3><a href="https://www.usf.edu/" rel="noreferrer" target="_blank">University of South Florida</a> | May 2021 to November 2021</h3>
+                    <ul>
+                        <li><a href="https://www.credly.com/badges/ef38c2a7-0c37-4886-8de9-f47179921472/public_url" rel="noreferrer" target="_blank" class="courseName">Diversity, Equity, and Inclusion in the Workplace</a> | <span class="courseDate">May 2021</span>
+                            <ul>
+                                <li>Course provided through the <a href="https://www.credly.com/organizations/university-of-south-florida/badges" rel="noreferrer" target="_blank">USF Office of Corporate Training and Professional Education</a>.</li>
+                                <li>
+                                    Description per the Credly page for the certificate:
+                                    <blockquote>Earners of the Diversity, Equity and Inclusion in the Workplace Certificate, offered by the University of South Florida Muma College of Business, have learned the essential practices and tools designed to increase employee diversity and to create a business model that embraces equity and inclusion. The seven-week program, created in partnership with the Tampa Bay Lightning and Jabil, focuses on ways for organizations to create diverse workplaces, address equity issues, and foster inclusivity.</blockquote>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="https://www.credly.com/badges/7f12680f-5e10-444a-b53c-cf7ec78a7f89/public_url" rel="noreferrer" target="_blank" class="courseName">Inclusive and Ethical Leadership</a> | <span class="courseDate">November 2021</span>
+                            <ul>
+                                <li>Course provided through the <a href="https://www.credly.com/organizations/university-of-south-florida/badges" rel="noreferrer" target="_blank">USF Office of Corporate Training and Professional Education</a>.</li>
+                                <li>Description per the Credly page for the certificate:
+                                    <blockquote>Earners of the Inclusive and Ethical Leadership Certificate, offered by the University of South Florida Muma College of Business M3 Center, have gained awareness of cutting-edge research and best practices for inclusive and ethical leadership. The certificate program was divided into eight sections: Leadership Basics, Communication, Conflict Management, Ethical Leadership / Decision Making, Diversity, Equity, and Inclusion, Innovation, Work/Family Life Balance and Self-Development.</blockquote>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3><a href="https://codelouisville.org/" rel="noreferrer" target="_blank">Code Louisville</a> | May 2017 to July 2020</h3>
+                    <ul>
+                        <li><span class="courseName">Python</span> | <span class="courseDate">July 2020</span>
+                            <ul>
+                                <li>Course work was a mixture of virtual class discussion using Zoom and online learning through Treehouse.</li>
+                                <li>Created a Python app that downloads a CSV, formats it for easier searching, and then allows the user to search for CVE items based on their main label.</li>
+                                <li>Project is contained within my <a href="https://github.com/CorgiDev/CVE_Search" rel="noreferrer" target="_blank">CVE Search Repo</a> on GitHub.</li>
+                            </ul>
+                        </li>
+                        <li><span class="courseName">JavaScript/React</span> | <span class="courseDate">November 2018</span>
+                            <ul>
+                                <li>Focus on JavaScript/React with API usage.</li>
+                                <li>Course work was a mixture of in-class discussion and online learning through Treehouse.</li>
+                                <li>Recreated my CorgiDev.com website with an additional page that uses React-Context API to have CRUD functionality, but without persistence.</li>
+                                <li>Used Bootstrap CDN for much of the styling and React-Router-Dom for routing.</li>
+                                <li>Used Firebase database as an API for my app to connect to.</li>
+                                <li>Project is located in my <a href="https://github.com/CorgiDev/ReactProject" rel="noreferrer" target="_blank">ReactProject</a> repo on GitHub.</li>
+                            </ul>
+                        </li>
+                        <li><span class="courseName">Full-Stack JavaScript</span> | <span class="courseDate">August 2018</span>
+                            <ul>
+                                <li>Focused on front-end/back-end development using JavaScript.</li>
+                                <li>Course work was a mixture of in-class discussion and online learning through Treehouse.</li>
+                                <li>Created a CRUD application as my final project, which is located in my <a href="https://github.com/CorgiDev/animalDex" rel="noreferrer" target="_blank">animalDex</a> repo on GitHub.</li>
+                            </ul>
+                        </li>
+                        <li><span class="courseName">C#/.Net Development</span> | <span class="courseDate">March 2018</span>
+                            <ul>
+                                <li>Focused on C#/.Net development on the front-end and back-end of a project.</li>
+                                <li>Course work was a mixture of in-class discussion and online learning through Treehouse.</li>
+                                <li>Created a CRUD application as my final project, which is located in my <a href="https://github.com/CorgiDev/StaffDirectoryProject" rel="noreferrer" target="_blank">StaffDirectoryProject</a> repo on GitHub.</li>
+                            </ul>
+                        </li>
+                        <li><span class="courseName">Front-End Web Design</span> | <span class="courseDate">August 2017</span>
+                            <ul>
+                                <li>Focused on Front-End Web Design technologies (i.e. HTML, CSS, and JavaScript)</li>
+                                <li>Course work was a mixture of in-class discussion and online learning through Treehouse.</li>
+                                <li>Created a project, which became my live site at <a href="https://corgidev.com">corgidev.com</a>.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3><a href="https://wwww.wku.edu" rel="noreferrer" target="_blank">Western Kentucky University</a> | Bachelor of Arts | May 2012</h3>
                         <ul>
                             <li>Majored in Sociology with a minor in Criminology</li>
                             <li>Member of Alpha Kappa Delta (National Sociological Honor Society)</li>
