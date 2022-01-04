@@ -85,9 +85,7 @@ body, p, figure figcaption {
 /*Header section*/
 
 header {
-    /* border-color: #af5920;*/
     border-color: #f27a2b;
-    /* background: #DD610E; */
     background: #DD610E;
 }
 
@@ -121,7 +119,6 @@ a {
 /*nav styles*/
 nav a, 
 nav a:visited {
-    /* color: #fff; */
     color: #1C0800;
 }
 
