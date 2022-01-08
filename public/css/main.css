@@ -37,7 +37,9 @@ a {
 }
 
 a:focus {
-    border: 3px solid #242424;
+    /* border: 3px solid #242424; */
+    text-decoration: underline;
+    font-weight: bolder;
 }
 
 body {
@@ -124,8 +126,8 @@ nav a:visited {
 
 nav a.selected, nav a:hover {
     color: #1C0800;
-    border-bottom: 2px solid black;
-    padding-bottom: 2px;
+    text-decoration: underline;
+    font-weight:900;
 }
 
 .error {
@@ -135,6 +137,29 @@ nav a.selected, nav a:hover {
 
 .social-icon {
     color: #af5920;
+}
+
+nav {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 15px 20px 15px 20px;
+    margin-bottom: 0;
+}
+
+nav li {
+    display: inline-block;
+    padding-top: 10px;
+}
+
+nav a {
+    font-weight: 700;
+    height: 25%;
+    padding: 15px 10px 15px 10px;
 }
 
 /******************************************
@@ -167,33 +192,6 @@ h1 {
     margin: -5px 5px 3px 0px;
     padding-bottom: 2px;
     font-weight: normal;
-}
-
-
-/******************************************
-NAVIGATION
-******************************************/
-nav {
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    margin: auto;
-}
-
-nav ul {
-    list-style: none;
-    padding: 15px 20px 15px 20px;
-    margin-bottom: 0;
-    margin-top: 0;
-}
-
-nav li {
-    display: inline-block;
-}
-nav a {
-    font-weight: 700;
-    height: 25%;
-    padding: 15px 10px 15px 10px;
-    margin: 0 8px 8px 8px;
 }
 
 /******************************************
