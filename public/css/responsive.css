@@ -1,5 +1,4 @@
 /* Applies to many smartphones in landscape mode. */
-
 @media screen and (min-width: 616px) {
 
     /******************************************
@@ -79,5 +78,13 @@
     header {
         border-bottom: 5px solid #f27a2b;
         margin: 0px;
+    }
+}
+
+/* Custom stuff for the nav */
+@media screen and (min-width: 472px) {
+    nav li {
+        display: inline-block;
+        padding-top: 0px;
     }
 }
