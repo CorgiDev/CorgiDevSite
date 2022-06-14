@@ -81,8 +81,8 @@
     }
 }
 
-/* Custom stuff for the nav */
 @media screen and (min-width: 472px) {
+    /* Custom stuff for the nav */
     nav li {
         display: inline-block;
         padding-top: 0px;
