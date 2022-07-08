@@ -53,10 +53,6 @@ img {
     max-width: 100%;
 }
 
-h1, h2, h3 {
-    color:#af5920;
-}
-
 h3 {
     margin: 0 0 1em 0;
 }
@@ -99,7 +95,8 @@ nav {
 /*Logo text*/
 #logo h1 {
     color: #fff;
-} 
+}
+
 #logo h2, #skip-content {
     color: #1C0800;
 }
@@ -113,9 +110,19 @@ nav {
    text-align: center;
 }
 
+h1, h2, h3 {
+    color:#af5920;
+}
+
 /*links*/
 a {
-   color: #7d6608;
+   /* color: #7d6608; */
+   color: #6c4600;
+}
+
+/* links within wrapper */
+#wrapper a {
+    background-color: #f0f5f5;
 }
 
 /*nav styles*/
