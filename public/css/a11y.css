@@ -28,14 +28,6 @@ main h2+div {
     padding-bottom: 1.5rem;
 }
 
-/* main>div+h2 {
-    border-bottom: 2px solid;
-}
-
-.topHeader{
-    border-top: 2px solid;
-} */
-
 main h2 {
     border-top: 2px solid;
 }
