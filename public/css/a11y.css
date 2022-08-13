@@ -1,14 +1,7 @@
 /******************************************
 PAGE: ACCESSIBILITY
 ******************************************/
-/* Colors */
-
-
-/* Other Styles */
-.siteList dt {
-    font-weight: bold;
-}
-
+/* General */
 #a11yTitle {
     display: block;
     text-align: center;
@@ -16,6 +9,10 @@ PAGE: ACCESSIBILITY
 
 #returnTop a {
     margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.siteList dt {
     font-weight: bold;
 }
 
@@ -30,10 +27,11 @@ main h2+div {
 
 main h2 {
     border-top: 2px solid;
+    min-width: 100%;
 }
 
-main h2:last-of-type {
-    border-bottom: 2px solid;
+main {
+    border-bottom: 2px solid #733c17;
 }
 
 h2 button {

@@ -10,14 +10,14 @@ GENERAL
 ******************************************/
 /*Wrapper section styles. Includes everything under the nav down to the footer.*/
 #skip-content {
-    background: #DD610E;
+    background: #bd4b00;
     color: white;
     padding-left: 5px;
     padding-top: 5px;
 }
 
 #wrapper {
-    max-width: 95%;
+    width: 80%;
     margin: 0 auto;
     padding: 20px 5%;
 }
@@ -70,6 +70,11 @@ h3 {
     padding-bottom: 5px;
 }
 
+/* Whenever I want to indicate an error in a form or other interactive element */
+.error {
+    font-weight: bold;
+ }
+
 /******************************************
 COLORS
 ******************************************/
@@ -84,7 +89,7 @@ body, p, figure figcaption {
 
 header {
     border-color: #f27a2b;
-    background: #DD610E;
+    background: #bd4b00;
 }
 
 /*nav bkgrd on mobile*/
@@ -92,58 +97,57 @@ nav {
     background: #f27a2b;
 }
 
-/*Logo text*/
+/* Header text */
 #logo h1 {
     color: #fff;
 }
 
 #logo h2, #skip-content {
-    color: #1C0800;
-}
-
-#logo h2 {
-    font-size: 1em;
+    color: #fff;
 }
 
 .mainHeadline {
    color:#682d06;
-   text-align: center;
 }
 
 h1, h2, h3 {
-    color:#af5920;
+    color:#733c17;
 }
 
 /*links*/
 a {
-   /* color: #7d6608; */
    color: #6c4600;
 }
 
-/* links within wrapper */
 #wrapper a {
     background-color: #f0f5f5;
 }
 
-/*nav styles*/
-nav a, 
-nav a:visited {
+/* Keep links in main nav from changing color. They only change appearance when active. */
+nav a, nav a:visited, nav a.selected, nav a:hover {
     color: #1C0800;
 }
 
+/* Whenever I want to indicate an error in a form or other interactive element */
+.error {
+    color: darkred;
+ }
+
+.social-icon {
+    color: #733c17;
+}
+
+/******************************************
+NAVIGATION
+******************************************/
+
 nav a.selected, nav a:hover {
-    color: #1C0800;
     text-decoration: underline;
     font-weight:900;
 }
 
-.error {
-   color: darkred;
-   font-weight: bold;
-}
-
-.social-icon {
-    color: #af5920;
+#skip-content {
+    font-weight: bold;
 }
 
 nav {
@@ -170,19 +174,13 @@ nav a {
 }
 
 /******************************************
-HEADING
+HEADINGS
 ******************************************/
 header {
     float: left;
     margin: 0 0 30px 0;
     padding: 5px 0 0 0;
     width: 100%;
-}
-
-/*Logo encompasses just the part where it says my name and a title.*/
-#logo {
-    text-align: center;
-    margin: 0;
 }
 
 h1 {
@@ -193,13 +191,23 @@ h1 {
     line-height: 0.8em;
 }
 
+/*Logo encompasses just the part where it says my name and a title.*/
+#logo {
+    text-align: center;
+    margin: 0;
+}
+
 #logo h2 {
     font-family: 'Ubuntu', sans-serif;
-    font-size: 0.9em;
+    font-size: 1em;
     margin: -5px 5px 3px 0px;
     padding-bottom: 2px;
-    font-weight: normal;
+    font-weight: bold;
 }
+
+.mainHeadline {
+    text-align: center;
+ }
 
 /******************************************
 FOOTER
