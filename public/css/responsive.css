@@ -43,7 +43,7 @@
     }    
 }
 
-@media screen and (min-width: 1150px) {
+@media screen and (min-width: 1155px) {
     /******************************************
     HEADER
     ******************************************/
@@ -55,6 +55,11 @@
         padding-top: 25px;
         text-align: right;
         width: 45%;
+    }
+
+    /* Keep links in main nav from changing color. They only change appearance when active. */
+    nav a, nav a:visited, nav a.selected, nav a:hover {
+        color: #fff;
     }
 
     #logo {

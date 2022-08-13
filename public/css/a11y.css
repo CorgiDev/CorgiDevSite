@@ -1,14 +1,7 @@
 /******************************************
 PAGE: ACCESSIBILITY
 ******************************************/
-/* Colors */
-
-
-/* Other Styles */
-.siteList dt {
-    font-weight: bold;
-}
-
+/* General */
 #a11yTitle {
     display: block;
     text-align: center;
@@ -17,4 +10,53 @@ PAGE: ACCESSIBILITY
 #returnTop a {
     margin-bottom: 20px;
     font-weight: bold;
+}
+
+.siteList dt {
+    font-weight: bold;
+}
+
+/* Collapsible Secttion Styles */
+main h2 {
+    margin: 0;
+}
+
+main h2+div {
+    padding-bottom: 1.5rem;
+}
+
+main h2 {
+    border-top: 2px solid;
+    min-width: 100%;
+}
+
+main {
+    border-bottom: 2px solid #733c17;
+}
+
+h2 button {
+    all: inherit;
+    border: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.5em 0;
+}
+
+h2 button:focus svg {
+    outline: 2px solid;
+}
+
+button svg {
+    height: 1em;
+    margin-left: 0.5em;
+}
+
+[aria-expanded="true"] .vert {
+    display: none;
+}
+
+[aria-expanded] rect {
+    fill: currentColor;
 }
