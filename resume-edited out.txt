@@ -1,0 +1,22 @@
+These are just entries I removed from my resume since I did not see the point in listing all my projects on my resume when people can go to my GitHub.
+
+<h3>Staff Directory Project</h3>
+    <ul>
+        <li><b>Project Location: </b><a href="https://github.com/CorgiDev/StaffDirectoryProject" rel="noreferrer" target="_blank">https://github.com/CorgiDev/StaffDirectoryProject</a></li>
+        <li>MVC project built using Entity Framework, .Net, C#, jQuery, and Bootstrap.</li>
+        <li>Uses Localdb for persistent data.</li>
+    </ul>
+<h3>AnimalDex Project</h3>
+    <ul>
+        <li><b>Project Location: </b><a href="https://github.com/CorgiDev/animalDex" rel="noreferrer" target="_blank">https://github.com/CorgiDev/animalDex</a></li>
+        <li>Built using JavaScript on the front-end and back-end.</li>
+        <li>Uses MongoDB for persistent data.</li>
+        <li>Functions as a CRUD application where users can store information about animals they have seen.</li>
+    </ul>
+<h3>React Project</h3>
+    <ul>
+        <li><b>Project Location: </b><a href="https://github.com/CorgiDev/ReactProject" rel="noreferrer" target="_blank">https://github.com/CorgiDev/ReactProject</a></li>
+        <li>Built using JavaScript and React.</li>
+        <li>Uses a Firebase database for persistent data and an API connection.</li>
+        <li>This project was a remake of my www.corgidev.com page with an added Blog page.</li>
+    </ul>
