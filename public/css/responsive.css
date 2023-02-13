@@ -47,7 +47,7 @@
     /******************************************
     HEADER
     ******************************************/
-    nav { /* This will make the nav links float to the right at larger resolutions. */
+    header nav { /* This will make the nav links float to the right at larger resolutions. */
         background: none;
         float: right;
         font-size: 1.125em;
@@ -58,7 +58,7 @@
     }
 
     /* Keep links in main nav from changing color. They only change appearance when active. */
-    nav a, nav a:visited, nav a.selected, nav a:hover {
+    header nav a, header nav a:visited, header nav a.selected, header nav a:hover {
         color: #fff;
     }
 
@@ -88,7 +88,7 @@
 
 @media screen and (min-width: 472px) {
     /* Custom stuff for the nav */
-    nav li {
+    header nav li {
         display: inline-block;
         padding-top: 0px;
     }
