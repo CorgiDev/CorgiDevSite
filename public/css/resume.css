@@ -33,10 +33,6 @@ PAGE: RESUME
     font-size: 3em;
 }
 
-.beforeSection {
-    padding-top: 25px;
-}
-
 hr {
     margin-top: 25px;
 }
@@ -92,6 +88,6 @@ th {
     background-color: #ac734d86;
 }
 
-main a {
-    color: #6c4600;
+h2 {
+    padding-top: 10px;
 }
