@@ -65,9 +65,15 @@
     #logo {
         background: none;
         float: left;
-        margin-left: 5%;
+        margin-left: 5px;
         text-align: left;
-        width: 45%;
+        padding: 0;
+    }
+
+    #logo img {
+        float: left;
+        max-width: 120px;
+        margin-bottom: 10px;
     }
 
     h1 {
