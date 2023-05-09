@@ -40,77 +40,66 @@
                 </ul>
             </nav>
         </header>
-        <div id="wrapper">
-            <h1 id="blogTitle">CorgiDev Thoughts</h1>
-            
-            <section id="blog" role="main">
-                <div class="blogPost">
-                    <h3 class="postTitle">Alternate Conformant Versions?</h3>
-                    <h4 class="postDescrip"><time datetime="2021-10-14 12:30-04:00">October 14, 2021 - 12:30 pm</time></h4>
-                    <p class="postContent">
-                        Alternate conformant versions is an important part of any Accessibility audit. When checking for this, an auditor is checking if inaccessible materials have an accessible alternate version identified. If an accessible alternative is available, an auditor can choose to skip any further accessibility checks on the non-conformant content and instead assess the accessibility of the conformant version.
-                    </p>
-                    <p class="postContent">A great example of content that has an alternate conformant version, is the <a href="https://adoption.microsoft.com/guides/" rel="noreferrer" target="_blank">Microsoft Product Adoption Guides</a>. If you select to view an individual guide, you are initially taken to an interactive booklet version. The booklet is not Accessible. However, at the top of the page, there is a link to a PDF version of the same content that is accessible.</p>
-                    <img src="img/microsoft-accessibility-guide-screenshot.webp" class="postImg" alt="Interactive booklet of the Microsoft 365 Accessibility Adoption Guide with a link to a pdf version at the top of the page, and buttons to control interaction with the booklet at the bottom of the page.">
-                </div>
-                <hr/>
+        <div id="wrapper">        
+            <main>
+                <h1 id="blogTitle">CorgiDev Thoughts</h1>
+                <p>This blog will mostly serve as a spot for me to throw things I am thinking about or things that I have learned that I feel others may benefit from.</p>
 
-                <!-- TODO: Redesign this so it is easier to navigate to individual posts. May wait until I do my React/Gatsby redesign of my site. -->
-                <!-- 
-                <div class="blogPost">
-                    <h3 class="postTitle">Insert Post Title Here</h3>
-                    <h4 class="postDescrip"><time datetime="2021-12-14 13:10-04:00">December 14, 2021 - 01:10 pm</time></h4>
-                    <p class="postContent">
-                        Insert post content here.
-                        <img src="img/ExportOptions.webp" class="postImg" alt="Export As dialog window in GIMP with the previously listed options unchecked.">
-                    </p>
-                </div>
-                <hr/>
-                --->
-
-                <div class="blogPost">
-                    <h3 class="postTitle">Uploading Images with Transparent Backgrounds to RedBubble</h3>
-                    <h4 class="postDescrip"><time datetime="2021-12-14 13:10-04:00">December 14, 2021 - 01:10 pm</time></h4>
-                    <p class="postContent">
-                        Have you uploaded an image to RedBubble that was supposed to have a transparent background, and it instead was given a solid background? I have run into this issue on more than one occassion and always had to waste time finding a solution. So I decided to describe a solution here for my benefit, and others who may benefit.
-                    </p>
-                    <p class="postContent">
-                        I tend to upload images to RedBubble to make custom content for my own use, or for my logo that I have listed in my RedBubble store. I use the free, open source image editing program known as <a href="https://www.gimp.org/" rel="noreferrer" target="_blank">GNU Image Manipulation Program (GIMP)</a> to edit images. I also save images as PNG files since I now know what settings to set to consistently get transparent backgrounds.
-                    </p>
-                    <p class="postContent">
-                        In GIMP, you select "Export As" to save an image as a particular format. Once you do that, you can use the "Select File Type (By Extension)" to select the PNG file type. After that you click the Export button to progress to the next window.
-                        <img src="img/ExportAs.webp" class="postImg" alt="Export As dialog window in GIMP">
-                    </p>
-                    <p class="postContent">
-                        You will next be presented with a set of Export options that are based on the file type. For PNG files that need to have a transparent background, you will need to focus on the settings in the bottom half of the window. You will want to make sure that the following settings are unchecked:
-                        <ul>
-                            <li>Save Exif data</li>
-                            <li>Save XMP data</li>
-                            <li>Save IPTC data</li>
-                            <li>Save Thumbnail</li>
-                        </ul>
-                        <img src="img/ExportOptions.webp" class="postImg" alt="Export As dialog window in GIMP with the previously listed options unchecked.">
-                    </p>
-                    <p class="postContent">
-                        Click the Export button once you have those options unchecked and upload your file to RedBubble. The transparent background should show up correctly now. I found out about this fix from a comment on a <a href="https://www.gimp-forum.net/Thread-Error-Uploading-to-Redbubble-Files-Exported-from-Gimp?pid=11542#pid11542" rel="noreferrer" target="_blank">forum post</a> on <a href="https://www.gimp-forum.net/" rel="noreferrer" target="_blank">Gimp-Forum.net</a>.
-                    </p>
-                </div>
-                <hr/>
-
-                <!-- Posst Template -->
-                <!-- 
-                <div class="blogPost">
-                    <h3 class="postTitle">Insert Post Title Here</h3>
-                    <h4 class="postDescrip"><time datetime="2021-12-14 13:10-04:00">December 14, 2021 - 01:10 pm</time></h4>
-                    <p class="postContent">
-                        Insert post content here.
-                        <img src="img/ExportOptions.webp" class="postImg" alt="Export As dialog window in GIMP with the previously listed options unchecked.">
-                    </p>
-                </div>
-                <hr/>
-                --->
-
-            </section>
+                <section id="blog">
+                    <div class="blogPost">
+                        <h2 class="postTitle">Alternate Conformant Versions?</h2>
+                        <h3 class="postDescrip"><time datetime="2021-10-14 12:30-04:00">October 14, 2021 - 12:30 pm</time></h3>
+                        <p class="postContent">
+                            Alternate conformant versions is an important part of any Accessibility audit. When checking for this, an auditor is checking if inaccessible materials have an accessible alternate version identified. If an accessible alternative is available, an auditor can choose to skip any further accessibility checks on the non-conformant content and instead assess the accessibility of the conformant version.
+                        </p>
+                        <p class="postContent">A great example of content that has an alternate conformant version, is the <a href="https://adoption.microsoft.com/guides/" rel="noreferrer" target="_blank">Microsoft Product Adoption Guides</a>. If you select to view an individual guide, you are initially taken to an interactive booklet version. The booklet is not Accessible. However, at the top of the page, there is a link to a PDF version of the same content that is accessible.</p>
+                        <img src="img/microsoft-accessibility-guide-screenshot.webp" class="postImg" alt="Interactive booklet of the Microsoft 365 Accessibility Adoption Guide with a link to a pdf version at the top of the page, and buttons to control interaction with the booklet at the bottom of the page.">
+                    </div>
+                    <hr/>
+    
+                    <div class="blogPost">
+                        <h2 class="postTitle">Uploading Images with Transparent Backgrounds to RedBubble</h2>
+                        <h3 class="postDescrip"><time datetime="2021-12-14 13:10-04:00">December 14, 2021 - 01:10 pm</time></h3>
+                        <p class="postContent">
+                            Have you uploaded an image to RedBubble that was supposed to have a transparent background, and it instead was given a solid background? I have run into this issue on more than one occassion and always had to waste time finding a solution. So I decided to describe a solution here for my benefit, and others who may benefit.
+                        </p>
+                        <p class="postContent">
+                            I tend to upload images to RedBubble to make custom content for my own use, or for my logo that I have listed in my RedBubble store. I use the free, open source image editing program known as <a href="https://www.gimp.org/" rel="noreferrer" target="_blank">GNU Image Manipulation Program (GIMP)</a> to edit images. I also save images as PNG files since I now know what settings to set to consistently get transparent backgrounds.
+                        </p>
+                        <p class="postContent">
+                            In GIMP, you select "Export As" to save an image as a particular format. Once you do that, you can use the "Select File Type (By Extension)" to select the PNG file type. After that you click the Export button to progress to the next window.
+                            <img src="img/ExportAs.webp" class="postImg" alt="Export As dialog window in GIMP">
+                        </p>
+                        <p class="postContent">
+                            You will next be presented with a set of Export options that are based on the file type. For PNG files that need to have a transparent background, you will need to focus on the settings in the bottom half of the window. You will want to make sure that the following settings are unchecked:
+                            <ul>
+                                <li>Save Exif data</li>
+                                <li>Save XMP data</li>
+                                <li>Save IPTC data</li>
+                                <li>Save Thumbnail</li>
+                            </ul>
+                            <img src="img/ExportOptions.webp" class="postImg" alt="Export As dialog window in GIMP with the previously listed options unchecked.">
+                        </p>
+                        <p class="postContent">
+                            Click the Export button once you have those options unchecked and upload your file to RedBubble. The transparent background should show up correctly now. I found out about this fix from a comment on a <a href="https://www.gimp-forum.net/Thread-Error-Uploading-to-Redbubble-Files-Exported-from-Gimp?pid=11542#pid11542" rel="noreferrer" target="_blank">forum post</a> on <a href="https://www.gimp-forum.net/" rel="noreferrer" target="_blank">Gimp-Forum.net</a>.
+                        </p>
+                    </div>
+                    <hr/>
+    
+                    <!-- Posst Template -->
+                    <!-- 
+                    <div class="blogPost">
+                        <h2 class="postTitle">Insert Post Title Here</h2>
+                        <h3 class="postDescrip"><time datetime="2021-12-14 13:10-04:00">December 14, 2021 - 01:10 pm</time></h3>
+                        <p class="postContent">
+                            Insert post content here.
+                            <img src="img/ExportOptions.webp" class="postImg" alt="Export As dialog window in GIMP with the previously listed options unchecked.">
+                        </p>
+                    </div>
+                    <hr/>
+                    --->
+                </section>
+            </main>
 
             <footer>
                 <nav aria-label="Footer Social Links">
