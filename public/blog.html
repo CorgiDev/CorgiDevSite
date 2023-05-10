@@ -47,19 +47,59 @@
 
                 <section id="blog">
                     <div class="blogPost">
+                        <h2 class="postTitle">Computer typing in reverse?</h2>
+                        <h3 class="postDescrip"><time datetime="2023-05-09 18:09-04:00">May 09, 2023 - 06:09 pm</time> EST</h3>
+                        <p class="postContent">
+                            I had a weird issue recently where my typing direction kept getting reversed. Basically, I would start typing and instead of the text going towards the right side of the screen, it would go towards the left. As a result, my sentences would be reversed from what I expected them to be. I could not figure out what key combination I was hitting to cause this until I did some research.
+                        </p>
+                        <p class="postContent">After doing some searching, I learned that this is a feature within Windows meant for languages where you may need to type in the opposite direction due to the way the text is printed and read. There can be some other causes, but generally the most likely causes are that you inadvertently changed the region on your keyboard, or you pressed the control (ctrl) key together with the left or right shift key. If you find your typing going in the wrong direction, first try pressing ctrl together with right shift for right to left typing, or with left shift for left to right typing.</p>
+                        <p class="postContent">If that does not work, try the one, or a combination, of the following options. Note that the following options, or the steps to alter them, may vary somewhat depending on your OS version.
+                            <ol>
+                                <li>Restart your computer</li>
+                                <li>Check your system region settings. This is typically done by:
+                                    <ol>
+                                        <li>Start menu</li>
+                                        <li>Search for and select "Control Panel".</li>
+                                        <li>Go to "Region". This may be under "Clock and Region" depending on how your control panel displays.</br><img src="img/blog_images/2023_05_09/Clock-and-Region.webp" alt="Windows control panel with the Region option showing."/></li>
+                                        <li>Navigate to the "Administrative" tab.</br><img src="img/blog_images/2023_05_09/administrativeSettings.webp" alt="Administrative settings tab under Region options."/></li>
+                                        <li>Select "Change system locale".</br><img src="img/blog_images/2023_05_09/systemLocale.webp" alt="Region settings window with drop-down for current system locale displaying."/></li>
+                                        <li>Click on the dropdown menu for "Current system locale" and select your country.</li>
+                                        <li>Click ok to apply the setting changes.</li>
+                                        <li>Click "Apply" to finish applying the changes.</li>
+                                        <li>Restart your machine.</li>
+                                    </ol>
+                                </li>
+                                <li>Try running the Keyboard troubleshooter. This can be accessed in Windows 10+ by:
+                                    <ol>
+                                        <li>Open Start menu.</li>
+                                        <li>Search for "Troubleshoot" and select the "Troubleshoot Settings" option.</br><img src="img/blog_images/2023_05_09/troubleshoot_settings.webp" alt="Start menu with the search term troubleshoot typed in and the troubleshoot settings displaying as an option."/></li>
+                                        <li>Select "Other troubleshooters".</li>
+                                        <li>Select the "Run" button next to "Keyboard".</br><img src="img/blog_images/2023_05_09/other_troubleshooters.webp" alt="System settings opened up to Troublesoot/Other Troubleshooters."/></li>
+                                        <li>A troubleshooter application will automatically run and complete with options. You may be asked to restart your machine.</li>
+                                    </ol>
+                                </li>
+                                <li>Uninstall your keyboard with device manager and then scan for new hardware to reinstall your keyboard</li>
+                            </ol>
+                        </p>
+                        <p>There are other options, and details listed under the following article, <a href="https://windowsreport.com/keyboard-typing-backward/">Keyboard Typing Backwards: Causes & Quick Fixes | WindowsReport</a>. Please note that this is an external page that I do not have any control over. As a result, there may be additional links and options on this page that I cannot guarantee the safety of. Please avoid installing additional applications without consulting someone able to identify if they are safe or not.</p>
+                        <p>I hope this information helps anyone else who may have gone through something similar to me.</p>
+                    </div>
+                    <hr/>
+
+                    <div class="blogPost">
                         <h2 class="postTitle">Alternate Conformant Versions?</h2>
-                        <h3 class="postDescrip"><time datetime="2021-10-14 12:30-04:00">October 14, 2021 - 12:30 pm</time></h3>
+                        <h3 class="postDescrip"><time datetime="2021-10-14 12:30-04:00">October 14, 2021 - 12:30 pm</time> EST</h3>
                         <p class="postContent">
                             Alternate conformant versions is an important part of any Accessibility audit. When checking for this, an auditor is checking if inaccessible materials have an accessible alternate version identified. If an accessible alternative is available, an auditor can choose to skip any further accessibility checks on the non-conformant content and instead assess the accessibility of the conformant version.
                         </p>
                         <p class="postContent">A great example of content that has an alternate conformant version, is the <a href="https://adoption.microsoft.com/guides/" rel="noreferrer" target="_blank">Microsoft Product Adoption Guides</a>. If you select to view an individual guide, you are initially taken to an interactive booklet version. The booklet is not Accessible. However, at the top of the page, there is a link to a PDF version of the same content that is accessible.</p>
-                        <img src="img/microsoft-accessibility-guide-screenshot.webp" class="postImg" alt="Interactive booklet of the Microsoft 365 Accessibility Adoption Guide with a link to a pdf version at the top of the page, and buttons to control interaction with the booklet at the bottom of the page.">
+                        <img src="img/microsoft-accessibility-guide-screenshot.webp" alt="Interactive booklet of the Microsoft 365 Accessibility Adoption Guide with a link to a pdf version at the top of the page, and buttons to control interaction with the booklet at the bottom of the page.">
                     </div>
                     <hr/>
     
                     <div class="blogPost">
                         <h2 class="postTitle">Uploading Images with Transparent Backgrounds to RedBubble</h2>
-                        <h3 class="postDescrip"><time datetime="2021-12-14 13:10-04:00">December 14, 2021 - 01:10 pm</time></h3>
+                        <h3 class="postDescrip"><time datetime="2021-12-14 13:10-04:00">December 14, 2021 - 01:10 pm</time> EST</h3>
                         <p class="postContent">
                             Have you uploaded an image to RedBubble that was supposed to have a transparent background, and it instead was given a solid background? I have run into this issue on more than one occassion and always had to waste time finding a solution. So I decided to describe a solution here for my benefit, and others who may benefit.
                         </p>
@@ -68,7 +108,7 @@
                         </p>
                         <p class="postContent">
                             In GIMP, you select "Export As" to save an image as a particular format. Once you do that, you can use the "Select File Type (By Extension)" to select the PNG file type. After that you click the Export button to progress to the next window.
-                            <img src="img/ExportAs.webp" class="postImg" alt="Export As dialog window in GIMP">
+                            <img src="img/ExportAs.webp" alt="Export As dialog window in GIMP">
                         </p>
                         <p class="postContent">
                             You will next be presented with a set of Export options that are based on the file type. For PNG files that need to have a transparent background, you will need to focus on the settings in the bottom half of the window. You will want to make sure that the following settings are unchecked:
@@ -78,7 +118,7 @@
                                 <li>Save IPTC data</li>
                                 <li>Save Thumbnail</li>
                             </ul>
-                            <img src="img/ExportOptions.webp" class="postImg" alt="Export As dialog window in GIMP with the previously listed options unchecked.">
+                            <img src="img/ExportOptions.webp" alt="Export As dialog window in GIMP with the previously listed options unchecked.">
                         </p>
                         <p class="postContent">
                             Click the Export button once you have those options unchecked and upload your file to RedBubble. The transparent background should show up correctly now. I found out about this fix from a comment on a <a href="https://www.gimp-forum.net/Thread-Error-Uploading-to-Redbubble-Files-Exported-from-Gimp?pid=11542#pid11542" rel="noreferrer" target="_blank">forum post</a> on <a href="https://www.gimp-forum.net/" rel="noreferrer" target="_blank">Gimp-Forum.net</a>.
@@ -93,7 +133,7 @@
                         <h3 class="postDescrip"><time datetime="2021-12-14 13:10-04:00">December 14, 2021 - 01:10 pm</time></h3>
                         <p class="postContent">
                             Insert post content here.
-                            <img src="img/ExportOptions.webp" class="postImg" alt="Export As dialog window in GIMP with the previously listed options unchecked.">
+                            <img src="img/ExportOptions.webp" alt="Export As dialog window in GIMP with the previously listed options unchecked.">
                         </p>
                     </div>
                     <hr/>

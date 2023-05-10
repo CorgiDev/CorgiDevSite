@@ -33,13 +33,15 @@ GENERAL
 }
 
 a {
+    font-weight: bold;
+}
+
+header a, footer a {
     text-decoration: none; /** Removes link styling. **/
 }
 
-a:focus {
-    /* border: 3px solid #242424; */
+main a {
     text-decoration: underline;
-    font-weight: bolder;
 }
 
 body {
