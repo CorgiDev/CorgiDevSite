@@ -7,7 +7,7 @@ PAGE: ACCESSIBILITY
     text-align: center;
 }
 
-#returnTop a {
+.returnTop a {
     margin-bottom: 20px;
     font-weight: bold;
 }
