@@ -64,10 +64,6 @@ img {
     margin: 5px;
 }
 
-#logo {
-    padding-bottom: 5px;
-}
-
 /* Whenever I want to indicate an error in a form or other interactive element */
 .error {
     font-weight: bold;
@@ -96,11 +92,11 @@ header nav {
 }
 
 /* Header text */
-#logo h1 {
+#logoDiv h1 {
     color: #fff;
 }
 
-#logo h2, #skip-content {
+#logoDiv h2, #skip-content {
     color: #fff;
 }
 
@@ -193,14 +189,6 @@ h1 {
     line-height: 0.8em;
 }
 
-#logo h2 {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1em;
-    margin: -5px 5px 3px 0px;
-    padding-bottom: 2px;
-    font-weight: bold;
-}
-
 .mainHeadline {
     text-align: center;
  }
@@ -214,7 +202,7 @@ HEADER
 }
 
 /*Logo encompasses just the part where it says my name and a title.*/
-#logo {
+#logoDiv {
     text-align: center;
     align-content: center;
 }
@@ -223,12 +211,21 @@ HEADER
     margin: 5px 5px;
 }
 
-#logo img {
+#logoDiv img {
     max-width: 20%;
     margin: 5px 40%;
 }
 
-#logo a {
+#logoDiv {
+    padding-bottom: 5px;
+}
+
+#logodiv h2 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+    margin: -5px 5px 3px 0px;
+    padding-bottom: 2px;
+    font-weight: bold;
 }
 
 /******************************************

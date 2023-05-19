@@ -62,7 +62,7 @@
         color: #fff;
     }
 
-    #logo {
+    #logoDiv {
         background: none;
         float: left;
         margin-left: 5px;
@@ -70,7 +70,7 @@
         padding: 0;
     }
 
-    #logo img {
+    #logoDiv img {
         float: left;
         max-width: 120px;
         margin-bottom: 10px;
