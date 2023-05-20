@@ -1,42 +1,6 @@
 /******************************************
 PAGE: RESUME
 ******************************************/
-
-.resume-photo {
-    display: block;
-    /** Using Block allows us to center the image using margins. Default is inline. **/
-    max-width: 250px;
-    max-height: 250px;
-    margin: 0 auto 30px;
-    border-radius: 45%;
-    border: 2px solid #af5920;
-}
-
-#resumeName {
-    font-size: 3em;
-    color: #af5920;
-}
-
-#resumeEmail {
-    font-size: 1em;
-}
-
-#professionalProfileList {
-    display: block;
-    text-align: center;  
-}
-
-#professionalProfileList li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 3em;
-}
-
-hr {
-    margin-top: 25px;
-}
-
 #resumeWrapperA {
     display:block;
     text-align:center;
@@ -58,6 +22,43 @@ hr {
 #resumeWrapperB h3 {
     color: #242424;
     font-size: 1em;
+}
+
+hr {
+    margin-top: 25px;
+}
+
+h2 {
+    padding-top: 10px;
+}
+
+.resume-photo {
+    display: block;
+    /** Using Block allows us to center the image using margins. Default is inline. **/
+    max-width: 250px;
+    max-height: 250px;
+    margin: 0 auto 30px;
+    border-radius: 45%;
+    border: 2px solid #af5920;
+}
+
+#resumeName {
+    font-size: 3em;
+    color: #af5920;
+}
+
+/* Profile List */
+#professionalProfileList {
+    display: block;
+    text-align: left;
+    padding-left: 0;
+}
+
+#professionalProfileList li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 3em;
 }
 
 /* Education List */
@@ -86,8 +87,4 @@ td {
 
 th {
     background-color: #ac734d86;
-}
-
-h2 {
-    padding-top: 10px;
 }
