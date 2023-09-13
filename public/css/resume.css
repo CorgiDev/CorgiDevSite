@@ -21,7 +21,7 @@ PAGE: RESUME
 
 #resumeWrapperB h3 {
     color: #242424;
-    font-size: 1em;
+    /* font-size: 1em; */
 }
 
 hr {
