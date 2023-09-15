@@ -91,6 +91,10 @@ header nav {
     background: #f27a2b;
 }
 
+.breadcrumbs {
+    background: #bd4b00;
+}
+
 /* Header text */
 #logoDiv h1 {
     color: #fff;
@@ -172,6 +176,18 @@ header nav a {
     font-weight: 700;
     height: 25%;
     padding: 15px 10px 15px 10px;
+}
+
+.breadcrumbs {
+    margin: 0;
+    padding: 0;
+    align-content: left;
+    display:flex;
+    font-weight: bold;
+}
+
+.breadcrumbs nav {
+    align-self: flex-start;
 }
 
 /******************************************
