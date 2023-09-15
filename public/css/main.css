@@ -61,13 +61,28 @@ img {
 /* Whenever I want to indicate an error in a form or other interactive element */
 .error {
     font-weight: bold;
- }
+}
 
- .vl {
+.vl {
     border-left: 2px solid #bd4b00;
     height: 500px;
     margin: 0 6px;
-  }
+}
+
+hr {
+    margin-top: 25px;
+}
+
+.sr-only {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    margin: -1px;
+}
 
 /******************************************
 COLORS
@@ -281,17 +296,3 @@ footer ul {
 #wcagIcon {
     display: block;
 }
-
-/******************************************
-ACCESSIBILITY STYLES
-******************************************/
-.sr-only {
-    clip: rect(1px, 1px, 1px, 1px);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    margin: -1px;
-  }
