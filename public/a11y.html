@@ -26,16 +26,22 @@
             <div id="logoDiv">
                 <img src="img/CorgidevLogo.webp" alt="CorgiDev Logo">
             </div>
-            <nav aria-label="Main Navigation">
+            <nav aria-label="Main">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="resume.html">Resumé</a></li>
                     <li><a href="a11y.html" class="selected">A11y</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </header>
+        <nav class="breadcrumbs" aria-label="Navigation Breadcrumbs">
+            <ul>
+                <li><a href="index.html" aria-label="CorgiDev Home"><i class="fa-duotone fa-house fa-lg" alt></i></a></li>
+                <li><i class="fa-solid fa-chevron-right fa-lg" alt></i> Accessibility</li>
+            </ul>
+        </nav>
         <div id="wrapper">
             <h1 id="a11yTitle">Accessibility Resources and Information</h1>
             <p>It is important to note that any guidelines and/or tests listed should not be all you look for when assessing Accessibility. They should just give you a starting point in your overall Accessibility testing straetgy.</p>
@@ -365,6 +371,7 @@
             </main>
 
             <footer>
+                <hr>
                 <nav aria-label="Footer Social Links">
                     <ul>
                         <li><a href="https://www.buymeacoffee.com/TheCorgiDev" aria-label="Buy CorgiDev a Coffee" rel="noreferrer noopener" target="_blank"><i class="fa-duotone fa-cup-togo fa-2x social-icon"></i></a></li>
