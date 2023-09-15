@@ -92,7 +92,11 @@ header nav {
 }
 
 .breadcrumbs {
-    background: #bd4b00;
+    background: #933c01;
+    color: white;
+}
+
+.breadcrumbs a:visited {
     color: white;
 }
 
@@ -189,6 +193,14 @@ header nav a {
 
 .breadcrumbs nav {
     align-self: flex-start;
+}
+
+.breadcrumbs ul {
+    margin: 12px;
+}
+
+.breadcrumbs li {
+    padding: 0px;
 }
 
 /******************************************
