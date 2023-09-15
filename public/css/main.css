@@ -63,6 +63,12 @@ img {
     font-weight: bold;
  }
 
+ .vl {
+    border-left: 2px solid #bd4b00;
+    height: 500px;
+    margin: 0 6px;
+  }
+
 /******************************************
 COLORS
 ******************************************/
@@ -83,6 +89,15 @@ header {
 /*nav bkgrd on mobile*/
 header nav {
     background: #f27a2b;
+}
+
+.breadcrumbs {
+    background: #933c01;
+    color: white;
+}
+
+.breadcrumbs a:visited {
+    color: white;
 }
 
 /* Header text */
@@ -166,6 +181,26 @@ header nav a {
     font-weight: 700;
     height: 25%;
     padding: 15px 10px 15px 10px;
+}
+
+.breadcrumbs {
+    margin: 0;
+    padding: 0;
+    align-content: left;
+    display:flex;
+    font-weight: bold;
+}
+
+.breadcrumbs nav {
+    align-self: flex-start;
+}
+
+.breadcrumbs ul {
+    margin: 12px;
+}
+
+.breadcrumbs li {
+    padding: 0px;
 }
 
 /******************************************

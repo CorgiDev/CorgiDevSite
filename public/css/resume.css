@@ -6,24 +6,6 @@ PAGE: RESUME
     text-align:center;
 }
 
-#resumeWrapperA h1 h2 {
-    margin: 10 auto;
-    color: #af5920;
-}
-
-#resumeWrapperB a {
-    font-weight: bold;
-}
-
-#resumeWrapperB h1 h2 {
-    font: black;
-}
-
-#resumeWrapperB h3 {
-    color: #242424;
-    /* font-size: 1em; */
-}
-
 hr {
     margin-top: 25px;
 }

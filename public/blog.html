@@ -26,16 +26,22 @@
             <div id="logoDiv">
                 <img src="img/CorgidevLogo.webp" alt="CorgiDev Logo">
             </div>
-            <nav aria-label="Main Navigation">
+            <nav aria-label="Main">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="resume.html">Resumé</a></li>
                     <li><a href="a11y.html">A11y</a></li>
                     <li><a href="blog.html" class="selected">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </header>
+        <nav class="breadcrumbs" aria-label="Navigation Breadcrumbs">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house fa-lg" style="color: #ffffff;"></i><span class="sr-only">Home</span></a></li>
+                <li><i class="fa-solid fa-chevron-right fa-lg" alt></i> Blog</li>
+            </ul>
+        </nav>
         <div id="wrapper">        
             <main>
                 <h1 id="blogTitle">CorgiDev Thoughts</h1>
@@ -87,6 +93,7 @@
                         </p>
                         <p class="postContent">A great example of content that has an alternate conformant version, is the <a href="https://adoption.microsoft.com/guides/" rel="noreferrer noopener" target="_blank">Microsoft Product Adoption Guides</a>. If you select to view an individual guide, you are initially taken to an interactive booklet version. The booklet is not Accessible. However, at the top of the page, there is a link to a PDF version of the same content that is accessible.</p>
                         <img src="img/microsoft-accessibility-guide-screenshot.webp" alt="Interactive booklet of the Microsoft 365 Accessibility Adoption Guide with a link to a pdf version at the top of the page, and buttons to control interaction with the booklet at the bottom of the page.">
+                        <p>However, while having an alternate conforming version can be a good way to provide multiple ways for users to view the same content in a format they prefer; it can pose severe risk. When you have multiple versions; you have multiple sources of truth. This means you run the risk of one not being as up to date as the other, and having to remove multiple copies of the same information if you need it gone.</p>
                     </div>
                     <hr>
     
@@ -110,7 +117,6 @@
                         <img src="img/ExportOptions.webp" alt="Export As dialog window in GIMP with the previously listed options unchecked.">
                         <p class="postContent">Click the Export button once you have those options unchecked and upload your file to RedBubble. The transparent background should show up correctly now. I found out about this fix from a comment on a <a href="https://www.gimp-forum.net/Thread-Error-Uploading-to-Redbubble-Files-Exported-from-Gimp?pid=11542#pid11542" rel="noreferrer noopener" target="_blank">forum post</a> on <a href="https://www.gimp-forum.net/" rel="noreferrer noopener" target="_blank">Gimp-Forum.net</a>.</p>
                     </div>
-                    <hr>
     
                     <!-- Posst Template -->
                     <!-- 
@@ -128,6 +134,7 @@
             </main>
 
             <footer>
+                <hr>
                 <nav aria-label="Footer Social Links">
                     <ul>
                         <li><a href="https://www.buymeacoffee.com/TheCorgiDev" aria-label="Buy CorgiDev a Coffee" rel="noreferrer noopener" target="_blank"><i class="fa-duotone fa-cup-togo fa-2x social-icon"></i></a></li>
