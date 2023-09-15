@@ -63,6 +63,12 @@ img {
     font-weight: bold;
  }
 
+ .vl {
+    border-left: 2px solid #bd4b00;
+    height: 500px;
+    margin: 0 6px;
+  }
+
 /******************************************
 COLORS
 ******************************************/
