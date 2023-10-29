@@ -13,6 +13,16 @@ PAGE: ACCESSIBILITY
     font-weight: bold;
 }
 
+/* General Headings */
+h4 {
+    margin-top: 15px;
+}
+
+h3 {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
 /* Collapsible Secttion Styles */
 main h2 {
     margin: 0;
@@ -67,12 +77,10 @@ button svg {
 .siteList dt, .siteList li {
     font-weight: bold;
     margin-bottom: 8px;
+    margin-top: 2px;
 }
 
-h4 {
-    margin-top: 15px;
-}
-
-h3 {
-    margin-bottom: 0;
+dl {
+    margin-left: 10px;
+    padding-left: 10px;
 }
