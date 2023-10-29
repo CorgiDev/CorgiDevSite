@@ -155,6 +155,10 @@ nav a, nav a:visited, nav a.selected, nav a:hover {
     color: #733c17;
 }
 
+#navHouse {
+    color: #ffffff;
+}
+
 /******************************************
 NAVIGATION
 Footer navigation located in Footer section
