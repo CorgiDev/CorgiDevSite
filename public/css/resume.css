@@ -8,6 +8,7 @@ PAGE: RESUME
 
 h2 {
     padding-top: 10px;
+    text-align: left;
 }
 
 .resume-photo {
@@ -81,5 +82,5 @@ th {
 }
 
 nav p {
-    align-self: left;
+    text-align: left;
 }
