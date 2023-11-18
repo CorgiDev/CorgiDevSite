@@ -29,7 +29,7 @@
             <nav aria-label="Main">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="resume.html" class="selected">Resumé</a></li>
+                    <li><a href="resume.html" class="selected" aria-current="page">Resumé</a></li>
                     <li><a href="a11y.html">A11y</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -48,13 +48,25 @@
             <main>
                 <section aria-label="Resumé Header" id="resumeWrapperA">
                     <img src="img/erissa-1.webp" alt="Photo of Erissa." class="resume-photo">
-                    <h1 id="resumeName">Erissa Renée Duvall</h1>
+                    <h1 id="resumeName">Erissa Duvall</h1>
                 </section>
                 <hr>
 
+                <nav aria-label="Resume sections">
+                    <ul>
+                        <li><a href="#downloadHeading">Resume Download</a><span class="vl"></span></li>
+                        <li><a href="#addProfExpHeader">Additional Professional Experience</a><span class="vl"></span></li>
+                        <li><a href="#profProfiles">Professional Profiles</a><span class="vl"></span></li>
+                        <li><a href="#skillsHeader">Skills</a><span class="vl"></span></li>
+                        <li><a href="#workExpHeader">Work Experience</a><span class="vl"></span></li>
+                        <li><a href="#educationHeader">Education</a></li>
+                    </ul>
+                </nav>
+                <hr>
+
                 <nav aria-label="Resume download options">
-                    <h2>Resume Download</h2>
-                    <p><strong>NOTE:</strong> The downloadable version does not contain quite the level of detail shown on this page. Also, please note that files may open in new windows, or in a desktop application, based on settings and applications installed on your machine.</p>
+                    <h2 id="downloadHeading">Resume Download</h2>
+                    <p><strong>NOTE:</strong> The downloadable version will differ in content and formatting from that seen on this page due to differences in platforms and intended uses. Also, please note that files may open in new windows, or in a desktop application, based on settings and applications installed on your machine.</p>
                     <ul class="downloadButton">
                         <li><a href="./resume/downloads/EDuvall_Resume_2023.pdf">Download as PDF file (338 KB)</a></li>
                         <li><a href="./resume/downloads/EDuvall_Resume_2023.docx">Download as Word Document (57 KB)</a></li>
@@ -62,16 +74,12 @@
                 </nav>
                 <hr>
 
-                <nav aria-label="Resume sections">
-                    <ul>
-                        <li><a href="#profProfiles">Professional Profiles</a><span class="vl"></span></li>
-                        <li><a href="#skillsHeader">Skills</a><span class="vl"></span></li>
-                        <li><a href="#educationHeader">Education</a><span class="vl"></span></li>
-                        <li><a href="#workExpHeader">Work Experience</a><span class="vl"></span></li>
-                        <li><a href="#addProfExpHeader">Additional Professional Experience</a></li>
-                    </ul>
-                </nav>
+                <section aria-describedby="addProfExpHeader">
+                    <h2 id="addProfExpHeader">Additional Professional Experience</h2>
+                    <p>Visit my <a href="resume/AdditionalExperience.html">Additional Professional Experience</a> page to learn more about my volunteer experience, speaking engagements past and upcoming, projects, and more.</p>
+                </section>
                 <hr>
+
                 <section aria-labelledby="profProfiles">
                     <h2 id="profProfiles">Professional Profiles</h2>
                     <nav class="beforeSection" aria-describedby="profProfiles">
@@ -97,59 +105,7 @@
                 <a href="#wrapper">Return to Top</a>
                 <hr>
             </section>
-            <section class="beforeSection" aria-describedby="educationHeader">
-                <h2 id="educationHeader">Education</h2>
-                <h3><a href="https://wwww.wku.edu" rel="noreferrer noopener" target="_blank">Western Kentucky University <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> | Bachelor of Arts | May 2012</h3>
-                    <ul>
-                        <li>Majored in Sociology with a minor in Criminology</li>
-                        <li>Member of Alpha Kappa Delta (National Sociological Honor Society)</li>
-                        <li>Studied abroad at Kansai Gaidai in Osaka, Japan for the Fall 2010 semester.</li>
-                    </ul>
-                <h3><a href="https://codelouisville.org/" rel="noreferrer noopener" target="_blank">Code:You (formerly Code Louisville) <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> | May 2017 to July 2020</h3>
-                <ul>
-                    <li><span class="courseName">Python</span> | <span class="courseDate">July 2020</span>
-                        <ul>
-                            <li>Course work was a mixture of virtual class discussion using Zoom and online learning through Treehouse.</li>
-                            <li>Created a Python app that downloads a CSV, formats it for easier searching, and then allows the user to search for CVE items based on their main label.</li>
-                            <li>Project is contained within my <a href="https://github.com/CorgiDev/CVE_Search" rel="noreferrer noopener" target="_blank">CVE Search Repo<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> on GitHub.</li>
-                        </ul>
-                    </li>
-                    <li><span class="courseName">JavaScript/React</span> | <span class="courseDate">November 2018</span>
-                        <ul>
-                            <li>Focus on JavaScript/React with API usage.</li>
-                            <li>Course work was a mixture of in-class discussion and online learning through Treehouse.</li>
-                            <li>Recreated my CorgiDev website with an additional page that uses React-Context API to have CRUD functionality, but without persistence.</li>
-                            <li>Used Bootstrap CDN for much of the styling and React-Router-Dom for routing.</li>
-                            <li>Used Firebase database as an API for my app to connect to.</li>
-                            <li>Project is located in my <a href="https://github.com/CorgiDev/ReactProject" rel="noreferrer noopener" target="_blank">ReactProject<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> repo on GitHub.</li>
-                        </ul>
-                    </li>
-                    <li><span class="courseName">Full-Stack JavaScript</span> | <span class="courseDate">August 2018</span>
-                        <ul>
-                            <li>Focused on front-end/back-end development using JavaScript.</li>
-                            <li>Course work was a mixture of in-class discussion and online learning through Treehouse.</li>
-                            <li>Created a CRUD application as my final project, which is located in my <a href="https://github.com/CorgiDev/animalDex" rel="noreferrer noopener" target="_blank">animalDex<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> repo on GitHub.</li>
-                        </ul>
-                    </li>
-                    <li><span class="courseName">C#/.Net Development</span> | <span class="courseDate">March 2018</span>
-                        <ul>
-                            <li>Focused on C#/.Net development on the front-end and back-end of a project.</li>
-                            <li>Course work was a mixture of in-class discussion and online learning through Treehouse.</li>
-                            <li>Created a CRUD application as my final project, which is located in my <a href="https://github.com/CorgiDev/StaffDirectoryProject" rel="noreferrer noopener" target="_blank">StaffDirectoryProject<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> repo on GitHub.</li>
-                        </ul>
-                    </li>
-                    <li><span class="courseName">Front-End Web Design</span> | <span class="courseDate">August 2017</span>
-                        <ul>
-                            <li>Focused on Front-End Web Design technologies (i.e. HTML, CSS, and JavaScript)</li>
-                            <li>Course work was a mixture of in-class discussion and online learning through Treehouse.</li>
-                            <li>Created a project, which became this site you are currently on.</li>
-                        </ul>
-                    </li>
-                </ul>
-                <a href="#wrapper">Return to Top<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a>
-                <hr>
-            </section>
-
+            
             <section class="beforeSection" aria-describedby="workExpHeader">
                 <h2 id="workExpHeader">Work Experience</h2>
                     <h3><a href="https://www.onwardsearch.com/" rel="noopener noreferrer" target="_blank">Onward Search <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a></h3>
@@ -252,10 +208,57 @@
                     <a href="#wrapper">Return to Top</a>
                     <hr>
                 </section>
-                <section aria-describedby="addProfExpHeader">
-                    <h2 id="addProfExpHeader">Additional Professional Experience</h2>
-                    <p>Visit my <a href="resume/AdditionalExperience.html">Additional Professional Experience</a> page to learn more about my volunteer experience, speaking engagements past and upcoming, projects, and more.</p>
-                    <a href="#wrapper">Return to Top</a>
+
+                <section class="beforeSection" aria-describedby="educationHeader">
+                    <h2 id="educationHeader">Education</h2>
+                    <h3><a href="https://wwww.wku.edu" rel="noreferrer noopener" target="_blank">Western Kentucky University <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> | Bachelor of Arts</h3>
+                        <ul>
+                            <li>Majored in Sociology with a minor in Criminology</li>
+                            <li>Member of Alpha Kappa Delta (National Sociological Honor Society)</li>
+                            <li>Studied abroad at Kansai Gaidai in Osaka, Japan for the Fall 2010 semester.</li>
+                        </ul>
+                    <h3><a href="https://codelouisville.org/" rel="noreferrer noopener" target="_blank">Code:You (formerly Code Louisville) <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a></h3>
+                    <ul>
+                        <li><span class="courseName">Python</span>
+                            <ul>
+                                <li>Course work was a mixture of virtual class discussion using Zoom and online learning through Treehouse.</li>
+                                <li>Created a Python app that downloads a CSV, formats it for easier searching, and then allows the user to search for CVE items based on their main label.</li>
+                                <li>Project is contained within my <a href="https://github.com/CorgiDev/CVE_Search" rel="noreferrer noopener" target="_blank">CVE Search Repo<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> on GitHub.</li>
+                            </ul>
+                        </li>
+                        <li><span class="courseName">JavaScript/React</span>
+                            <ul>
+                                <li>Focus on JavaScript/React with API usage.</li>
+                                <li>Course work was a mixture of in-class discussion and online learning through Treehouse.</li>
+                                <li>Recreated my CorgiDev website with an additional page that uses React-Context API to have CRUD functionality, but without persistence.</li>
+                                <li>Used Bootstrap CDN for much of the styling and React-Router-Dom for routing.</li>
+                                <li>Used Firebase database as an API for my app to connect to.</li>
+                                <li>Project is located in my <a href="https://github.com/CorgiDev/ReactProject" rel="noreferrer noopener" target="_blank">ReactProject<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> repo on GitHub.</li>
+                            </ul>
+                        </li>
+                        <li><span class="courseName">Full-Stack JavaScript</span>
+                            <ul>
+                                <li>Focused on front-end/back-end development using JavaScript.</li>
+                                <li>Course work was a mixture of in-class discussion and online learning through Treehouse.</li>
+                                <li>Created a CRUD application as my final project, which is located in my <a href="https://github.com/CorgiDev/animalDex" rel="noreferrer noopener" target="_blank">animalDex<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> repo on GitHub.</li>
+                            </ul>
+                        </li>
+                        <li><span class="courseName">C#/.Net Development</span>
+                            <ul>
+                                <li>Focused on C#/.Net development on the front-end and back-end of a project.</li>
+                                <li>Course work was a mixture of in-class discussion and online learning through Treehouse.</li>
+                                <li>Created a CRUD application as my final project, which is located in my <a href="https://github.com/CorgiDev/StaffDirectoryProject" rel="noreferrer noopener" target="_blank">StaffDirectoryProject<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> repo on GitHub.</li>
+                            </ul>
+                        </li>
+                        <li><span class="courseName">Front-End Web Design</span>
+                            <ul>
+                                <li>Focused on Front-End Web Design technologies (i.e. HTML, CSS, and JavaScript)</li>
+                                <li>Course work was a mixture of in-class discussion and online learning through Treehouse.</li>
+                                <li>Created a project, which became this site you are currently on.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="#wrapper">Return to Top<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a>
                 </section>
             </main>
 
