@@ -208,6 +208,7 @@ header nav a {
     align-content: left;
     display:flex;
     font-weight: bold;
+    min-height: 5px;
 }
 
 .breadcrumbs nav {
@@ -313,6 +314,6 @@ footer ul {
     padding: 0;
 }
 
-#wcagIcon {
+#wcagIconContainer {
     display: block;
 }
