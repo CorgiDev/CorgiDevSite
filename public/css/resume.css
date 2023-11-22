@@ -1,7 +1,7 @@
 /******************************************
 PAGE: RESUME
 ******************************************/
-#resumeWrapperA {
+#resumeHeader {
     display:block;
     text-align:center;
 }
@@ -36,7 +36,7 @@ h2 {
 #professionalProfileList li {
     list-style: none;
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 5px;
     font-size: 3em;
 }
 
@@ -68,19 +68,11 @@ th {
     background-color: #ac734d86;
 }
 
-/* Formatting for Download Links */
-.downloadButton li {
-    margin: 10px;
+#resumeDownload, #resumeSections ul, #extraExpSections ul {
+    margin-left: 0;
+    padding-left: 0;
 }
 
-.downloadButton a {
-    background-color: #f5c7a9;
-    border-radius: 3px;
-    padding: 10px;
-    border: #5d2500 solid 1px;
-    text-decoration: none;
-}
-
-nav p {
+#resumeSections, #extraExpSections, nav p, #resumeDownload {
     text-align: left;
 }
