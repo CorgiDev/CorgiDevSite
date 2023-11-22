@@ -74,7 +74,11 @@ button svg {
     margin-top: 5px;
 }
 
-.siteList dt, .siteList li {
+.siteList ul, .siteList li {
+    list-style-type: none;
+}
+
+.siteList dt {
     font-weight: bold;
     margin-bottom: 8px;
     margin-top: 2px;
