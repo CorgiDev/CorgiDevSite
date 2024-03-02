@@ -76,3 +76,7 @@ th {
 #resumeSections, #extraExpSections, nav p, #resumeDownload {
     text-align: left;
 }
+
+#mvpBadge {
+    max-height: 45px;
+}
