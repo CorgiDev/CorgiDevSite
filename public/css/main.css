@@ -8,6 +8,17 @@ font-family: 'Ubuntu', sans-serif;
 /******************************************
 GENERAL
 ******************************************/
+/* Get rid of white space bounce at top of page */
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    overflow: auto;
+    height: 100%;
+}
+
 /*Wrapper section styles. Includes everything under the nav down to the footer.*/
 #skip-content {
     background: #bd4b00;
