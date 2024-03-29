@@ -63,52 +63,87 @@
                     <hr>
                     -->
 
-                    <!-- 
                     <div class="blogPost">
                         <h2 class="postTitle">Links to DM people in Slack & Teams</h2>
-                        <h3 class="postDescrip"><time datetime="2024-03-21 13:10-04:00">March 21, 2024 - 01:10 pm</time></h3>
-                        <p class="postContent">
-                            Insert post content here.
-                            <img src="img/ExportOptions.webp" alt="Export As dialog window in GIMP with the previously listed options unchecked.">
-                        </p>
+                        <h3 class="postDescrip"><time datetime="2024-03-21 13:10-04:00">March 29, 2024 - 04:00 am</time></h3>
+                        <div class="postContent">
+                            <p>One of my favorite things to do is add links in my email signature for people to DM me in Slack & Teams. I only use it for internal communications, but it tends to surprise people and is just an overall useful little trick.</p>
+                            <p>I've also found these links useful in documentation. Maybe you have a list of contacts who someone needs to contact in a particular circumstance. You could include Teams links to ensure people message the right people and not someone with a similar name.</p>
+                            <p>Follow along if you are interested in doing the same. Keep in mind that there may be some instances where the methods I show do not work for your organization. This could be due to some organization settings. I will provide a list of resources that might provide alternatives you can try. The ones I list are just the ones that worked for me most frequently.</p>
+                            
+                            <h4>Links to Direct Message someone in Teams</h4>
+                            <p>Teams has proven to be the easiest one for me. With this you just use <code>https://teams.microsoft.com/l/chat/0/0?users=[your email address]</code>. Want to make it a group chat? Add additional email addresses separated by commas.(<code>https://teams.microsoft.com/l/chat/0/0?users=[your email address],[second email address]</code>).</p>
+                            <p>One potential hiccup could occur if you have an old Microsoft 365 account where you had a personal and an enterprise version of your account. You will know if this is the case if Microsoft 365 asks you if you want to log in as your Home Account or your Work Account when you try to log in.</p>
+                            
+                            <h4>Links to Direct Message someone in Slack</h4>
+                            <p>Slack is a little more complex to make a direct message link for. Keep in mind that someone must be a member of the Slack tenant to direct message someone using the link. This is why I typically only use these internally, and I always put a text note next to them stating that they are for internal use only.</p>
+                            <p>Another important distinction of the link format I am about to cover is that it will open in the desktop app, if it is installed. There are other variants you can use, but many of them open in the web browser instead of the desktop app.</p>
+                            <ol>
+                                <li>First, we need to find you <code>Team ID</code>. To find this, you will need to login to your Slack environment via web browser rather than the desktop app.</li>
+                                <li>Once logged in, look at the url in the browser's address bar.</li>
+                                <li>The url will look something like the following: <code>https://app.slack.com/client/T05REF2GYN9/C06DFSGR5SB</code>. The set of charcters after <code>client/</code> is the Team ID.</li>
+                                <li>Next we need your <code>Member ID</code>. For this, you can access Slack in the browser or in the desktop app.</li>
+                                <li>Once you have the app loaded, go to your Slack profile in the app, or the Slack profile of the user who you wish to make a message link to. You can accomplish this by right-clicking their image in an existing chat or channel, and selecting "View Profile".</li>
+                                <li>Once in the profile, you should see a set of 2 large buttons labeled either:
+                                    <ul>
+                                        <li>Your Profile: "Set Status" & "View As"</li>
+                                        <li>Other User Profile: "Message" & "Huddle"</li>
+                                    </ul>
+                                    Either way, there will be a vertical elipses icon that indicates the "More" menu after those buttons that you need to click to expand another menu.
+                                </li>
+                                <li>From that menu, select the "Copy Member ID" option.</li>
+                                <li>Now format your direct message link as <code>https://app.slack.com/client/[Team ID]/[Member ID]</code>.</li>
+                                <li>You now have a direct message Slack link for someone.</li>
+                            </ol>
+                            <h4>Other Resources</h4>
+                            <p>I hope this information proves useful for you. The following resources should prove useful if you'd like to learn more.</p>
+                            <ul>
+                                <li><a href="https://blog.thoughtstuff.co.uk/2019/02/how-to-use-a-hyperlink-to-jump-directly-to-a-teams-private-chat-with-a-user/" target="_blank" rel="noopener noreferrer">How to: use a hyperlink to jump directly to a Teams private chat with a user | The thoughtstuff Blog</a></li>
+                                <li><a href="https://support.shortpoint.com/support/solutions/articles/1000277743-how-to-link-to-slack-user-direct-message-from-shortpoint-element" target="_blank" rel="noopener noreferrer">Start Slack direct messaging by opening a link : ShortPoint Support</a></li>
+                                <li><a href="https://api.slack.com/reference/deep-linking" target="_blank" rel="noopener noreferrer">Reference: Deep linking into Slack | Slack</a></li>
+                                <li><a href="https://api.slack.com/web" target="_blank" rel="noopener noreferrer">Using the Slack Web API | Slack</a></li>
+                                <li><a href="https://adam.garrett-harris.com/2021-03-22-slack-urls-to-quickly-message-people/" target="_blank" rel="noopener noreferrer">Slack Urls to Quickly Message People | Adam Garrett-Harris</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <hr>
-                    -->
 
                     <div class="blogPost">
                         <h2 class="postTitle" id="compTyping">Computer typing in reverse?</h2>
                         <h3 class="postDescrip"><time datetime="2023-05-09 18:09-04:00">May 09, 2023 - 06:09 pm</time> EST</h3>
-                        <p class="postContent">I had a weird issue recently where my typing direction kept getting reversed. Basically, I would start typing and instead of the text going towards the right side of the screen, it would go towards the left. As a result, my sentences would be reversed from what I expected them to be. I could not figure out what key combination I was hitting to cause this until I did some research.</p>
-                        <p class="postContent">After doing some searching, I learned that this is a feature within Windows meant for languages where you may need to type in the opposite direction due to the way the text is printed and read. There can be some other causes, but generally the most likely causes are that you inadvertently changed the region on your keyboard, or you pressed the control (ctrl) key together with the left or right shift key. If you find your typing going in the wrong direction, first try pressing ctrl together with right shift for right to left typing, or with left shift for left to right typing.</p>
-                        <p class="postContent">If that does not work, try the one, or a combination, of the following options. Note that the following options, or the steps to alter them, may vary somewhat depending on your OS version.</p>
-                        <ol>
-                            <li>Restart your computer</li>
-                            <li>Check your system region settings. This is typically done by:
-                                <ol>
-                                    <li>Start menu</li>
-                                    <li>Search for and select "Control Panel".</li>
-                                    <li>Go to "Region". This may be under "Clock and Region" depending on how your control panel displays.<br><img src="img/blog_images/2023_05_09/Clock-and-Region.webp" alt="Windows control panel with the Region option showing."></li>
-                                    <li>Navigate to the "Administrative" tab.<br><img src="img/blog_images/2023_05_09/administrativeSettings.webp" alt="Administrative settings tab under Region options."></li>
-                                    <li>Select "Change system locale".<br><img src="img/blog_images/2023_05_09/systemLocale.webp" alt="Region settings window with drop-down for current system locale displaying."></li>
-                                    <li>Click on the dropdown menu for "Current system locale" and select your country.</li>
-                                    <li>Click ok to apply the setting changes.</li>
-                                    <li>Click "Apply" to finish applying the changes.</li>
-                                    <li>Restart your machine.</li>
-                                </ol>
-                            </li>
-                            <li>Try running the Keyboard troubleshooter. This can be accessed in Windows 10+ by:
-                                <ol>
-                                    <li>Open Start menu.</li>
-                                    <li>Search for "Troubleshoot" and select the "Troubleshoot Settings" option.<br><img src="img/blog_images/2023_05_09/troubleshoot_settings.webp" alt="Start menu with the search term troubleshoot typed in and the troubleshoot settings displaying as an option."></li>
-                                    <li>Select "Other troubleshooters".</li>
-                                    <li>Select the "Run" button next to "Keyboard".<br><img src="img/blog_images/2023_05_09/other_troubleshooters.webp" alt="System settings opened up to Troublesoot/Other Troubleshooters."></li>
-                                    <li>A troubleshooter application will automatically run and complete with options. You may be asked to restart your machine.</li>
-                                </ol>
-                            </li>
-                            <li>Uninstall your keyboard with device manager and then scan for new hardware to reinstall your keyboard</li>
-                        </ol>
-                        <p>There are other options, and details listed under the following article, <a href="https://windowsreport.com/keyboard-typing-backward/">Keyboard Typing Backwards: Causes & Quick Fixes | WindowsReport <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a>. Please note that this is an external page that I do not have any control over. As a result, there may be additional links and options on this page that I cannot guarantee the safety of. Please avoid installing additional applications without consulting someone able to identify if they are safe or not.</p>
-                        <p>I hope this information helps anyone else who may have gone through something similar to me.</p>
+                        <div class="postContent">
+                            <p>I had a weird issue recently where my typing direction kept getting reversed. Basically, I would start typing and instead of the text going towards the right side of the screen, it would go towards the left. As a result, my sentences would be reversed from what I expected them to be. I could not figure out what key combination I was hitting to cause this until I did some research.</p>
+                            <p>After doing some searching, I learned that this is a feature within Windows meant for languages where you may need to type in the opposite direction due to the way the text is printed and read. There can be some other causes, but generally the most likely causes are that you inadvertently changed the region on your keyboard, or you pressed the control (ctrl) key together with the left or right shift key. If you find your typing going in the wrong direction, first try pressing ctrl together with right shift for right to left typing, or with left shift for left to right typing.</p>
+                            <p>If that does not work, try the one, or a combination, of the following options. Note that the following options, or the steps to alter them, may vary somewhat depending on your OS version.</p>
+                            <ol>
+                                <li>Restart your computer</li>
+                                <li>Check your system region settings. This is typically done by:
+                                    <ol>
+                                        <li>Start menu</li>
+                                        <li>Search for and select "Control Panel".</li>
+                                        <li>Go to "Region". This may be under "Clock and Region" depending on how your control panel displays.<br><img src="img/blog_images/2023_05_09/Clock-and-Region.webp" alt="Windows control panel with the Region option showing."></li>
+                                        <li>Navigate to the "Administrative" tab.<br><img src="img/blog_images/2023_05_09/administrativeSettings.webp" alt="Administrative settings tab under Region options."></li>
+                                        <li>Select "Change system locale".<br><img src="img/blog_images/2023_05_09/systemLocale.webp" alt="Region settings window with drop-down for current system locale displaying."></li>
+                                        <li>Click on the dropdown menu for "Current system locale" and select your country.</li>
+                                        <li>Click ok to apply the setting changes.</li>
+                                        <li>Click "Apply" to finish applying the changes.</li>
+                                        <li>Restart your machine.</li>
+                                    </ol>
+                                </li>
+                                <li>Try running the Keyboard troubleshooter. This can be accessed in Windows 10+ by:
+                                    <ol>
+                                        <li>Open Start menu.</li>
+                                        <li>Search for "Troubleshoot" and select the "Troubleshoot Settings" option.<br><img src="img/blog_images/2023_05_09/troubleshoot_settings.webp" alt="Start menu with the search term troubleshoot typed in and the troubleshoot settings displaying as an option."></li>
+                                        <li>Select "Other troubleshooters".</li>
+                                        <li>Select the "Run" button next to "Keyboard".<br><img src="img/blog_images/2023_05_09/other_troubleshooters.webp" alt="System settings opened up to Troublesoot/Other Troubleshooters."></li>
+                                        <li>A troubleshooter application will automatically run and complete with options. You may be asked to restart your machine.</li>
+                                    </ol>
+                                </li>
+                                <li>Uninstall your keyboard with device manager and then scan for new hardware to reinstall your keyboard</li>
+                            </ol>
+                            <p>There are other options, and details listed under the following article, <a href="https://windowsreport.com/keyboard-typing-backward/">Keyboard Typing Backwards: Causes & Quick Fixes | WindowsReport <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a>. Please note that this is an external page that I do not have any control over. As a result, there may be additional links and options on this page that I cannot guarantee the safety of. Please avoid installing additional applications without consulting someone able to identify if they are safe or not.</p>
+                            <p>I hope this information helps anyone else who may have gone through something similar to me.</p>
+                        </div>
                     </div>
                     <hr>
 
