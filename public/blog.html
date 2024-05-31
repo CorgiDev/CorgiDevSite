@@ -137,7 +137,8 @@
                             <p>Setting</p>
 
                             <h4>Setting Up Palworld on a Windows VM</h4>
-                            <p>Much of this is written from being on a Windows machine.</p>
+                            <p>Much of this is written from being on a Windows machine. In particular, I am on a Windows 11 machine. However, this just impacts how you connect to the machine. Once you are connected and interacting with the VM itself, it is a completely separate machine.</p>
+                            <h5>Connect to the VM</h5>
                             <ol>
                                 <li>Go to the Windows VM in the Resource Group and observe the "Public IP address" listed.
                                     <img src="./img/blog_images/AzureVM/WindowsVMConnectIP.png" alt="Windows VM Dashboard with the Public IP address highlighted.">
@@ -145,9 +146,84 @@
                                 <li>Open the Start menu on your computer and type "RDP" to search for the "Remote Desktop Connection" program on Windows. Select the application when it shows in the results.
                                     <img src="./img/blog_images/AzureVM/RDP.png" alt="Windows start menu with RDP in search and the Remote Desktop Connection application selcted from the results.">
                                 </li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <li>Once the RDP application opens, enter the IP address in the "Computer" field followed by ":3389", which is the RDP port set by default in Azure.
+                                    <img src="./img/blog_images/AzureVM/RDPConnectWindow.png" alt="RDP Connect window with IP address and port entered in the Computer field.">
+                                </li>
+                                <li>Click the "Connect" button and then enter in the credentials you previously set for the VM's Admin authentication credentials.
+                                    <ul>
+                                        <li>The credential window will default to your Windows account. You will need to click the "More choices" button and select "Use a different account" before entering in the credentials you set during VM creation.
+                                            <img src="./img/blog_images/AzureVM/RDPCredentialWindow.png" alt="RDP Credential window with More choices button highlighted.">
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>You may be asked to confirm you trust the connection. If so, click "Yes" to confirm and it should connect.
+                                    <img src="./img/blog_images/AzureVM/VMConnectConfirm.png" alt="RDP connection security confirmation window.">
+                                </li>
+                            </ol>
+                            <h5>Set Firewall Rule on VM</h5>
+                            <p>This firewall rule is basically the same rule as the one we set in Azure. You have to also set the rule in the VM itself.</p>
+                            <ol>
+                                <li>Once connected to the VM, open the start menu and type "firewall". Select the "Windows Defender Firewall with Advanced Security" result when it appears.
+                                    <img src="./img/blog_images/AzureVM/WindowsAdvancedFirewall.png" alt="Windows start menu with firewall in the search and the Firewall app displayed in the results.">
+                                </li>
+                                <li>Once the firewall application opens, click the "Inbound Rules" option under the side nav panel, and then click the "New Rule..." option from the "Actions" panel that displays.
+                                    <img src="./img/blog_images/AzureVM/FirewallRule.png" alt="Windows Firewall application with the Inbound Rules panel open">
+                                </li>
+                                <li>On the Inbound Rule Wizard that opens, select the "Port" option, and then click "Next".
+                                    <img src="./img/blog_images/AzureVM/InboundRulePortOption.png" alt="Inbound Rule wizard with port selected.">
+                                </li>
+                                <li>On the next screen, select the "UDP" option and then enter "8211" in the "Specific local ports" field before clicking "Next".
+                                    <img src="./img/blog_images/AzureVM/UDPPort.png" alt="Windows Firewall application with the Inbound Rules panel open">
+                                </li>
+                                <li>Click Next again on the next screens until you get to the screen with the "Name" field. In the Name field, give the rule a name that helps you identify it later. For example, I named mine "Palworld Connections".
+                                    <img src="./img/blog_images/AzureVM/PalworldConnectionsRule.png" alt="Windows Firewall application with the Inbound Rules panel open">
+                                </li>
+                                <li>Click "Finish" to finalize the rule creation.
+                                    <img src="./img/blog_images/AzureVM/FirewallRule.png" alt="Windows Firewall application with the Inbound Rules panel open">
+                                </li>
+                            </ol>
+
+                            <h5>Palworld Server Pre-Requisites</h5>
+                            <p>There are some things we have to install before we can begin installing the Palworld dedicated server needed to run a Palworld server.</p>
+                            <ul>
+                                <li><a href="https://developer.valvesoftware.com/wiki/SteamCMD#Windows" rel="nonreferrer noopener" target="_blank">SteamCMD for Windows</a>
+                                    <ul>
+                                        <li>For this one, I extract the installer into a "Palworld Server Setup" folder in the VM's C drive instead of the drive shown in the Steam steps.</li>
+                                        <li>Once this finishes running, you can press CTRL + C to close the command prompt window.</li>
+                                    </ul>
+                                </li>
+                                <li><a href="https://www.microsoft.com/en-us/download/details.aspx?id=8109" rel="nonreferrer noopener" target="_blank">DirectX 9.0</a>
+                                    <ol>
+                                        <li>This link should install to the server. The main link you get when you search is a downloader installer and doesn't work within the VM for some reason.</li>
+                                        <li>Before running this, create a "DirectX" folder in your Download folder. It extracts ALOT of files, but does not allow you to create a folder during the extraction process. So you need the folder you want the files to go into before you run it.</li>
+                                        <li>Once you run it to extract the files, go into the DirectX folder you created and extracted the files into.</li>
+                                        <li>Inside the folder, scroll to and run the "DXSETUP" executable to install DirectX.</li>
+                                    </ol>
+                                </li>
+                                <li><a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-microsoft-visual-c-redistributable-version" rel="nonreferrer noopener" target="_blank">Visual C++</a>
+                                    <ol>
+                                        <li>Select the "X64" link in the table of download links.</li>
+                                    </ol>
+                                </li>
+                            </ul>
+                            
+                            <h5>Installing Palworld Server</h5>
+                            <ol>
+                                <li>a
+                                    <img src="./img/blog_images/AzureVM/FirewallRule.png" alt="Windows Firewall application with the Inbound Rules panel open">
+                                </li>
+                                <li>a
+                                    <img src="./img/blog_images/AzureVM/FirewallRule.png" alt="Windows Firewall application with the Inbound Rules panel open">
+                                </li>
+                                <li>a
+                                    <img src="./img/blog_images/AzureVM/FirewallRule.png" alt="Windows Firewall application with the Inbound Rules panel open">
+                                </li>
+                                <li>a
+                                    <img src="./img/blog_images/AzureVM/FirewallRule.png" alt="Windows Firewall application with the Inbound Rules panel open">
+                                </li>
+                                <li>a
+                                    <img src="./img/blog_images/AzureVM/FirewallRule.png" alt="Windows Firewall application with the Inbound Rules panel open">
+                                </li>
                             </ol>
                             <!-- <img src="img/ExportOptions.webp" alt="Export As dialog window in GIMP with the previously listed options unchecked."> -->
                         </div>
