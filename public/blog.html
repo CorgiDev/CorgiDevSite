@@ -64,6 +64,97 @@
                     -->
 
                     <div class="blogPost">
+                        <h2 class="postTitle">Host a Palworld Server on Azure</h2>
+                        <h3 class="postDescrip"><time datetime="2024-05-31 14:30-04:00">May 31, 2024 - 02:30 pm</time></h3>
+                        <!-- <ul id="blogTags"><li>Azure</li><li>Gaming</li><li>Palworld</li></ul> -->
+                        <div class="postContent">
+                            <p>I recently started getting Azure credits and decided to have some fun seeing if I could host a Palworld server there. However, I ran into difficulties when I started to search for documentation to help me. Many skipped steps or were too vague. I ended up having to cobble together a couple of different pages and sift through Azure's documentation to find everything I needed. As a result, I decided to try to save other people some time by making my own documentation on how I created my server. I will include steps for creating a Palworld server based on Linux and Windows.</p>
+                            <h4>Creating the VM</h4>
+                            <p>Initially creating the VM in Azure is pretty straight forward and similar regardless of whether your end result will be Linux or Windows. One very important note with any VM in Azure, you will only be charged for the time your VM is running. So, to save on cost, shut down your VM when no one is using it. You can also set it to auto-shutdown at a certain time each day if you want to make sure you don't leave it running indvertently. I will also provide some Powershell scripts that you can use to check the status of your Azure VM in a separte post later.</p>
+                            <ol>
+                                <li>Login the your Azure account with the <a href="https://portal.azure.com/" rel="nonreferrer noopener" target="_blank">Azure portal</a>.</li>
+                                <li>You should initially be taken to the Dashbord. From there you can select "Resource Group" to access the "Create a resource group" process.
+                                    <ol>
+                                        <li>If you don't see "Resource Group" listed, select the "Create a Resource" option and search for "Resource Group" in the Marketplace.</li>
+                                    </ol>
+                                    <img src="./img/blog_images/AzureVM/AzureDashboard.png" alt="Azure Dashboard with the Create a Resource and Resource Group options."> </br>
+                                    <img src="./img/blog_images/AzureVM/AzureMarketplace.png" alt="Azure Marketplace with Resource Group pulled up in the search.">
+                                </li>
+                                <li>You should now be on the "Create a Resource" page. Select the subscription if the one you want your VM in is not listed, and then type a name in the "Resource group" text input field.
+                                    <img src="./img/blog_images/AzureVM/CreateResourceGrp.png" alt="Azure Create a Resource page">
+                                </li>
+                                <li>Next click "Review + Create" and then "Create" on the next screen as long as long as everything looks like what you selected and typed.
+                                    <img src="./img/blog_images/AzureVM/CreateResourceGrp2.png" alt="Azure Create a Resource page create validation page">
+                                </li>
+                                <li>You will be taken back to where you initially selected to start creating the group. A pop up will display that you can select "Go to Resource" from, or you can type the name in the search bar to get to the resource group.
+                                    <img src="./img/blog_images/AzureVM/Go2Resource.png" alt="Pop up with option to go to resource.">
+                                </li>
+                                <li>Once you are at the resource, you will see a list of resources that is currently empty. We can start changing that by clicking on the "Create" option.
+                                    <img src="./img/blog_images/AzureVM/CreateInResource.png" alt="Resource Group dashboard with Create option highlighted">
+                                </li>
+                                <li>This will take us to the Azure Marketplace. From here, go to the "Search the Marketplace" text input field and type "Virtual Machine".
+                                    <img src="./img/blog_images/AzureVM/AZVM.png" alt="Azure Marketplace with the listing for Virtual Machine">
+                                </li>
+                                <li>Click on the Virtual Machine option, and then click the "Create" button on the next page.
+                                    <img src="./img/blog_images/AzureVM/CreateVM.png" alt="Azure Marketplace Virtual Machine page with Create button">
+                                </li>
+                                <li>This is where things begin to split just slightly based on whether you are making a Linux VM or a Windows VM. The following options are what you should select and fill out:
+                                    <ul>
+                                        <li><strong>Resource Group:</strong> Name of Resource Group you created</li>
+                                        <li><strong>Virtual machine name:</strong> Name you want to use</li>
+                                        <li><strong>Image:</strong> Select either "Ubuntu Server 22.04 LTS - x64 Gen2" or "Windows Server 2022 Datacenter: Azure Edition - x64 Gen2".</li>
+                                        <li><strong>Size:</strong> Standard_B4as_v2 - 4 vcpus, 16 GiB memory (current cost / month)</li>
+                                        <li><strong>Authentication Type:</strong> (Recommend selecting the Password type for Linux VMs. Windows VMs default to this.) Enter the username & password you wish to use.</li>
+                                    </ul>
+                                    <img src="./img/blog_images/AzureVM/CreateVMForm.png" alt="Form to create a VM.">
+                                </li>
+                                <li>Click "Review + Create" and then "Create" on the next screen. The next screen will step through deploying the VM. This will involve it creating all the necessary parts. Most will have a data disk, network security group, virtual network, the VM itself, nd possibly other parts.</li>
+                                <li>Click the "Go to Resource" option once the creation is complete. You can click away from the page while it is deploying, but you just might not be notified when it finishes. However, it will show up under the Resource Group once it is done. If you go to the Resource Group, click the item with the Virtual Machine name you entered and "Virtual machine" under the "Type" column.</li>
+                                <li>Once in the VM dashboard, click the "Network settings" option in the side navigation bar.
+                                    <img src="./img/blog_images/AzureVM/VMDashboard.png" alt="VM Dashboard with Network Settings option highlighted.">
+                                </li>
+                                <li>Once on the Network Settings page, scroll down to the "Network security group" section, click the "Create port rule" button, and select the "Inbound port rule" option.
+                                    <img src="./img/blog_images/AzureVM/VMAddInbound.png" alt="VM Network Settings page with the Inbound port rule option highlighted.">
+                                </li>
+                                <li>An "Add inbound security rule" pane will display. There you need to set the following options:
+                                    <ul>
+                                        <li><strong>Destination port ranges:</strong> 8211</li>
+                                        <li><strong>Protocol:</strong> UDP</li>
+                                        <li><strong>Priority:</strong> 100</li>
+                                    </ul>
+                                    <img src="./img/blog_images/AzureVM/SecurityRule.png" alt="Add inbound security rule pane with settings entered.">
+                                </li>
+                                <li>You can also set a description on the pane to help you quickly identify th purpose of the rule later. For example, I usually add something like "Palworld Connections".</li>
+                                <li>Once you have set the options, click "Add". This will ensure that the necessary Palworld connections can make it to the virtual machine.
+                                    <ul>
+                                        <li><strong>IMPORTANT: </strong> You will still need to add a firewll rule on the VM itself once you remote into it the first time, but we will go into that later.</li>
+                                    </ul>
+                                </li>
+                                <li>The VM should now be set up and ready for you to begin setting up the Palworld server. This is where things completely split based on what VM type you are using. The VM automatically starts up after creation. So, make sure to shut down the VM if you are not continuing at this time to avoid extra charges.</li>
+                            </ol>
+
+                            <h4>Setting Up Palworld on a Linux VM</h4>
+                            <p>Setting</p>
+
+                            <h4>Setting Up Palworld on a Windows VM</h4>
+                            <p>Much of this is written from being on a Windows machine.</p>
+                            <ol>
+                                <li>Go to the Windows VM in the Resource Group and observe the "Public IP address" listed.
+                                    <img src="./img/blog_images/AzureVM/WindowsVMConnectIP.png" alt="Windows VM Dashboard with the Public IP address highlighted.">
+                                </li>
+                                <li>Open the Start menu on your computer and type "RDP" to search for the "Remote Desktop Connection" program on Windows. Select the application when it shows in the results.
+                                    <img src="./img/blog_images/AzureVM/RDP.png" alt="Windows start menu with RDP in search and the Remote Desktop Connection application selcted from the results.">
+                                </li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ol>
+                            <!-- <img src="img/ExportOptions.webp" alt="Export As dialog window in GIMP with the previously listed options unchecked."> -->
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="blogPost">
                         <h2 class="postTitle">Links to DM people in Slack & Teams</h2>
                         <h3 class="postDescrip"><time datetime="2024-03-21 13:10-04:00">March 29, 2024 - 04:00 am</time></h3>
                         <div class="postContent">
