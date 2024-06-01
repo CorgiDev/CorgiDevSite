@@ -184,11 +184,12 @@
                             </ol>
 
                             <h5>Palworld Server Pre-Requisites</h5>
-                            <p>There are some things we have to install before we can begin installing the Palworld dedicated server needed to run a Palworld server.</p>
+                            <p>There are some things we have to install before we can begin installing the Palworld dedicated server needed to run a Palworld server. Once you get all of these installed, I recommend restarting the VM before continuing.</p>
                             <ul>
                                 <li><a href="https://developer.valvesoftware.com/wiki/SteamCMD#Windows" rel="nonreferrer noopener" target="_blank">SteamCMD for Windows</a>
                                     <ul>
-                                        <li>For this one, I extract the installer into a "Palworld Server Setup" folder in the VM's C drive instead of the drive shown in the Steam steps.</li>
+                                        <li>SteamCMD allows you to basically run Steam without the graphic interface, which allows it to be a lot more lightweight.</li>
+                                        <li>For this one, I extract the installer into a "SteamCMD" folder in the VM's C drive.</li>
                                         <li>Once this finishes running, you can press CTRL + C to close the command prompt window.</li>
                                     </ul>
                                 </li>
@@ -209,23 +210,46 @@
                             
                             <h5>Installing Palworld Server</h5>
                             <ol>
-                                <li>a
-                                    <img src="./img/blog_images/AzureVM/FirewallRule.png" alt="Windows Firewall application with the Inbound Rules panel open">
+                                <li>Navigate to the SteamCMD directory. It will be wherever you extracted and ran SteamCMD from initially to install it, and then run the "SteamCMD.exe" file.
+                                    <img src="./img/blog_images/AzureVM/steamCMDLocation.png" alt="Windows folder for SteamCMD with the exe file highlighted.">
                                 </li>
-                                <li>a
-                                    <img src="./img/blog_images/AzureVM/FirewallRule.png" alt="Windows Firewall application with the Inbound Rules panel open">
+                                <li>A Command Prompt window will open and SteamCMD will start up. When it finishes, the window will display "Steam>" instead of the usual C drive.
+                                    <img src="./img/blog_images/AzureVM/SteamCMDInitialWindow.png" alt="Command Prompt window after starting SteamCMD.">
                                 </li>
-                                <li>a
-                                    <img src="./img/blog_images/AzureVM/FirewallRule.png" alt="Windows Firewall application with the Inbound Rules panel open">
+                                <li>In the window, type the following commands in order. Note each command has a short description of what it does. Allow each to complete its action before trying to enter the next one.
+                                    <ol>
+                                        <li><strong>Logins into Steam:</strong> <code>login anonymous</code></li>
+                                        <li><strong>Updates Steam & Updates / Installs Palworld Server:</strong> <code>app_update 2394010 validate</code></li>
+                                        <li><strong>Closes SteamCMD:</strong> <code>quit</code></li>
+                                    </ol>
+                                    <img src="./img/blog_images/AzureVM/SteamCMDPalUpdate.png" alt="Command prompt window showing the commands and their outcomes.">
                                 </li>
-                                <li>a
-                                    <img src="./img/blog_images/AzureVM/FirewallRule.png" alt="Windows Firewall application with the Inbound Rules panel open">
+                                <li>Palworld Dedicated Server is now installed. Go back to your folder where SteamCMD is installed.</li>
+                                <li>Next, within that folder, navigate to "<code>/steamapps/common/PalServer</code>" and run PalServer.exe. A command prompt window will open that says "<code>Setting breakpad minidump AppID = [some numbers]</code>".</li>
+                                <li>Close that command prompt window. Then back in the folder, open "DefaultPalWorldSettings.exe". Copy everything from, and including, the line "<code>[/Script/Pal.PalGameWorldSettings]</code>" to the bottom of the file, and then close the file.
+                                    <img src="./img/blog_images/AzureVM/DefaultSettingsFile.png" alt="Palworld folder with the default settings file highlighted."> </br>
+                                    <img src="./img/blog_images/AzureVM/DefaultSettingsFileCopy.png" alt="Default settings file opened with the aforementioned content highlighted.">
                                 </li>
-                                <li>a
-                                    <img src="./img/blog_images/AzureVM/FirewallRule.png" alt="Windows Firewall application with the Inbound Rules panel open">
+                                <li>Back in the folder, navigate to "<code>/Pal/Saved/Config/WindowsServer</code>" and then open the "PalWorldSettings.ini" locted there, paste the content you previously copied into the currently blank file, and save it.
+                                    <img src="./img/blog_images/AzureVM/PalWorldSettings.png" alt="Server settings file opened with the aforementioned content pasted in.">
                                 </li>
+                                <li>Next we need to edit a couple of settings. You can edit more if you would like, but these are just the ones needed to make our server function. Once you have made all of your changes, save and close the file.
+                                    <ul>
+                                        <li><strong>Server Name:</strong> Give your servr a name if you don't want it to just be "Default Palworld Server Name".</li>
+                                        <li><strong>Server Description:</strong> Not required, but you can give a little description that you and users will be able to see under the settings when connected to the server. This could be useful if users have multiple servers they play on.</li>
+                                        <li><strong>Admin Password:</strong> Enter the password you want to use to access admin functions within the server.</li>
+                                        <li><strong>Server Password:</strong> Enter the password you want users to enter to access the server. Leaving it blank will result in users not needing a password to access the server.</li>
+                                        <li><strong>Public IP:</strong> Enter the public IP of your VM displyed on the VM's dashbord in Azure</li>
+                                    </ul>
+                                </li>
+                                <li>Now that we have everything configured, restart your VM before running PalServer.exe again to start the server.</li>
+                                <li>Back in the folder, navigate to "<code>/Pal/Saved/Config/WindowsServer</code>" and then open the "PalWorldSettings.ini" locted there, paste the content you previously copied into the currently blank file, and save it.</li>
+                                <li>On your physical computer that you use for playing Palworld, start the game and click "Join Multiplayer Game".
+                                    <img src="./img/blog_images/AzureVM/JoinMultiplayer.png" alt="Palworld start menu with Join Multiplayer option highlighted."></li>
+                                <li>On the next screen, you will need to go to the bottom where there is an "Enter Password" checbox and an input field followed by a "Connect" button. Check the box if you added a server password. Then enter in the Public IP address of your VM with ":8211" appended to the end of it.
+                                    <img src="./img/blog_images/AzureVM/ServerConnectionScreen.png" alt="Palworld multiplayer screen with options to connect to servers."></li>
+                                <li>If you checked the option to enter a password, you will be prompted to enter that password and then need to click "OK". Otherwise, you will just be taken to your server if everything ws set correctly.</li>
                             </ol>
-                            <!-- <img src="img/ExportOptions.webp" alt="Export As dialog window in GIMP with the previously listed options unchecked."> -->
                         </div>
                     </div>
                     <hr>
