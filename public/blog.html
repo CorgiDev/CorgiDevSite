@@ -286,26 +286,22 @@
                             <ol>
                                 <li>First type "exit" and press enter if you are still running as the Steam user from earlier.</li>
                                 <li>Now start creating a service to start Palworld when Ubuntu boots using the following command: <ul><li><code class="codeBlock">sudo nano /etc/systemd/system/palworld.service</code></li></ul></li>
-                                <li>You will find yourself in the now more familiar Nano editor. Paste in the following text in order to let Ubuntu know what to start and pass along some additional options the developer recommends:
+                                <li>You will find yourself in the now more familiar Nano editor. When you go to paste this in, it will have an extra line in between the lines of text. It is because I couldn't get it to display properly across browsers for some reason. So, for now, I had to kind of play around to get it to at least show that each line is a different line rather than shoving it all together. You'll need to remove those extra blank lines manually after pasting it until I can fix it. Paste in the following text in order to let Ubuntu know what to start and pass along some additional options the developer recommends:
                                     <ul>
-                                        <li>
-                                            <code class="codeBlock">
-[Unit]
-Description=Palworld Server
-Wants=network-online.target
-After=network-online.target
-
-[Service]
-User=steam
-Group=steam
-WorkingDirectory=/home/steam/
-ExecStartPre=/usr/games/steamcmd +force_install_dir '/home/steam/Steam/steamapps/common/PalServer' +login anonymous +app_update 2394010 +quit
-ExecStart=/home/steam/Steam/steamapps/common/PalServer/PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS > /dev/null
-Restart=always
-
-[Install]
+                                        <li class="codeBlock2">
+[Unit]<br>
+Description=Palworld Server<br>
+Wants=network-online.target<br>
+After=network-online.target<br>
+[Service]<br>
+User=steam<br>
+Group=steam<br>
+WorkingDirectory=/home/steam/<br>
+ExecStartPre=/usr/games/steamcmd +force_install_dir '/home/steam/Steam/steamapps/common/PalServer' +login anonymous +app_update 2394010 +quit<br>
+ExecStart=/home/steam/Steam/steamapps/common/PalServer/PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS > /dev/null<br>
+Restart=always<br>
+[Install]<br>
 WantedBy=multi-user.target
-                                            </code>
                                         </li>
                                     </ul>
                                 </li>
