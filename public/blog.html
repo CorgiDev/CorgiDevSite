@@ -15,8 +15,10 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/blog.css">
+        <link rel="stylesheet" href="css/code-copy.css">
         <link rel="stylesheet" href="css/responsive.css">
         <link rel="stylesheet" href="css/foundation-icons.css">
+        <link rel="stylesheet" href="css/prism.css">
     </head>
     <body>
         <header>
@@ -65,11 +67,17 @@
 
                     <div class="blogPost">
                         <h2 class="postTitle">Host a Palworld Server on Azure</h2>
-                        <h3 class="postDescrip"><time datetime="2024-05-31 14:30-04:00">May 31, 2024 - 02:30 pm</time></h3>
+                        <p class="postDescrip"><strong>Posted:</strong> <time datetime="2024-05-31 14:30-04:00">May 31, 2024 - 02:30 pm</time></p>
                         <!-- <ul id="blogTags"><li>Azure</li><li>Gaming</li><li>Palworld</li></ul> -->
                         <div class="postContent">
-                            <p>I recently started getting Azure credits and decided to have some fun seeing if I could host a Palworld server there. However, I ran into difficulties when I started to search for documentation to help me. Many skipped steps or were too vague. I ended up having to cobble together a couple of different pages and sift through Azure's documentation to find everything I needed. As a result, I decided to try to save other people some time by making my own documentation on how I created my server. I will include steps for creating a Palworld server based on Linux and Windows.</p>
-                            <h4>Creating the VM</h4>
+                            <p>I recently started getting Azure credits and decided to have some fun seeing if I could host a Palworld server there. However, I ran into difficulties when I started to search for documentation to help me. Many skipped steps or were too vague. I ended up having to cobble together a couple of different pages and sift through Azure's documentation to find everything I needed. As a result, I decided to try to save other people some time by making my own documentation on how I created my server. I will include steps for creating a Palworld server based on Ubuntu Linux and Windows.</p>
+                            <p>If you don't need help setting up a VM, and just want to set up a Palworld Server in Ubuntu Linux or Windows, you can jump to those sections. Note that the benefit of these install methods is they use SteamCMD, which is separate from a regular Steam client install. They also involve logging into SteamCMD anonymously, which means you can be logged into your Steam client playing Palworld while the server also runs, or have the server running on one machine while playing on another machine. Also, if you are installing Palworld Server on personal equipment, you will need to set up port forwarding to whichever port you hve Palworld set to use (default is 8211).</p>
+                            <ul>
+                                <li><a href="#linux-instructions">Jump to Linux instructions</a></li>
+                                <li><a href="#windows-instructions">Jump to Windows instructions</a></li>
+                            </ul>
+                            
+                            <h3>Creating the VM</h3>
                             <p>Initially creating the VM in Azure is pretty straight forward and similar regardless of whether your end result will be Linux or Windows. One very important note with any VM in Azure, you will only be charged for the time your VM is running. So, to save on cost, shut down your VM when no one is using it. You can also set it to auto-shutdown at a certain time each day if you want to make sure you don't leave it running indvertently. I will also provide some Powershell scripts that you can use to check the status of your Azure VM in a separte post later.</p>
                             <ol>
                                 <li>Login the your Azure account with the <a href="https://portal.azure.com/" rel="nonreferrer noopener" target="_blank">Azure portal</a>.</li>
@@ -130,15 +138,191 @@
                                         <li><strong>IMPORTANT: </strong> You will still need to add a firewll rule on the VM itself once you remote into it the first time, but we will go into that later.</li>
                                     </ul>
                                 </li>
-                                <li>The VM should now be set up and ready for you to begin setting up the Palworld server. This is where things completely split based on what VM type you are using. The VM automatically starts up after creation. So, make sure to shut down the VM if you are not continuing at this time to avoid extra charges.</li>
+                                <li>The VM automatically starts up after creation. So, make sure to shut down the VM if you are not continuing at this time to avoid extra charges.</li>
+                                <li>The VM should now be set up and ready for you to begin setting up the Palworld server. This is where things completely split based on what VM type you are using.
+                                    <ul>
+                                        <li><a href="#linux-instructions">Jump to Linux instructions</a></li>
+                                        <li><a href="#windows-instructions">Jump to Windows instructions</a></li>
+                                    </ul>
+                                </li>
                             </ol>
 
-                            <h4>Setting Up Palworld on a Linux VM</h4>
-                            <p>Setting</p>
+                            <h3 id="linux-instructions">Setting Up Palworld on a Linux VM</h3>
+                            <p>Setting up Palworld Server on a Linux server can be a little more confusing for some because it is a purely command line OS with no graphic interface. However, it isn't too bad. One thing to keep in mind is that this tutorial is based around Ubuntu Linux. If you are using a different variant of Linux, you may need to use different commands for some things. Granted most of the process will be the same.</p>
+                            <p>Additionally, while I do not know how well it works on the Azure instance of Linux server, it is possible to install a graphic interface addon to Ubuntu Server.</p>
+                            <p>You could elect to use regular Ubuntu, but I wouldn't do that in Cloud environment because it might incur much more cost than Ubuntu server.</p>
+                            
+                            <h4>Connect to Your Linux VM</h4>
+                            <p>I prefer using <a href="https://mremoteng.org/download" rel="noopener nonreferrer" target="_blank">mRemoteNG</a> to connect to my Linux VM. You can technically use command line, but I like being ble to save my connections.</p>
+                            <ol>
+                                <li>Downlod and install mRemoteNG if you are electing to use that method, and run it once it is installed.</li>
+                                <li>There should be a first connection added when you run it the first time. If not, right-click on "Connections" in the side nav panel and select "New Connection".
+                                    <img src="./img/blog_images/AzureVM/mRemoteNGNewConnection.png" alt="New Connection option in mRemoteNG">
+                                </li>
+                                <li>Click on your new connection and fill in the information similar to the following:
+                                    <ul>
+                                        <li><strong>Name:</strong> Name to help you identify your connection in mRemoteNG</li>
+                                        <li><strong>Hostname/IP:</strong> Public IP of your VM as listed on its dashbord in Azure</li>
+                                        <li><strong>Username:</strong> Admin username you set during VM creation</li>
+                                        <li><strong>Password:</strong> Admin password you set during VM creation</li>
+                                        <li><strong>Protocol:</strong> Select "SSH version 2" from the drop-down list</li>
+                                        <li><strong>Port:</strong> Make sure it says 22</li>
+                                    </ul>
+                                    <img src="./img/blog_images/AzureVM/mRemoteNGLinux.png" alt="New Connection option in mRemoteNG">
+                                </li>
+                                <li>Double-click on your new connection to connect. The first time you connect you will get a security prompt just letting you know that the fingerprint of the VM's host server is not stored yet. Click "Yes" to continue.
+                                    <img src="./img/blog_images/AzureVM/LinuxFirstConnectFingerprint.png" alt="Linux fingerprint security message prompt">
+                                </li>
+                                <li>You will know that you have successfully connected when the screen displays the start up information for Ubuntu Server with the end showing a command prompt that is formatted as your admin name, an @ symbol, and your server's name followed by "<code>:~$</code>". You're now ready to move on to the prep and setup steps.
+                                    <img src="./img/blog_images/AzureVM/mRemoteNGLinuxConnected.png" alt="New Connection option in mRemoteNG">
+                                </li>
+                            </ol>
+                            
+                            <h4>Preparing Ubuntu for Palworld Install</h4>
+                            <p>To prepare for installing Palworld Server, we need to do the following:</p>
+                            <ol>
+                                <li>Ensure the Ubuntu Server is up to date</li>
+                                <li>Update the package list</li>
+                                <li>Install the "software-properties-common" package to make performing repository changes easier</li>
+                                <li>Enable 32-bit architecture because SteamCMD is only 32-bit</li>
+                                <!-- <li>Instll the "multiverse" and "non-free" repositories.</li> -->
+                                <li>Rerun update</li>
+                                <li>Add the 8211 port to the incoming rules for the Linux firewall</li>
+                            </ol>
 
-                            <h4>Setting Up Palworld on a Windows VM</h4>
+                            <p>The following command will accomplish all of this. It is technically 7 commands. I just combined it all into one for easier copying and pasting. It will run like this because the 2 ampersands (&) between each command basically tell Linux to run one commnd and then run the next in line as long as the previous one succeeds. Additionlly, after copying the command, you can paste it in Linux by just right-clicking in the command line window.</p>
+                            <p><strong>Start of Command</strong></p>
+                            <code class="codeBlock">sudo apt update && sudo apt upgrade -y && sudo apt install software-properties-common && sudo dpkg --add-architecture i386 && sudo add-apt-repository multiverse && sudo apt update && sudo ufw allow 8211</code>
+                            <p><strong>End of Command</strong></p>
+
+                            <h4>Installing SteamCMD</h4>
+                            <p>SteamCMD allows you to run a lightweight version of Steam that does not have the GUI. It is also useful since you can run it with an anonymous login. This allows you to install the Palworld Server software without locking up your Steam account.</p>
+                            <p>To install SteamCMD:</p>
+                            <ol>
+                                <li>The following command will start the install of SteamCMD:
+                                    <ul><li><code class="codeBlock">sudo apt install steamcmd</code></li></ul>
+                                </li>
+                                <li>SteamCMD will install until it gets to a point where it asks you to confirm you wish to continue. Type the letter Y and press enter.
+                                    <img src="./img/blog_images/AzureVM/LinuxSteamContinue.png" alt="Request to continue in command line">
+                                </li>
+                                <li>A new prompt will display featuring the SteamCMD agreement. Use the arrow keys to scroll up and down through the agreement text. When you are ready, press the tab key to move to the "OK" option and press enter.
+                                    <img src="./img/blog_images/AzureVM/SteamCMDAgreement.png" alt="Terms of SteamCMD window">
+                                </li>
+                                <li>Next you will be asked to confirm whether or not you agree with the terms. You must agree if you want to continue the install. Use the arrow keys to select your choice. Then press tab to move to "OK". Finally, press enter to confirm your choice.
+                                    <img src="./img/blog_images/AzureVM/SteamCMDAgreement2.png" alt="Agree or Disagree to terms window">
+                                </li>
+                                <li>The install will continue on until it finishes.</li>
+                            </ol>
+                            
+                            
+                            <h4>Create a User to Run SteamCMD as in Linux</h4>
+                            <p>It is best to not run all of the SteamCMD processes as the sudo user. Hence why it is recommended to create a separate user just for running SteamCMD. This provides a separation between what programs have access to do, and who can use them.</p>
+                            <p>To create and modify the user for use with SteamCMD:</p>
+                            <ol>
+                                <li>Run the following command to initially create the user: <ul><li><code class="codeBlock">sudo useradd -m steam</code></li></ul></li>
+                                <li>Next we need to modify the account's "<code>.bashrc</code>" file to adjust the path environment variable. This ensures the user can find the file path for SteamCMD. Otherwise, the "/usr/games" pth is missing. Open the file for editing with the following command: <ul><li><code class="codeBlock">sudo nano /home/steam/.bashrc</code></li></ul></li>
+                                <li>With the file open, use the down arrow key to move all the way to the bottom of the file.
+                                    <img src="./img/blog_images/AzureVM/steamBashFile.png" alt="The bashrc file for the Steam user">
+                                </li>
+                                <li>Now we need to paste in the following line to the file to add the "/user/games/" path to the Steam user's "PATH:" environment variable. <ul><li><code class="codeBlock">export PATH="/usr/games/:$PATH"</code></li></ul>
+                                    <img src="./img/blog_images/AzureVM/BashLinePaste.png" alt="Bashrc file with pasted text at the end.">
+                                </li>
+                                <li>Press "CTRL+X" to exit the file. You will be asked if you want to "Save modified buffer". Simply type the letter Y and press enter to confirm.</li>
+                                <li>Anytime we perform any actions related to SteamCMD or Palworld, we will need to swap to the Steam user. You can always confirm what user you are running a command as by looking at the start of the command line when it is awaiting a command. It always starts with the current username. Use the following command to switch to the Steam user: <ul><li><code class="codeBlock">sudo -u steam -s</code></li></ul></li>
+                                <li>When we initially switch users, we will still be in the former user's home directory. You can tell this by looking at the part of the command line's ready state that is between the colon and dollar sign. If it is anything other than a tilde (~), then you are not in the Steam user's home directory. Use the following command to switch to the home directory of the Steam user: <ul><li><code class="codeBlock">cd ~</code></li></ul></li>
+                            </ol>
+
+                            <p>Now we are ready to install Palworld Server.</p>
+
+                            <h4>Install Palworld Server on Linux</h4>
+
+                                <li>Install the Steamworks SDK with the following command to get a 64-bit file Palworld needs to run: <ul><li><code class="codeBlock">steamcmd +force_install_dir '/home/steam/Steam/steamapps/common/steamworks' +login anonymous +app_update 1007 +quit</code></li></ul></li>
+                                <li>Now we need to create the directory where we will copy the "steamclient.so" file Palworld Server needs to operate. We can do so using the following command: <ul><li><code class="codeBlock">mkdir -p /home/steam/.steam/sdk64</code></li></ul></li>
+                                <li>With the directory created, we now need to copy in the "steamclient.so" file necessry to get this all running. We can do so using the following command: <ul><li><code class="codeBlock">cp '/home/steam/Steam/steamapps/common/steamworks/linux64/steamclient.so' /home/steam/.steam/sdk64/</code></li></ul></li>
+                                <li>Now we re ready to download and install the Palworld Server to our machine. This can be accomplished with the following command: <ul><li><code class="codeBlock">steamcmd +force_install_dir '/home/steam/Steam/steamapps/common/PalServer' +login anonymous +app_update 2394010 validate +quit</code></li></ul></li>
+                            </ol>
+
+                            <h4>Starting Up Your Palworld Server</h4>
+                            <p>We can now try starting up our Palworld Server for the first time. This will give us a chance to see if everything set up correctly, and is also needed to create some files we will need to edit before we can try connecting to it with a Palworld client.</p>
+
+                            <ol>
+                                <li>Switch to the directory where the start script is located using the following command: <ul><li><code class="codeBlock">cd /home/steam/Steam/steamapps/common/PalServer</code></li></ul></li>
+                                <li>Start the server using the following command: <ul><li><code class="codeBlock">./PalServer.sh</code></li></ul></li>
+                                <li>If the server starts, you should see some text similar to the following, but don't be put off by the fail messages. They are expected for now: <ul><li><code class="codeBlock">[S_API FAIL] Tried to access Steam interface SteamNetworkingUtils004 before SteamAPI_Init succeeded.</code></li></ul></li>
+                                <li>Start the server using the following command: <ul><li><code class="codeBlock">./PalServer.sh</code></li></ul></li>
+                                <li>Press <code>CTRL+C</code> to stop things for now so we can make some config changes.</li>
+                            </ol>
+
+                            <h4>Configuring Your Palworld Server</h4>
+                            <p>We need to make some config changes to our server that will help make it function better and allow us to customize some settings.</p>
+
+                            <ol>
+                                <li>We need to start by copying over the default settings file into the server's individual settings file to give us a starting point. Otherwise, the settings file for the server is empty at first by default. Do so using the following command: <ul><li><code class="codeBlock">cp /home/steam/Steam/steamapps/common/PalServer/DefaultPalWorldSettings.ini /home/steam/Steam/steamapps/common/PalServer/Pal/Saved/Config/LinuxServer/PalWorldSettings.ini</code></li></ul></li>
+                                <li>Similar to what we did with the bashrc file earlier, we are now going to edit the settings file with nano using the following command: <ul><li><code class="codeBlock">nano ~/Steam/steamapps/common/PalServer/Pal/Saved/Config/LinuxServer/PalWorldSettings.ini</code></li></ul></li>
+                                <li>For easier editing, press the Escape (Esc) key on your keyboard and then release it. Then press shift + 4. This will cause nano to do text wrapping so you can see more.</li>
+                                <li>Use the arrow keys to move around the text to the spots you need to edit. The main ones to edit first include: 
+                                    <ul>
+                                        <li><strong>ServerName:</strong> A name for your server. Not required, but this can be helpful if users connect to multiple servers.</li>
+                                        <li><strong>ServerDescription:</strong> Not required, but could be useful for the same reasons as the name.</li>
+                                        <li><strong>AdminPassword:</strong> Sets a password for admin functions on the server.</li>
+                                        <li><strong>ServerPassword:</strong> Sets a password for users who want to connect to your server. Not required unless you want one.</li>
+                                        <li><strong>PublicIP:</strong> Input the Public IP listed in the dashboard for the VM in Azure.</li>
+                                    </ul>
+                                </li>
+                                <li>You can now edit other settings too if you would like. I recommend changing the "<code>DeathPenalty</code>" setting. By default it is set to "<code>All</code>", which means you drop your items and Pals when you die and have to go pick them all back up. You can change it to one of the following:
+                                    <ul>
+                                        <li><code>DeathPenalty=0</code>: No death penalty</li>
+                                        <li><code>DeathPenalty=1</code>: drop items only</li>
+                                        <li><code>DeathPenalty=2</code>: drop items and gear</li>
+                                        <li><code>DeathPenalty=All</code>: drop pals, items, and gear</li>
+                                    </ul>
+                                </li>
+                                <li>Once you have made all the changes you want, press ctrl+x, y, and enter to save and exit.</li>
+                            </ol>
+
+                            <h4>Have Palworld Server Start at Boot</h4>
+                            <p>If you'd like your server to start at boot in Linux, you can do that.</p>
+
+                            <ol>
+                                <li>First type "exit" and press enter if you are still running as the Steam user from earlier.</li>
+                                <li>Now start creating a service to start Palworld when Ubuntu boots using the following command: <ul><li><code class="codeBlock">sudo nano /etc/systemd/system/palworld.service</code></li></ul></li>
+                                <li>You will find yourself in the now more familiar Nano editor. Paste in the following text in order to let Ubuntu know what to start and pass along some additional options the developer recommends:
+                                    <ul>
+                                        <li>
+                                            <code class="codeBlock">
+[Unit]
+Description=Palworld Server
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=steam
+Group=steam
+WorkingDirectory=/home/steam/
+ExecStartPre=/usr/games/steamcmd +force_install_dir '/home/steam/Steam/steamapps/common/PalServer' +login anonymous +app_update 2394010 +quit
+ExecStart=/home/steam/Steam/steamapps/common/PalServer/PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS > /dev/null
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+                                            </code>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Now press ctrl+x, y, and then enter to save and exit.</li>
+                                <li>Enable the server using the following command: 
+                                    <ul>
+                                        <li><code class="codeBlock">sudo systemctl enable palworld</code></li>
+                                        <li>You can later disable it by just swapping "enable" for "disable".</li>
+                                    </ul>
+                                </li>
+                                <li>I ran into issues with certain ports being used. So, I recommend restarting your Ubuntu machine at this point just to avoid issues.</li>
+                                <li>Now you can jump to the section about how to <a href="#Connecting2Palworld">connect to your server</a>.</li>
+                            </ol>
+
+                            <h3 id="windows-instructions">Setting Up Palworld on a Windows VM</h3>
                             <p>Much of this is written from being on a Windows machine. In particular, I am on a Windows 11 machine. However, this just impacts how you connect to the machine. Once you are connected and interacting with the VM itself, it is a completely separate machine.</p>
-                            <h5>Connect to the VM</h5>
+                            <h4>Connect to the VM</h4>
                             <ol>
                                 <li>Go to the Windows VM in the Resource Group and observe the "Public IP address" listed.
                                     <img src="./img/blog_images/AzureVM/WindowsVMConnectIP.png" alt="Windows VM Dashboard with the Public IP address highlighted.">
@@ -160,7 +344,8 @@
                                     <img src="./img/blog_images/AzureVM/VMConnectConfirm.png" alt="RDP connection security confirmation window.">
                                 </li>
                             </ol>
-                            <h5>Set Firewall Rule on VM</h5>
+                            
+                            <h4>Set Firewall Rule on VM</h4>
                             <p>This firewall rule is basically the same rule as the one we set in Azure. You have to also set the rule in the VM itself.</p>
                             <ol>
                                 <li>Once connected to the VM, open the start menu and type "firewall". Select the "Windows Defender Firewall with Advanced Security" result when it appears.
@@ -183,7 +368,7 @@
                                 </li>
                             </ol>
 
-                            <h5>Palworld Server Pre-Requisites</h5>
+                            <h4>Windows Palworld Server Pre-Requisites</h4>
                             <p>There are some things we have to install before we can begin installing the Palworld dedicated server needed to run a Palworld server. Once you get all of these installed, I recommend restarting the VM before continuing.</p>
                             <ul>
                                 <li><a href="https://developer.valvesoftware.com/wiki/SteamCMD#Windows" rel="nonreferrer noopener" target="_blank">SteamCMD for Windows</a>
@@ -208,7 +393,7 @@
                                 </li>
                             </ul>
                             
-                            <h5>Installing Palworld Server</h5>
+                            <h4>Installing Palworld Server on Windows Server</h4>
                             <ol>
                                 <li>Navigate to the SteamCMD directory. It will be wherever you extracted and ran SteamCMD from initially to install it, and then run the "SteamCMD.exe" file.
                                     <img src="./img/blog_images/AzureVM/steamCMDLocation.png" alt="Windows folder for SteamCMD with the exe file highlighted.">
@@ -242,8 +427,39 @@
                                         <li><strong>Public IP:</strong> Enter the public IP of your VM displyed on the VM's dashbord in Azure</li>
                                     </ul>
                                 </li>
+                                <li>Once you have made your changes, including altering any of the other settings listed, you just need to save and close the file.
+                                    <ul>
+                                        <li>I recommend changing the "<code>DeathPenalty</code>" setting. By default it is set to "<code>All</code>", which means you drop your items and Pals when you die and have to go pick them all back up. You can change it to one of the following:
+                                            <ul>
+                                                <li><code>DeathPenalty=0</code>: No death penalty</li>
+                                                <li><code>DeathPenalty=1</code>: drop items only</li>
+                                                <li><code>DeathPenalty=2</code>: drop items and gear</li>
+                                                <li><code>DeathPenalty=All</code>: drop pals, items, and gear</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li>Now that we have everything configured, restart your VM before running PalServer.exe again to start the server.</li>
-                                <li>Back in the folder, navigate to "<code>/Pal/Saved/Config/WindowsServer</code>" and then open the "PalWorldSettings.ini" locted there, paste the content you previously copied into the currently blank file, and save it.</li>
+                                <li>I'll update this later with steps on how to get Palserver.exe to start when the machine starts, but for now you would need to manually start it. The following might work, but I haven't tried it myself yet because my server is running in Ubuntu.
+                                    <ol>
+                                        <li>If you want to set up the Palworld Server to autostart when the VM is started:
+                                            <ol>
+                                                <li>create a text file with just the file path to your "PalServer.exe" file. It needs to be the full path with "C:\" at the start. If you want a quick way to get the full file path, hold shift and right click the "PalServer.exe" file. Then select "Copy as path". Just make sure to remove the quote marks from around the file path after pasting it.</li>
+                                                <li>Move the bat file to your C drive.</li>
+                                                <li>Create a task in task scheduler that runs the bat file once the computer starts.</li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>You can now move on to <a href="#Connecting2Palworld">connecting to the server</a>.</li>
+                            </ol>
+
+                            <h3 id="Connecting2Palworld">Connecting to Your Palworld Server</h3>
+                            <p>With Pal Server running on your VM, you can now try connecting to it with a Palworld client. Remember that if you are running your server on your home network, you will need to setup port forwarding on your router for anyone outside your network to be able to connect. Additionally, you will need to get the public IP for the machine running the server.</p>
+                            
+                            <ol>
+                                <li>First verify that your server is running in Azure if that is where you installed and are running Pal Server.</li>
+                                <li>Manually start the Pal Server if you don't have it setup to auto start when the computer boots.</li>
                                 <li>On your physical computer that you use for playing Palworld, start the game and click "Join Multiplayer Game".
                                     <img src="./img/blog_images/AzureVM/JoinMultiplayer.png" alt="Palworld start menu with Join Multiplayer option highlighted."></li>
                                 <li>On the next screen, you will need to go to the bottom where there is an "Enter Password" checbox and an input field followed by a "Connect" button. Check the box if you added a server password. Then enter in the Public IP address of your VM with ":8211" appended to the end of it.
@@ -256,7 +472,7 @@
 
                     <div class="blogPost">
                         <h2 class="postTitle">Links to DM people in Slack & Teams</h2>
-                        <h3 class="postDescrip"><time datetime="2024-03-21 13:10-04:00">March 29, 2024 - 04:00 am</time></h3>
+                        <p class="postDescrip"><strong>Posted:</strong> <time datetime="2024-03-21 13:10-04:00">March 29, 2024 - 04:00 am</time></p>
                         <div class="postContent">
                             <p>One of my favorite things to do is add links in my email signature for people to DM me in Slack & Teams. I only use it for internal communications, but it tends to surprise people and is just an overall useful little trick.</p>
                             <p>I've also found these links useful in documentation. Maybe you have a list of contacts who someone needs to contact in a particular circumstance. You could include Teams links to ensure people message the right people and not someone with a similar name.</p>
@@ -301,7 +517,7 @@
 
                     <div class="blogPost">
                         <h2 class="postTitle" id="compTyping">Computer typing in reverse?</h2>
-                        <h3 class="postDescrip"><time datetime="2023-05-09 18:09-04:00">May 09, 2023 - 06:09 pm</time> EST</h3>
+                        <p class="postDescrip"><strong>Posted:</strong> <time datetime="2023-05-09 18:09-04:00">May 09, 2023 - 06:09 pm</time> EST</p>
                         <div class="postContent">
                             <p>I had a weird issue recently where my typing direction kept getting reversed. Basically, I would start typing and instead of the text going towards the right side of the screen, it would go towards the left. As a result, my sentences would be reversed from what I expected them to be. I could not figure out what key combination I was hitting to cause this until I did some research.</p>
                             <p>After doing some searching, I learned that this is a feature within Windows meant for languages where you may need to type in the opposite direction due to the way the text is printed and read. There can be some other causes, but generally the most likely causes are that you inadvertently changed the region on your keyboard, or you pressed the control (ctrl) key together with the left or right shift key. If you find your typing going in the wrong direction, first try pressing ctrl together with right shift for right to left typing, or with left shift for left to right typing.</p>
@@ -340,7 +556,7 @@
 
                     <div class="blogPost">
                         <h2 class="postTitle">Alternate Conformant Versions?</h2>
-                        <h3 class="postDescrip"><time datetime="2021-10-14 12:30-04:00">October 14, 2021 - 12:30 pm</time> EST</h3>
+                        <p class="postDescrip"><strong>Posted:</strong> <time datetime="2021-10-14 12:30-04:00">October 14, 2021 - 12:30 pm</time> EST</p>
                         <p class="postContent">
                             Alternate conformant versions is an important part of any Accessibility audit. When checking for this, an auditor is checking if inaccessible materials have an accessible alternate version identified. If an accessible alternative is available, an auditor can choose to skip any further accessibility checks on the non-conformant content and instead assess the accessibility of the conformant version.
                         </p>
@@ -352,7 +568,7 @@
     
                     <div class="blogPost">
                         <h2 class="postTitle">Uploading Images with Transparent Backgrounds to RedBubble</h2>
-                        <h3 class="postDescrip"><time datetime="2021-12-14 13:10-04:00">December 14, 2021 - 01:10 pm</time> EST</h3>
+                        <p class="postDescrip"><strong>Posted:</strong> <time datetime="2021-12-14 13:10-04:00">December 14, 2021 - 01:10 pm</time> EST</p>
                         <p class="postContent">
                             Have you uploaded an image to RedBubble that was supposed to have a transparent background, and it instead was given a solid background? I have run into this issue on more than one occassion and always had to waste time finding a solution. So I decided to describe a solution here for my benefit, and others who may benefit.
                         </p>
@@ -394,5 +610,7 @@
             </footer>
         </div>
         <script src="https://kit.fontawesome.com/57e0b881dd.js" crossorigin="anonymous"></script>
+        <script src="js/code-copy.js" crossorigin="anonymous"></script>
+        <script src="js/prism.js" crossorigin="anonymous"></script>
     </body>
 </html>
