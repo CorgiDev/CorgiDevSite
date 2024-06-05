@@ -193,7 +193,7 @@
 
                             <p>The following command will accomplish all of this. It is technically 7 commands. I just combined it all into one for easier copying and pasting. It will run like this because the 2 ampersands (&) between each command basically tell Linux to run one commnd and then run the next in line as long as the previous one succeeds. Additionlly, after copying the command, you can paste it in Linux by just right-clicking in the command line window.</p>
                             <p><strong>Start of Command</strong></p>
-                            <code class="codeBlock">sudo apt update && sudo apt upgrade -y && sudo apt install software-properties-common && sudo dpkg --add-architecture i386 && sudo add-apt-repository multiverse && sudo apt update && sudo ufw allow 8211</code>
+                            <code class="codeBlock2">sudo apt update && sudo apt upgrade -y && sudo apt install software-properties-common && sudo dpkg --add-architecture i386 && sudo add-apt-repository multiverse && sudo apt update && sudo ufw allow 8211</code>
                             <p><strong>End of Command</strong></p>
 
                             <h4>Installing SteamCMD</h4>
@@ -201,7 +201,7 @@
                             <p>To install SteamCMD:</p>
                             <ol>
                                 <li>The following command will start the install of SteamCMD:
-                                    <ul><li><code class="codeBlock">sudo apt install steamcmd</code></li></ul>
+                                    <ul><li><code class="codeBlock2">sudo apt install steamcmd</code></li></ul>
                                 </li>
                                 <li>SteamCMD will install until it gets to a point where it asks you to confirm you wish to continue. Type the letter Y and press enter.
                                     <img src="./img/blog_images/AzureVM/LinuxSteamContinue.png" alt="Request to continue in command line">
@@ -220,36 +220,36 @@
                             <p>It is best to not run all of the SteamCMD processes as the sudo user. Hence why it is recommended to create a separate user just for running SteamCMD. This provides a separation between what programs have access to do, and who can use them.</p>
                             <p>To create and modify the user for use with SteamCMD:</p>
                             <ol>
-                                <li>Run the following command to initially create the user: <ul><li><code class="codeBlock">sudo useradd -m steam</code></li></ul></li>
-                                <li>Next we need to modify the account's "<code>.bashrc</code>" file to adjust the path environment variable. This ensures the user can find the file path for SteamCMD. Otherwise, the "/usr/games" pth is missing. Open the file for editing with the following command: <ul><li><code class="codeBlock">sudo nano /home/steam/.bashrc</code></li></ul></li>
+                                <li>Run the following command to initially create the user: <ul><li><code class="codeBlock2">sudo useradd -m steam</code></li></ul></li>
+                                <li>Next we need to modify the account's "<code>.bashrc</code>" file to adjust the path environment variable. This ensures the user can find the file path for SteamCMD. Otherwise, the "/usr/games" pth is missing. Open the file for editing with the following command: <ul><li><code class="codeBlock2">sudo nano /home/steam/.bashrc</code></li></ul></li>
                                 <li>With the file open, use the down arrow key to move all the way to the bottom of the file.
                                     <img src="./img/blog_images/AzureVM/steamBashFile.png" alt="The bashrc file for the Steam user">
                                 </li>
-                                <li>Now we need to paste in the following line to the file to add the "/user/games/" path to the Steam user's "PATH:" environment variable. <ul><li><code class="codeBlock">export PATH="/usr/games/:$PATH"</code></li></ul>
+                                <li>Now we need to paste in the following line to the file to add the "/user/games/" path to the Steam user's "PATH:" environment variable. <ul><li><code class="codeBlock2">export PATH="/usr/games/:$PATH"</code></li></ul>
                                     <img src="./img/blog_images/AzureVM/BashLinePaste.png" alt="Bashrc file with pasted text at the end.">
                                 </li>
                                 <li>Press "CTRL+X" to exit the file. You will be asked if you want to "Save modified buffer". Simply type the letter Y and press enter to confirm.</li>
-                                <li>Anytime we perform any actions related to SteamCMD or Palworld, we will need to swap to the Steam user. You can always confirm what user you are running a command as by looking at the start of the command line when it is awaiting a command. It always starts with the current username. Use the following command to switch to the Steam user: <ul><li><code class="codeBlock">sudo -u steam -s</code></li></ul></li>
-                                <li>When we initially switch users, we will still be in the former user's home directory. You can tell this by looking at the part of the command line's ready state that is between the colon and dollar sign. If it is anything other than a tilde (~), then you are not in the Steam user's home directory. Use the following command to switch to the home directory of the Steam user: <ul><li><code class="codeBlock">cd ~</code></li></ul></li>
+                                <li>Anytime we perform any actions related to SteamCMD or Palworld, we will need to swap to the Steam user. You can always confirm what user you are running a command as by looking at the start of the command line when it is awaiting a command. It always starts with the current username. Use the following command to switch to the Steam user: <ul><li><code class="codeBlock2">sudo -u steam -s</code></li></ul></li>
+                                <li>When we initially switch users, we will still be in the former user's home directory. You can tell this by looking at the part of the command line's ready state that is between the colon and dollar sign. If it is anything other than a tilde (~), then you are not in the Steam user's home directory. Use the following command to switch to the home directory of the Steam user: <ul><li><code class="codeBlock2">cd ~</code></li></ul></li>
                             </ol>
 
                             <p>Now we are ready to install Palworld Server.</p>
 
                             <h4>Install Palworld Server on Linux</h4>
 
-                                <li>Install the Steamworks SDK with the following command to get a 64-bit file Palworld needs to run: <ul><li><code class="codeBlock">steamcmd +force_install_dir '/home/steam/Steam/steamapps/common/steamworks' +login anonymous +app_update 1007 +quit</code></li></ul></li>
-                                <li>Now we need to create the directory where we will copy the "steamclient.so" file Palworld Server needs to operate. We can do so using the following command: <ul><li><code class="codeBlock">mkdir -p /home/steam/.steam/sdk64</code></li></ul></li>
-                                <li>With the directory created, we now need to copy in the "steamclient.so" file necessry to get this all running. We can do so using the following command: <ul><li><code class="codeBlock">cp '/home/steam/Steam/steamapps/common/steamworks/linux64/steamclient.so' /home/steam/.steam/sdk64/</code></li></ul></li>
-                                <li>Now we re ready to download and install the Palworld Server to our machine. This can be accomplished with the following command: <ul><li><code class="codeBlock">steamcmd +force_install_dir '/home/steam/Steam/steamapps/common/PalServer' +login anonymous +app_update 2394010 validate +quit</code></li></ul></li>
+                                <li>Install the Steamworks SDK with the following command to get a 64-bit file Palworld needs to run: <ul><li><code class="codeBlock2">steamcmd +force_install_dir '/home/steam/Steam/steamapps/common/steamworks' +login anonymous +app_update 1007 +quit</code></li></ul></li>
+                                <li>Now we need to create the directory where we will copy the "steamclient.so" file Palworld Server needs to operate. We can do so using the following command: <ul><li><code class="codeBlock2">mkdir -p /home/steam/.steam/sdk64</code></li></ul></li>
+                                <li>With the directory created, we now need to copy in the "steamclient.so" file necessry to get this all running. We can do so using the following command: <ul><li><code class="codeBlock2">cp '/home/steam/Steam/steamapps/common/steamworks/linux64/steamclient.so' /home/steam/.steam/sdk64/</code></li></ul></li>
+                                <li>Now we re ready to download and install the Palworld Server to our machine. This can be accomplished with the following command: <ul><li><code class="codeBlock2">steamcmd +force_install_dir '/home/steam/Steam/steamapps/common/PalServer' +login anonymous +app_update 2394010 validate +quit</code></li></ul></li>
                             </ol>
 
                             <h4>Starting Up Your Palworld Server</h4>
                             <p>We can now try starting up our Palworld Server for the first time. This will give us a chance to see if everything set up correctly, and is also needed to create some files we will need to edit before we can try connecting to it with a Palworld client.</p>
 
                             <ol>
-                                <li>Switch to the directory where the start script is located using the following command: <ul><li><code class="codeBlock">cd /home/steam/Steam/steamapps/common/PalServer</code></li></ul></li>
-                                <li>Start the server using the following command: <ul><li><code class="codeBlock">./PalServer.sh</code></li></ul></li>
-                                <li>If the server starts, you should see some text similar to the following, but don't be put off by the fail messages. They are expected for now: <ul><li><code class="codeBlock">[S_API FAIL] Tried to access Steam interface SteamNetworkingUtils004 before SteamAPI_Init succeeded.</code></li></ul></li>
+                                <li>Switch to the directory where the start script is located using the following command: <ul><li><code class="codeBlock2">cd /home/steam/Steam/steamapps/common/PalServer</code></li></ul></li>
+                                <li>Start the server using the following command: <ul><li><code class="codeBlock2">./PalServer.sh</code></li></ul></li>
+                                <li>If the server starts, you should see some text similar to the following, but don't be put off by the fail messages. They are expected for now: <ul><li><code class="codeBlock2">[S_API FAIL] Tried to access Steam interface SteamNetworkingUtils004 before SteamAPI_Init succeeded.</code></li></ul></li>
                                 <li>Press <code>CTRL+C</code> to stop things for now so we can make some config changes.</li>
                             </ol>
 
@@ -257,8 +257,8 @@
                             <p>We need to make some config changes to our server that will help make it function better and allow us to customize some settings.</p>
 
                             <ol>
-                                <li>We need to start by copying over the default settings file into the server's individual settings file to give us a starting point. Otherwise, the settings file for the server is empty at first by default. Do so using the following command: <ul><li><code class="codeBlock">cp /home/steam/Steam/steamapps/common/PalServer/DefaultPalWorldSettings.ini /home/steam/Steam/steamapps/common/PalServer/Pal/Saved/Config/LinuxServer/PalWorldSettings.ini</code></li></ul></li>
-                                <li>Similar to what we did with the bashrc file earlier, we are now going to edit the settings file with nano using the following command: <ul><li><code class="codeBlock">nano ~/Steam/steamapps/common/PalServer/Pal/Saved/Config/LinuxServer/PalWorldSettings.ini</code></li></ul></li>
+                                <li>We need to start by copying over the default settings file into the server's individual settings file to give us a starting point. Otherwise, the settings file for the server is empty at first by default. Do so using the following command: <ul><li><code class="codeBlock2">cp /home/steam/Steam/steamapps/common/PalServer/DefaultPalWorldSettings.ini /home/steam/Steam/steamapps/common/PalServer/Pal/Saved/Config/LinuxServer/PalWorldSettings.ini</code></li></ul></li>
+                                <li>Similar to what we did with the bashrc file earlier, we are now going to edit the settings file with nano using the following command: <ul><li><code class="codeBlock2">nano ~/Steam/steamapps/common/PalServer/Pal/Saved/Config/LinuxServer/PalWorldSettings.ini</code></li></ul></li>
                                 <li>For easier editing, press the Escape (Esc) key on your keyboard and then release it. Then press shift + 4. This will cause nano to do text wrapping so you can see more.</li>
                                 <li>Use the arrow keys to move around the text to the spots you need to edit. The main ones to edit first include: 
                                     <ul>
@@ -285,26 +285,28 @@
 
                             <ol>
                                 <li>First type "exit" and press enter if you are still running as the Steam user from earlier.</li>
-                                <li>Now start creating a service to start Palworld when Ubuntu boots using the following command: <ul><li><code class="codeBlock">sudo nano /etc/systemd/system/palworld.service</code></li></ul></li>
+                                <li>Now start creating a service to start Palworld when Ubuntu boots using the following command: <ul><li><code class="codeBlock2">sudo nano /etc/systemd/system/palworld.service</code></li></ul></li>
                                 <li>You will find yourself in the now more familiar Nano editor, which we need to paste some text into.
                                     <ul>
                                         <li>When you go to paste this in, it will have an extra line in between the lines of text. It is because I couldn't get it to display properly across browsers for some reason. So, for now, I had to kind of play around to get it to at least show that each line is a different line rather than shoving it all together. You'll need to remove those extra blank lines manually after pasting it until I can fix it. I have included a screenshot of what it should look like for reference.</li>
                                         <li>Paste in the following text in order to let Ubuntu know what to start and pass along some additional options the developer recommends:
                                             <ul>
                                                 <li class="codeBlock2">
-        [Unit]<br>
-        Description=Palworld Server<br>
-        Wants=network-online.target<br>
-        After=network-online.target<br>
-        [Service]<br>
-        User=steam<br>
-        Group=steam<br>
-        WorkingDirectory=/home/steam/<br>
-        ExecStartPre=/usr/games/steamcmd +force_install_dir '/home/steam/Steam/steamapps/common/PalServer' +login anonymous +app_update 2394010 +quit<br>
-        ExecStart=/home/steam/Steam/steamapps/common/PalServer/PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS > /dev/null<br>
-        Restart=always<br>
-        [Install]<br>
-        WantedBy=multi-user.target
+[Unit]
+Description=Palworld Server
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=steam
+Group=steam
+WorkingDirectory=/home/steam/
+ExecStartPre=/usr/games/steamcmd +force_install_dir '/home/steam/Steam/steamapps/common/PalServer' +login anonymous +app_update 2394010 +quit
+ExecStart=/home/steam/Steam/steamapps/common/PalServer/PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS > /dev/null
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
                                                 </li>
                                             </ul>
                                         </li>
@@ -316,7 +318,7 @@
                                 <li>Now press ctrl+x, y, and then enter to save and exit.</li>
                                 <li>Enable the server using the following command: 
                                     <ul>
-                                        <li><code class="codeBlock">sudo systemctl enable palworld</code></li>
+                                        <li><code class="codeBlock2">sudo systemctl enable palworld</code></li>
                                         <li>You can later disable it by just swapping "enable" for "disable".</li>
                                     </ul>
                                 </li>
