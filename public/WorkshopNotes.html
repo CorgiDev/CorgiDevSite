@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>TechBash 2024 Workshop Tips - Erissa Duvall</title>
+        <title>Workshop Notes - Erissa Duvall</title>
         <meta name="description" content="Workshop Notes page for the CorgiDev website.">
         <meta name="keywords" content="error">
         <meta name="author" content="Erissa Duvall aka CorgiDev">
@@ -39,24 +39,55 @@
         <nav class="breadcrumbs" aria-label="Navigation Breadcrumbs">
             <ul>
                 <li><a href="index.html"><i class="fa-solid fa-house fa-lg" id="navHouse"></i><span class="sr-only">Home</span></a></li>
-                <li><i class="fa-solid fa-chevron-right fa-lg"></i> Techbash Workshop</li>
+                <li><i class="fa-solid fa-chevron-right fa-lg"></i>Workshop Notes</li>
             </ul>
         </nav>
         <div id="wrapper">
             <main>
                 <h1>TechBash Workshop Tips</h1>
-                <p>The following notes are meant to help with the different ways you can participate in the 2024 TechBash workshop, <strong>Accessibility Testing with Screen Readers and More</strong>. Many of the links on this page will open in new tabs/windows because they go to sites external to this one.</p>
+                <p>The following resources and tips are meant to help with the 2024 TechBash workshop, <strong>Accessibility Testing with Screen Readers and More</strong>. Many of the links on this page will open in new tabs/windows because they go to sites external to this one.</p>
 
-                <h2>Installing Screen Readers</h2>
-                <p>Most of what I will show you, with regards to a screen reader, will apply to any screen reader. However, the keyboard shortcuts and some of the functionality will vary between them.  If you use Windows or MacOS, there is a screen reader built into your operating system that does not require any additional installs. This is typically the best option if you are using a locked down computer that you cannot freely install applications on. Navigate to the <a href="#turnOnScreenReader">Turning on you screen reader</a> section for details on how to turn on one of those screen readers.</p>
-                <p>Alternatively, if you would like to follow along using the same screen reader I will be primarily using, and are using a Windows based computer, <a href="https://www.nvaccess.org/download/NVDA" target="_blank" rel="noreferrer noopener">NVDA</a> can be installed to a flash drive as a portable version. The portable version does not install anything to the machine itself and thus can sometimes be used unless your machine also blocks the use of flash drives.</p>
+                <h2>Bookmarklets</h2>
+
+                <h2>Desktop Applications</h2>
+
+                <h2>Screen Readers</h2>
+                <p>I will be using the NVDA screen reader for my demonstration, but most of what I show will have an equivalent on other screen readers. Some keyboard shortcuts, customization options, or how things are viewed may just differ.</p>
+                <p>Some key things to note:</p>
+
+                <ul>
+                    <li>NVDA, Narrator, and JAWS are all Windows only screen readers. Voiceover is a MacOS/iOS only screen reader. TalkBack is an Android specific screen reader.</li>
+                    <li>We will not delve into mobile testing demonstrations, but I will include some resource links in the <a href="#additionalResources">Additional Resources</a> section of this page.</li>
+                    <li>NVDA can be installed as a portable version on a flashdrive or just a folder on your computer. This can often allow you to install it on a machine that doesn't allow you to install applications normally, but you don't get all the same auto-start options necessarily.</li>
+                </ul>
+
+                <h3>Installing Screen Readers</h3>
+                <h4>Narrator & Voiceover</h4>
+                <p>If you use Narrator (Windows) and Voiceover (MacOS/iOS), they are built into their respective operating systems. No additional isntalls are required aside from possible voice/language packs that may be available.</p>
+                
+                <p>If you want to install NVDA (Windows):</p>
+                <ol>
+                    <li>Download the <a href="https://www.nvaccess.org/download/NVDA" target="_blank" rel="noreferrer noopener">NVDA installer <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> from the NV Access website.</li>
+                    <li>Run the installer and follow the prompts to install NVDA. Select the portable install option when it is presented if that is how you wish to install it.
+                        <ul>
+                            <li>Note that there is also an option at the start to perform a portable install if you want to install it on a flashdrive.</li>
+                            <li>The portable version can also be used to install NVDA on some computers where installation would otherwise be blocked because it doesn't add entries to the system registry..</li>
+                            <li>The portable version will not allow for some of the automatic startup options because it doesn't add system registry entries.</li>
+                        </ul>
+                    </li>
+                    <li>Once installed, you can run NVDA via the NVDA shortcut (on the desktop or in the start menu), or by activating the main executable (exe) file.</li>
+                </ol>
+                <p>During installation there are options to enable/disable whether NVDA starts on the login screen or after you login. It is suggested that you disable the start on login screen if you share a machine. If you need to disable these settings after installation, see the <a href="#disableRunOnLogin">Disabling the Run on Login Screen and/or Login option</a> section.</p>
+                
+                <h3>Manually Turning on a Screen Reader</h3>
+                <h3>Enable/Disable Screen Reader to Automatically Start Before/After Login</h3>
+                <h3>Turning on Speech Viewer</h3>
 
                 <h3>Installing NVDA</h3>
                 <p>NVDA only runs in a Windows operating system. If you are using MacOS, please the the <a href="#turnOnVoiceOver">Turning on VoiceOver</a> section. Otherwise the installation of NVDA is pretty straight forward.</p>
-                <p>During installation there are options to enable/disable whether NVDA starts on the login screen or after you login. It is suggested that you disable the start on login screen if you share a machine. If you need to disable these settings after installation, see the <a href="#disableRunOnLogin">Disabling the Run on Login Screen and/or Login option</a> section.</p>
 
                 <ol>
-                    <li>Download the <a href="https://www.nvaccess.org/download/NVDA" target="_blank" rel="noreferrer noopener">NVDA installer</a> from the NV Access website.</li>
+                    <li>Download the <a href="https://www.nvaccess.org/download/NVDA" target="_blank" rel="noreferrer noopener">NVDA installer <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> from the NV Access website.</li>
                     <li>Run the installer and follow the prompts to install NVDA.</li>
                     <li>Once installed, you can run NVDA by pressing the Windows key, typing "NVDA", and pressing enter.</li>
                 </ol>
