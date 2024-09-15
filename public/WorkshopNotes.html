@@ -39,7 +39,7 @@
         <nav class="breadcrumbs" aria-label="Navigation Breadcrumbs">
             <ul>
                 <li><a href="index.html"><i class="fa-solid fa-house fa-lg" id="navHouse"></i><span class="sr-only">Home</span></a></li>
-                <li><i class="fa-solid fa-chevron-right fa-lg"></i>Workshop Notes</li>
+                <li><i class="fa-solid fa-chevron-right fa-lg"></i> Workshop Notes</li>
             </ul>
         </nav>
         <div id="wrapper">
@@ -48,7 +48,6 @@
                 <p>The following resources and tips are meant to help with the 2024 TechBash workshop, <strong>Accessibility Testing with Screen Readers and More</strong>. Many of the links on this page will open in new tabs/windows because they go to sites external to this one.</p>
 
                 <h2>Bookmarklets</h2>
-
                 <h2>Desktop Applications</h2>
 
                 <h2>Screen Readers</h2>
@@ -56,22 +55,50 @@
                 <p>Some key things to note:</p>
 
                 <ul>
-                    <li>NVDA, Narrator, and JAWS are all Windows only screen readers. Voiceover is a MacOS/iOS only screen reader. TalkBack is an Android specific screen reader.</li>
-                    <li>We will not delve into mobile testing demonstrations, but I will include some resource links in the <a href="#additionalResources">Additional Resources</a> section of this page.</li>
-                    <li>NVDA can be installed as a portable version on a flashdrive or just a folder on your computer. This can often allow you to install it on a machine that doesn't allow you to install applications normally, but you don't get all the same auto-start options necessarily.</li>
+                    <li><strong>Compatibility</strong>:
+                        <ul>
+                            <li>NVDA, Narrator, and JAWS are all Windows only screen readers.</li>
+                            <li>Voiceover is a MacOS/iOS only screen reader.</li>
+                            <li>TalkBack is an Android specific screen reader.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mobile Testing</strong>:
+                        <ul>
+                            <li>We will not delve into mobile testing demonstrations.</li>
+                            <li>I will include some resource links in the <a href="#additionalResources">Additional Resources</a> section of this page.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Costs</strong>:
+                        <ul>
+                            <li>NVDA is a free, open source screen reader.</li>
+                            <li>Narrator, Voiceover, and Talkback are free and built into their respective operating systems.</li>
+                            <li>JAWS is a premium screen reader that costs a decent amount.</li>
+                        </ul>
+                    </li>
+                    <li><span id="modifierKey"><strong>Modifier keys</strong></span>:
+                        <ul>
+                            <li>All screen readers will have modifier keys.</li>
+                            <li>Modifier keys are used in combination with other keys to perform particular navigation actions.</li>
+                            <li>Modifier keys can typically be customized using the screen reader settings.</li>
+                            <li>Voiceover's default modifier keys are Caps Lock or Ctrl+Option.</li>
+                            <li>Most Windows screen readers use Insert or Caps Lock.</li>
+                        </ul>
+                    </li>
                 </ul>
 
                 <h3>Installing Screen Readers</h3>
-                <h4>Narrator & Voiceover</h4>
-                <p>If you use Narrator (Windows) and Voiceover (MacOS/iOS), they are built into their respective operating systems. No additional isntalls are required aside from possible voice/language packs that may be available.</p>
+                <h4>Narrator & Voiceover Installtion</h4>
+                <p>If you use Narrator (Windows) or Voiceover (MacOS/iOS), installation is not necessary because they are built into their respective operating systems. No additional isntalls are required aside from possible voice/language packs that may be available. Navigate to the <a href="#manualStart">Manually Turning on a Screen Reader</a> section to learn how to start either of these.</p>
                 
-                <p>If you want to install NVDA (Windows):</p>
+                <h4>NVDA Installtion</h4>
+                <p>In addition to a regular installation,NVDA can be installed as a portable version on a flashdrive or just a folder on your computer. This can often allow you to install it on a machine that doesn't allow you to install applications normally, but you don't get all the same auto-start options necessarily.</p>
+                <p>If you want to install NVDA:</p>
                 <ol>
                     <li>Download the <a href="https://www.nvaccess.org/download/NVDA" target="_blank" rel="noreferrer noopener">NVDA installer <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> from the NV Access website.</li>
                     <li>Run the installer and follow the prompts to install NVDA. Select the portable install option when it is presented if that is how you wish to install it.
                         <ul>
                             <li>Note that there is also an option at the start to perform a portable install if you want to install it on a flashdrive.</li>
-                            <li>The portable version can also be used to install NVDA on some computers where installation would otherwise be blocked because it doesn't add entries to the system registry..</li>
+                            <li>The portable version can also be used to install NVDA on some computers where installation would otherwise be blocked because it doesn't add entries to the system registry.</li>
                             <li>The portable version will not allow for some of the automatic startup options because it doesn't add system registry entries.</li>
                         </ul>
                     </li>
@@ -79,53 +106,74 @@
                 </ol>
                 <p>During installation there are options to enable/disable whether NVDA starts on the login screen or after you login. It is suggested that you disable the start on login screen if you share a machine. If you need to disable these settings after installation, see the <a href="#disableRunOnLogin">Disabling the Run on Login Screen and/or Login option</a> section.</p>
                 
-                <h3>Manually Turning on a Screen Reader</h3>
+                <h4>JAWS Installation</h4>
+                <p>You can download the JAWS installer on the <a href="https://support.freedomscientific.com/Downloads/JAWS" rel="noopener noreferrer"  target="_blank">Freedom Scientific site <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a>. The cost can be a bit prohibitive for some. However, you may be able to get it for free, or at a discount, through your employer or school.</p>
+                <p>JAWS can be used without being activated in a 45 minute mode. However, it will only work for the first 45 minutes after the machine was powered on, not from when the program was started. If it has been more than 45 minutes since you powered on your computer, it will not run. In those instances, you will need to reboot the machine before you can run JAWS again.</p>
+
+                <h3 id="manualStart">Manually Turning on a Screen Reader</h3>
+                <p>Most screen readers will have an application shortcut you can access from the applications list (i.e. Applications on MacOS or Start Menu on Windows), and they will have a keyboard shortcut.</p>
+                <ul>
+                    <li><strong>Narrator</strong> can be turned on To by pressing the Windows logo key + Ctrl + Enter. To stop the narrator, press these keys once more.</li>
+                    <li><strong>Voiceover</strong> can be turned on via one of the following:
+                        <ul>
+                            <li>Press Command-F5.</li>
+                            <li>Use Touch ID. If your Mac or Magic Keyboard has Touch ID, press and hold the Command key while you quickly press Touch ID three times.</li>
+                            <li>Use Siri. Say something like: “Turn VoiceOver on” or “Turn VoiceOver off.”</li>
+                            <li>Choose Apple menu > System Settings, then click Accessibility in the sidebar (you may need to scroll down). Click VoiceOver on the right, then turn VoiceOver on or off.</li>
+                            <li>You can also use the Accessibility Options shortcut panel. Show this panel by pressing Option-Command-F5, or if your Mac or Magic Keyboard has Touch ID, quickly press Touch ID three times. In the shortcut panel, press the Tab key until you hear the VoiceOver option, then press the Space bar.</li>
+                        </ul>
+                    </li>
+                    <li><strong>NVDA</strong> can be launched with the Ctrl + Alt + n. You can then quit NVDA using the NVDA <a href="#modifierKey">modifier key</a> + q.</li>
+                    <li><strong>JAWS</strong> can be started with Ctrl + Alt + J. You can then quit JAWS using Insert + F4. You'll then be asked for confirmation before it fully quits.</li>
+                </ul>
+
                 <h3>Enable/Disable Screen Reader to Automatically Start Before/After Login</h3>
-                <h3>Turning on Speech Viewer</h3>
-
-                <h3>Installing NVDA</h3>
-                <p>NVDA only runs in a Windows operating system. If you are using MacOS, please the the <a href="#turnOnVoiceOver">Turning on VoiceOver</a> section. Otherwise the installation of NVDA is pretty straight forward.</p>
-
+                <p>NVDA and JAWS both provide options for enabling the option to auto-start them at the login screen and/or after login during installation. All screen readers have auto-start options in their settings.</p>
+                <p>It is important to know that changing whether a screen reader starts automatically after sign-in typically does not require administrator rights. However, starting a screen reader automatically on the login screen does. This is because changing this after sign in is just impacting the individual user registry/settings, and not the system-wide registry/settings the way setting it to start on the login screen does.</p>
+                <h4>Auto-Start Narrator</h4>
+                <p>These steps are in Windows 11, but it should be fairly close to the same in Windows 8 & 10.</p>
                 <ol>
-                    <li>Download the <a href="https://www.nvaccess.org/download/NVDA" target="_blank" rel="noreferrer noopener">NVDA installer <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> from the NV Access website.</li>
-                    <li>Run the installer and follow the prompts to install NVDA.</li>
-                    <li>Once installed, you can run NVDA by pressing the Windows key, typing "NVDA", and pressing enter.</li>
+                    <li>To edit the Narrator auto-start options, you will first need to access Narrators settings, which can be done with Windows key + Ctrl + n.</li>
+                    <li>From there, expand the "Use Narrator" section.</li>
+                    <li>Depending on your needs you can check / uncheck the "Start Narrator before sign-in" and/or "Start Narrator after sign-in" to set Narrator to start on the login screen or after you login. The "after sign-in" option will only impact the user currently logged in. You will have to login to other accounts to set this for other users. However, those users can use the manual start option to start Narrator after sign-in to set the option if needed.</li>
                 </ol>
-
-                <h4>Installing Portable NVDA</h4>
-                <p>If you are installing the portable version, the option will be one of the first ones you see when you run the installer. You need to plug in your flash drive before starting the installer. Past that the steps are pretty much the same, except you don't get as many of the customization options.</p>
-
-                <h2 id="disableRunOnLogin">Disabling the Run on Login Screen and/or Login option</h2>
-                <h3>Comfiguring Narrator to start on login screen and/or at login</h3>
-                <p>To turn on Narrator on Windows, perform one of the following:</p>
                 
-                <ul>
-                    <li>Press Windows Key + Ctrl + Enter.</li>
-                    <li>Press Windows Key + Ctrl + N to open the Narrator settings, and then toggle on the "Use Narrator" option.</li>
-                </ul>
-
-                <p>To start Narrator automatically, you will need to go into the Narrator settings and check the box next to one, or both, of the following settings:</p>
-
-                <ul>
-                    <li>"Start Narrator after sign-in" if you want it to start after your account logs into the machine</li>
-                    <li>"Start Narrator before sign-in" if you want Narrator to run on the login screen for all users.</li>
-                </ul>
-
-                <h3>Comfiguring VoiceOver to start on login screen and/or at login</h3>
-                <p>Placeholder</p>
-
-                <h3>Comfiguring NVDA to start on login screen and/or at login</h3>
-                <p>Placeholder</p>
+                <h4>Voiceover</h4>
+                <p></p>
+                <ol>
+                    <li>Choose Apple menu > System Settings, then click Lock Screen in the sidebar. (You may need to scroll down.)</li>
+                    <li>Click Accessibility Options on the right.</li>
+                    <li>Turn on VoiceOver. You may need to enter an administrator name and password.</li>
+                    <li>Click Done.</li>
+                </ol>
                 
-                <h2 id="turnOnScreenReader">Turning on you screen reader</h2>
-                <h3>Turning on Narrator</h3>
-                <p>Placeholder</p>
-
-                <h3 id="turnOnVoiceOver">Turning on VoiceOver</h3>
-                <p>Placeholder</p>
-
-                <h3>Turning on NVDA</h3>
-                <p>Placeholder</p>
+                <h4>NVDA</h4>
+                <p></p>
+                <ol>
+                    <li>Start NVDA.</li>
+                    <li>Right-click (Shift+F10 or Shift+Enter) on the NVDA icon in the notification area.</li>
+                    <li>Select Preferences > Settings.</li>
+                    <li>Check/uncheck the boxes for "Start NVDA after I sign in" and/or "Use NVDA during sign-in (requires administrator privileges)" to adjust when/if NVDA automatically starts.</li>
+                </ol>
+                
+                <h4>JAWS</h4>
+                <p></p>
+                <ol>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+                
+                <h3>Turning on Speech Viewer</h3>
+                
+                <h2>General Resources</h2>
+                <ul>
+                    <li><a href="https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1#WindowsVersion=Windows_11" target="_blank" rel="noopener noreferrer">Complete guide to Narrator | Microsoft Support <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a></a></li>
+                    <li><a href="https://support.apple.com/guide/voiceover/welcome/mac" rel="noopener noreferrer" target="_blank">VoiceOver User Guide | MacOS | Apple Support <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a></a></li>
+                    <li><a href="https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/17.0/ios/17.0" rel="noopener noreferrer" target="_blank">VoiceOver on iOS | iOS | Apple Support <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a></a></li>
+                    <li><a href="https://dequeuniversity.com/screenreaders/" rel="noopener noreferrer" target="_blank">Screen Reader Keyboard Shortcuts and Gestures | Deque University <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a></a></li>
+                    <li><a href="https://www.freedomscientific.com/training/jaws/hotkeys/" target="_blank" rel="noopener noreferrer">JAWS Hotkeys | Freedom Scientific <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a></li>
+                </ul>
 
                 <h2>Providing Workshop Feedback</h2>
 
