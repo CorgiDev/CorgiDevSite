@@ -1,9 +1,9 @@
 ---
-name: User Reported Issue Template
+name: New Issue Template
 about: Report an issue relating to corgidev.com.
 title: "[User Reported Issue] <Provide Brief Issue Name between these arrow brackets>"
-labels: UserReported
-assignees: corgidev
+labels: [UserReported]
+assignees: [corgidev]
 
 ---
 
