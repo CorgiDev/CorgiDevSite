@@ -40,3 +40,21 @@
 #wrapper li {
     margin: 2px;
 }
+
+.taglist {
+    display: inline;
+}
+
+.tagListLabel {
+    font-weight: bold;
+}
+
+.tagItems li {
+    display:inline;
+    list-style-type: none;
+    border:#2D2D2D 1px solid;
+    background: purple;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
