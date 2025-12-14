@@ -65,6 +65,35 @@
                     </div>
                     <hr>
                     -->
+                    <div class="blogPost">
+                        <h2 class="postTitle">HTML Order versus Visual Order</h2>
+                        <h3 class="postDescrip"><time datetime="2024-10-25 18:00-04:00">October 25, 2024 - 06:00 pm</time></h3>
+                        <p class="postContent">
+                            When building a site, you can have elements in the markup in one order, but then change how it displays via CSS. However, ideally you want the visual / reading order to match the order the content is in the HTML.  This is because the code order is mostly what will control how assistive technology navigates through the content. You also want this order to remain the same if the user resizes the screen so they are not disoriented and don't struggle to find controls/content that has moved. By remaining consistent between screen sizes or code verus display, we can better ensure the content will flow in a predictable and meaningful order.
+                        </p>
+                        <p class="postContent">
+                            This is also why we want to avoid overwriting tab order using <code>tabindex</code> unless we are forcing an interactive element into the tab order that is not being tabbed to for some reason. If you are using proper semantic elements this overwriting is typically not necessaryunless there is a compatibility issue. Usually, forcing elements into tab order is only necessary when you are using a custom element.
+                        </p>
+                        <p class="postContent">
+                            In some cases, you may be able to use the <code>role</code> attribute to have the custom element be properly recognized as what it is (i.e., button, link, etc.) and the browser thus automatically placing it into tab order. Only if that does not work, would <code>tabindex</code> potentially be needed as well. However, even in those cases we should only be setting <code>tabindex</code> to <code>-1</code> (removes from tab order) or <code>0</code> (adds to tab order).
+                        </p>
+                        <p class="postContent">
+                            Setting tabindex to <code>0</code> or <code>-1</code> will purely add/remove the elements from the tab order. When adding to tab order using <code>tabindex="0"</code>, the element's placement in tab order will still be primarily determined by its order in the code. We don't want to use other positive values that would actually force an element into a particular spot in the tab order. Doing so can result in issues when the page adjusts based on screen size or if elements are removed/added by various controls or user actions. There is even a warning about this on the tabindex <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex" rel="noreferrer noopener" target="_blank">Mozilla Developer Network page <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a>.
+                        </p>
+                        <p class="postContent">
+                            If you'd like to learn more about the importance of ensuring HTML order matches the display order, check out the following article: <a href="https://adrianroselli.com/2015/10/html-source-order-vs-css-display-order.html">HTML Source Order vs CSS Display Order | Adrian Roselli <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a>.
+                        </p>
+                    </div>
+                    <hr>
+
+                    <div class="blogPost">
+                        <h2 class="postTitle">How old is your GitHub account?</h2>
+                        <h3 class="postDescrip"><time datetime="2024-10-24 18:00-04:00">October 24, 2024 - 06:00 pm EST</time></h3>
+                        <p class="postContent">
+                            Every GitHub account has an associated ID that is created sequentially. There are over 100,000,000 accounts. So the lower the number, the older the account. You can easily see the ID by going to <code>https://api.github.com/users/username</code>, but swap out "username" at the end with your GitHub handle.
+                        </p>
+                    </div>
+                    <hr>
 
                     <div class="blogPost">
                         <h2 class="postTitle">Host a Palworld Server on Azure</h2>
