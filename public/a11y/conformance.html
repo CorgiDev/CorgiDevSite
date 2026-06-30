@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Accessibility Conformance - Erissa Duvall</title>
+        <meta name="description" content="Home page for Corgidev.com.">
+        <meta name="keywords" content="home, corgidev, developer">
+        <meta name="author" content="Erissa Duvall aka CorgiDev">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/webp" href="img/favicon.webp">
+        <!-- Linked CSS -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,700i&display=swap" rel="stylesheet">	
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/conformance.css">
+        <link rel="stylesheet" href="../css/responsive.css">
+        <link rel="stylesheet" href="../css/foundation-icons.css">
+    </head>
+    <body>
+        <header>
+            <div id="skipContentDiv">
+                <a href="#wrapper" id="skip-content">Skip to main content</a>
+            </div>
+            <div id="logoDiv">
+                <img src="img/CorgidevLogo.webp" alt="CorgiDev Logo">
+            </div>
+            <nav aria-label="Main">
+                <ul>
+                    <li><a href="index.html" class="selected" aria-current="page">Home</a></li>
+                    <li><a href="resume.html">Resumé</a></li>
+                    <li><a href="a11y.html">A11y</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="breadcrumbs"></div>
+        <!-- <nav class="breadcrumbs" aria-label="Navigation Breadcrumbs">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house fa-lg" id="navHouse"></i><span class="sr-only">Home</span></a></li>
+            </ul>
+        </nav> -->
+        <div id="wrapper">
+            <main>
+                <h1 class="mainHeadline">Welcome to CorgiDev!</h1>
+
+                <section aria-describedby="upcomingTalksHeader">
+                    <h2 id="upcomingTalksHeader">Upcoming Talks</h2>
+                    <!-- Good resources for formatting time strings: 
+                        - https://developer.mozilla.org/en-US/docs/Web/HTML/Date_and_time_formats#local_date_and_time_strings
+                        - https://www.w3schools.com/tags/att_time_datetime.asp
+                    -->
+                    <!-- None at this time. Check back later for updates, or check out the Other Events section for information about other events that I am interested in. -->
+
+                    <h3>Nebraska.Code()</h3>
+                        <ul>
+                            <li><strong>When:</strong> Wednesday, July 22 through Friday, 24, 2026</li>
+                            <li><strong>Where:</strong> Cornhusker Marriott Hotel, Lincoln, NE, USA</li>
+                            <li><strong>My Talk:</strong> POUR One Out for A11y</li>
+                        </ul>
+                        <p>My talk will be on Thursday, July 23rd at <time datetime="16:20:00-05:00">10:00 am</time> (Central Daylight Time). The room is TBD at this time.</p>
+                        <p>More details about <a href="https://www.nebraska-code.com/" rel="noreferrer noopener" target="_blank">Nebraska.Code() <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> can be found on their site.</p>
+
+                    <!-- 
+                    <h3>[Event Name]</h3>
+                        <ul>
+                            <li><strong>When:</strong> [Date/Dates]</li>
+                            <li><strong>Where:</strong> [Location]</li>
+                            <li><strong>My Talk:</strong> [Talk Title]</li>
+                        </ul>
+                        <p>My talk will be on January 29th at <time datetime="16:20:00+01:00">4:20pm</time> (West Europe Standard Time) in room 4.</p>
+                        <p>More details about <a href="https://ndclondon.com/" rel="noreferrer noopener" target="_blank">NDC London <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> can be found on their site.</p>
+                    -->
+
+                    <h2 id="otherEventsHeader">Other Events</h2>
+                    <p>These are not necessarily events that I am speaking at, but additional upcoming events that are of interest to me.</p>
+
+                    <h3>Cincy Deliver 2026</h3>
+                        <ul>
+                            <li><strong>When:</strong> Friday, July 24th, 2026</li>
+                            <li><strong>Where:</strong> Manor House, Mason, Ohio, USA</li>
+                            <li><strong>CFP:</strong> February through March 16th, 2026 on <a href="https://www.cincydeliver.org/" rel="noreferrer noopener" target="_blank">Cindy Deliver's site <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a></li>
+                        </ul>
+                        <p>More details about <a href="https://www.cincydeliver.org/" rel="noreferrer noopener" target="_blank">Cincy Deliver <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> can be found on their site.</p>
+
+                    <h3>Beer City Code 2026</h3>
+                        <ul>
+                            <li><strong>When:</strong> August 14th through 15th,2026</li>
+                            <li><strong>Where:</strong> Calvin University - Fine Arts Center, Grand Rapids, MI, USA</li>
+                            <li><strong>CFP:</strong> January 16th through March 1st, 2026 on <a href="https://sessionize.com/beer-city-code-2026/" rel="noreferrer noopener" target="_blank">Sessionize <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a></li>
+                        </ul>
+                        <p>More details about <a href="https://beercitycode.com/" rel="noreferrer noopener" target="_blank">Beer City Code <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> can be found on their site.</p>
+
+                    <h3>KCDC 2026</h3>
+                        <ul>
+                            <li><strong>When:</strong> September 9th through 11th, 2026</li>
+                            <li><strong>Where:</strong> Kansas City Convention Center, Kansas City, MO, USA</li>
+                            <li><strong>CFP:</strong> February 4th through March 9th, 2026 on <a href="https://sessionize.com/kcdc-2026/" rel="noreferrer noopener" target="_blank">Sessionize <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a></li>
+                        </ul>
+                        <p>More details about <a href="http://www.kcdc.info/" rel="noreferrer noopener" target="_blank">KCDC <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> can be found on their site.</p>
+                    
+                    <h3>TechBash 2026</h3>
+                        <ul>
+                            <li><strong>When:</strong> Tuesday thru Friday, October 13th through 16th, 2026</li>
+                            <li><strong>Where:</strong> Kalahari Resorts, Pocono Manor, PA, USA</li>
+                            <li><strong>CFP:</strong> TBD</li>
+                        </ul>
+                        <p>More details about <a href="https://techbash.com/" rel="noreferrer noopener" target="_blank">TechBash <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> can be found on their site.</p>
+
+                    <h3>Momentum Developer Conference 2026</h3>
+                        <ul>
+                            <li><strong>When:</strong> Friday, October 16th, 2026</li>
+                            <li><strong>Where:</strong> Hard Rock Casino Cincinnati, Cincinnati, OH, USA</li>
+                            <li><strong>CFP:</strong> Approximately May 2026</li>
+                        </ul>
+                        <p>More details about <a href="https://momentumdevcon.com/" rel="noreferrer noopener" target="_blank">Momentum Developer Conference <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> can be found on their site.</p>
+
+                    <h3>Techorama Netherlands 2026</h3>
+                        <ul>
+                            <li><strong>When:</strong>: October 26th through 28th, 2026</li>
+                            <li><strong>Where:</strong>: Kinepolis Jaarbeurs, Utrecht, The Netherlands</li>
+                            <li><strong>CFP:</strong> February 17th through May 29th 2026 on <a href="https://sessionize.com/techorama-2026-netherlands/" rel="noreferrer noopener" target="_blank">Sessionize <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a></li>
+                        </ul>
+                        <p>More details about <a href="https://www.techorama.nl/" rel="noreferrer noopener" target="_blank">Technorama Netherlands <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> can be found on their site.</p>
+
+                    <h3>CodeMash 2027</h3>
+                        <ul>
+                            <li><strong>When:</strong> TBD</li>
+                            <li><strong>Where:</strong> Kalahari Resort, Sandusky, OH, USA</li>
+                            <li><strong>CFP:</strong> TBD</li>
+                        </ul>
+                        <p>More details about <a href="https://codemash.org/" rel="noreferrer noopener" target="_blank">CodeMash <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> can be found on their site.</p>
+
+                    <h3>CodeMash East 2027</h3>
+                    <ul>
+                        <li><strong>When:</strong> June 17th through 18th, 2027</li>
+                        <li><strong>Where:</strong> Kalahari Resort, Spotsylvania, VA, USA</li>
+                        <li><strong>CFP:</strong> TBD</li>
+                    </ul>
+                    <p>I'll update if they come out with a separate site for specifically CodeMash East, but for now you can check out the main <a href="https://codemash.org/" rel="noreferrer noopener" target="_blank">CodeMash site <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> for details.</p>
+
+                    <h3>NDC London 2027</h3>
+                        <ul>
+                            <li><strong>When:</strong> TBD</li>
+                            <li><strong>Where:</strong> TBD</li>
+                            <li><strong>CFP:</strong> TBD</li>
+                        </ul>
+                        <p>More details about <a href="https://ndclondon.com/" rel="noreferrer noopener" target="_blank">NDC London <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> can be found on their site.</p>
+                    
+                        <h3>Gary Con 2027</h3>
+                        <ul>
+                            <li><strong>When:</strong> March 19th through 22nd, 2027</li>
+                            <li><strong>Where:</strong> Grand Geneva Resort & Spa, Lake Geneva, WI, USA</li>
+                        </ul>
+                        <p>More details about <a href="https://www.garycon.com/" rel="noreferrer noopener" target="_blank">Gary Con <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> can be found on their site.</p>
+
+                        <h3>River City Tabletop Con 2027</h3>
+                        <ul>
+                            <li><strong>When:</strong> January 29 through 31, 2027</li>
+                            <li><strong>Where:</strong> Louisville Marriott East, Louisville, KY, USA</li>
+                        </ul>
+                        <p>More details about <a href="https://tabletop.events/conventions/rivercitycon-2027-tabletop-gaming-convention/" rel="noreferrer noopener" target="_blank">River City Tabletop Con <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a> can be found on their site.</p>
+                </section>
+                <hr>
+
+                <section aria-labelledby="nsbuHeader">
+                    <h2 id="nsbuHeader">NSBU App</h2>
+                    <p>I have been having fun playing Never Stop Blowing Up with some friends as fun one shot games between our usual campaign games. I had trouble keeping up with my stats. So I built a little app for my own use. There is a chance that it may not be as accessible as this site, but I wanted to share it in case it might help someone else. You can access it via the following links:</p>
+                    <ul>
+                        <li><strong>Desktop App Repo</strong>: <a href="https://github.com/CorgiDev/Roll20-NSBU-Desktop-App" rel="noreferrer noopener" target="_blank">Roll20-NSBU-Desktop-App repo <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a></li>
+                        <li><strong>Web App Repo and GitHub Pages Site</strong>: <div id="githubPagesLink">(IMPORTANT: For some reason the dark mode does not work on the GitHub Pages site version of this one.)</div>
+                            <ul>
+                                <li><a href="https://github.com/CorgiDev/Roll20-NSBU-Web-App" rel="noreferrer noopener" target="_blank" aria-describedby="githubPagesLink">Roll20-NSBU-Web-App <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a></li>
+                                <li><a href="https://corgidev.github.io/Roll20-NSBU-Web-App/" rel="noreferrer noopener" target="_blank">Roll20-NSBU-Web-App GitHub pages <i class="fa-solid fa-arrow-up-right-from-square newWindowIcon" aria-hidden="true"></i><span class="sr-only">Opens in new window</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                
+                <hr>
+
+                <section aria-labelledby="accessibilityStatement">
+                    <h2 id="accessibilityStatement">Accessibility Statement</h2>
+                    <p>This site strives to be WCAG 2.1 AA conformant. Please message me on one of my social media platforms if you notice an accessibility issue with this site and I will do my best to fix the issue.</p>
+                </section>
+
+                
+                <!-- Gallery images should be 1024x768-->
+                <!-- <section aria-describedby="galleryHeader">
+                    <h2 id="galleryHeader">Fun Gallery</h2>
+                    <p>I have included some fun pictures in this section as a way to let you get some insight into me.</p>
+                    <div id="gallery">
+                        <figure>
+                            <img src="img/japan.webp" alt="Me with my boyfriend and a friend in front of a gate">
+                            <figcaption>My friend Rina, my boyfriend Mitch, and I in Tokyo, Japan.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/kabukiza.webp" alt="Japanese woman in a kimono posing with me">
+                            <figcaption>Photo of me with a woman in a beautiful kimono at a shop in Kubukiza.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/ghibli.webp" alt="Me posing in front of a giant robot statue">
+                            <figcaption>Me in front of the Laputa robot at the Ghibli Museum in Mikata, Tokyo, Japan.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/rolexes.webp" alt="Me in front of a horse">
+                            <figcaption>Me at the Rolexes near Lexington, KY in 2016.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/rainbow-erissa-resized.webp" alt="A girl with rainbow gradient hair that goes from magenta to red, to orange, to yellow, to green, to blue, and finally indigo. She has fair skin, dark red lips, bright blue eyes, and is wear a short sleeve black shirt.">
+                            <figcaption>Got my hair dyed for the first time in 2022 and will never look back.</figcaption>
+                        </figure>
+                    </div>
+                </section> -->
+            </main>
+
+            <footer>
+                <hr>
+                <nav aria-label="Footer Social Links">
+                    <ul>
+                        <li><a href="https://www.buymeacoffee.com/TheCorgiDev" aria-label="Buy CorgiDev a Coffee (Opens in new window)" rel="noreferrer noopener" target="_blank"><i class="fa-duotone fa-cup-togo fa-2x social-icon"></i></a></li>
+                        <li><a href="http://a11y.info/@CorgiDev" aria-label="CorgiDev on Mastodon (Opens in new window)" rel="noreferrer noopener" target="_blank"><i class="fa-brands fa-mastodon fa-2x social-icon"></i></a></li>
+                        <li><a href="http://facebook.com/corgidev" aria-label="Corgidev on Facebook (Opens in new window)" rel="noreferrer noopener" target="_blank"><i class="fab fa-facebook-square fa-2x social-icon"></i></a></li>
+                        <li><a href="https://www.instagram.com/corgidev/" aria-label="Corgidev Instagram (Opens in new window)" rel="noreferrer noopener" target="_blank"><i class="fab fa-instagram fa-2x social-icon"></i></a></li>
+                        <li><a href="https://www.youtube.com/@CorgiDev" aria-label="Corgidev on YouTube (Opens in new window)" rel="noreferrer noopener" target="_blank"><i class="fa-brands fa-youtube fa-2x social-icon"></i></a></li>
+                    </ul>
+                </nav>
+                <p>Website created and maintained by Erissa Duvall aka CorgiDev since 2017.</p>
+                <div id="wcagIconContainer">
+                    <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" id="wcagIcon" title="Explanation of WCAG 2 Level AA conformance">
+                        <img height="32" width="88" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-v" alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.1">
+                    </a>
+                </div>
+            </footer>
+        </div>
+        <script src="https://kit.fontawesome.com/57e0b881dd.js" crossorigin="anonymous"></script>
+    </body>
+</html>
